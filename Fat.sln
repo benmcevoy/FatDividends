@@ -14,8 +14,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_documentation", "_document
 		_documentation\201300314-yahoo api notes.txt = _documentation\201300314-yahoo api notes.txt
 		_documentation\20130305-fat-d.txt = _documentation\20130305-fat-d.txt
 		_documentation\ASXListedCompanies.csv = _documentation\ASXListedCompanies.csv
-		_documentation\fat-d.png = _documentation\fat-d.png
-		_documentation\fatdividends.com Requirements Specification v0.4.pdf = _documentation\fatdividends.com Requirements Specification v0.4.pdf
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{D1166DF3-F64E-465A-8CF3-3000F7DE36CC}"

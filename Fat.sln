@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fat.Web", "Fat\Fat.Web.csproj", "{34EDDAA5-73FB-4FD1-B08A-D51DE9890385}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fat.Web", "Fat.Web\Fat.Web.csproj", "{34EDDAA5-73FB-4FD1-B08A-D51DE9890385}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fat.Tests", "Fat.Tests\Fat.Tests.csproj", "{F414194E-6DB6-4C95-8CBE-9F0EB8B0E135}"
 EndProject

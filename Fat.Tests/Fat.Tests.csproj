@@ -112,7 +112,7 @@
       <Project>{0135e795-f0cc-42b6-8ab0-599022d8efd3}</Project>
       <Name>Fat.Services</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Fat\Fat.Web.csproj">
+    <ProjectReference Include="..\Fat.Web\Fat.Web.csproj">
       <Project>{34EDDAA5-73FB-4FD1-B08A-D51DE9890385}</Project>
       <Name>Fat.Web</Name>
     </ProjectReference>

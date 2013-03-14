@@ -1,0 +1,30 @@
+the blog is a blog is a blog
+data administration happens offline
+
+generates JSON data sets to file
+widgets are javascript widgets
+	.js
+	.js templates/html
+	.css
+again just static content
+consume the .JSON generated above
+
+client does the heavy work
+server requirements are minimal, can even be Linux-Apache
+as it's all static
+
+admin is
+	some app (MVC/WPF who cares)
+	some database (SQL CE who cares)
+	templates + data to render JSON 
+		render (Razor + model -> html)
+		preview(just open in browser)
+		export (ftp that shit up)
+
+The thing i wanted to build for myself...
+
+BUT how does file store work for related pdf etc?
+How is this EASY to administer?
+it's certainly cheap to run....
+
+

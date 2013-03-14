@@ -1,0 +1,28 @@
+Routes
+	default to index?
+	oh it is already.
+
+/404	proper 404
+
+/Home
+	/(index)
+	/about
+	/OTHER pages t&c etc
+/stock
+	/(index)listing page
+	/(index)/id a specific page
+		any code will do, if we have content we can render, otherwise
+		we can render a notfound or something
+
+/dividend
+	/calendar
+	/(index)	listing page
+	/(index)/id 	- dividend details if we have them
+/earning
+	/calendar
+	/(index)	listing page
+	/(index)/id 	- earning details if we have them
+
+/news
+	/(index)	listing page
+	/(index)/id 	- a news item

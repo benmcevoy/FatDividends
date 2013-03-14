@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>YahooStockQuotes</id>
+    <version>1.0.1</version>
+    <title>Yahoo Stock Quotes</title>
+    <authors>Jonathan Christian</authors>
+    <owners>Jonathan Christian</owners>
+    <licenseUrl>https://github.com/jchristian/yahoo_stock_quotes/blob/master/License.txt</licenseUrl>
+    <projectUrl>https://github.com/jchristian/yahoo_stock_quotes</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Easily get stock quotes from the Yahoo Finance API</description>
+    <releaseNotes />
+    <copyright>Copyright 2012</copyright>
+    <language />
+    <tags>finance stock quote</tags>
+    <references>
+      <reference file="YSQ.core.dll" />
+    </references>
+  </metadata>
+</package>

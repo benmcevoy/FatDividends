@@ -1,0 +1,5 @@
+company news RSS feeds, also industry news
+http://developer.yahoo.com/finance/company.html
+e.g. http://finance.yahoo.com/rss/headline?s=yhoo
+
+

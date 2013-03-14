@@ -1,0 +1,71 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fat.Web", "Fat\Fat.Web.csproj", "{34EDDAA5-73FB-4FD1-B08A-D51DE9890385}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fat.Tests", "Fat.Tests\Fat.Tests.csproj", "{F414194E-6DB6-4C95-8CBE-9F0EB8B0E135}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fat.Quotes", "Fat.Quotes\Fat.Quotes.csproj", "{608B3493-2926-438E-9FB2-271473C99326}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fat.Services", "Fat.Services\Fat.Services.csproj", "{0135E795-F0CC-42B6-8AB0-599022D8EFD3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_documentation", "_documentation", "{33DA174D-A48C-4541-8444-490867C3EA10}"
+	ProjectSection(SolutionItems) = preProject
+		_documentation\201300314-yahoo api notes.txt = _documentation\201300314-yahoo api notes.txt
+		_documentation\20130305-fat-d.txt = _documentation\20130305-fat-d.txt
+		_documentation\ASXListedCompanies.csv = _documentation\ASXListedCompanies.csv
+		_documentation\fat-d.png = _documentation\fat-d.png
+		_documentation\fatdividends.com Requirements Specification v0.4.pdf = _documentation\fatdividends.com Requirements Specification v0.4.pdf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{D1166DF3-F64E-465A-8CF3-3000F7DE36CC}"
+	ProjectSection(SolutionItems) = preProject
+		_documentation\SQL\insert stocks.txt = _documentation\SQL\insert stocks.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fat.Import", "Fat.Import\Fat.Import.csproj", "{84A3BDFB-B2E1-4BA5-AC46-4BE995018798}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{871B6931-2845-47DC-9E3D-8B13F88918CF}"
+	ProjectSection(SolutionItems) = preProject
+		lib\MaasOne.dll = lib\MaasOne.dll
+		lib\MaasOne.pdb = lib\MaasOne.pdb
+		lib\MaasOne.xml = lib\MaasOne.xml
+		lib\MaasOne.Yahoo.dll = lib\MaasOne.Yahoo.dll
+		lib\MaasOne.Yahoo.pdb = lib\MaasOne.Yahoo.pdb
+		lib\MaasOne.Yahoo.XML = lib\MaasOne.Yahoo.XML
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34EDDAA5-73FB-4FD1-B08A-D51DE9890385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34EDDAA5-73FB-4FD1-B08A-D51DE9890385}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34EDDAA5-73FB-4FD1-B08A-D51DE9890385}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34EDDAA5-73FB-4FD1-B08A-D51DE9890385}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F414194E-6DB6-4C95-8CBE-9F0EB8B0E135}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F414194E-6DB6-4C95-8CBE-9F0EB8B0E135}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F414194E-6DB6-4C95-8CBE-9F0EB8B0E135}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F414194E-6DB6-4C95-8CBE-9F0EB8B0E135}.Release|Any CPU.Build.0 = Release|Any CPU
+		{608B3493-2926-438E-9FB2-271473C99326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{608B3493-2926-438E-9FB2-271473C99326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{608B3493-2926-438E-9FB2-271473C99326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{608B3493-2926-438E-9FB2-271473C99326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0135E795-F0CC-42B6-8AB0-599022D8EFD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0135E795-F0CC-42B6-8AB0-599022D8EFD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0135E795-F0CC-42B6-8AB0-599022D8EFD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0135E795-F0CC-42B6-8AB0-599022D8EFD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84A3BDFB-B2E1-4BA5-AC46-4BE995018798}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84A3BDFB-B2E1-4BA5-AC46-4BE995018798}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84A3BDFB-B2E1-4BA5-AC46-4BE995018798}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84A3BDFB-B2E1-4BA5-AC46-4BE995018798}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D1166DF3-F64E-465A-8CF3-3000F7DE36CC} = {33DA174D-A48C-4541-8444-490867C3EA10}
+	EndGlobalSection
+EndGlobal

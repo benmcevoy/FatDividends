@@ -1,14 +1,9 @@
-﻿using System;
+﻿using Fat.Services.Data;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web;
 using System.Web.Http;
-using Fat.Services.Data;
 
 namespace Fat.Web.Controllers.api
 {
@@ -16,9 +11,9 @@ namespace Fat.Web.Controllers.api
     {
         private readonly Entities _context;
 
-        public StockController()
+        public StockController(Entities context)
         {
-            _context = new Entities();
+            _context = context;
         }
 
         // GET api/Stock
@@ -39,7 +34,8 @@ namespace Fat.Web.Controllers.api
         /// <returns></returns>
         public Stock GetStock(string id)
         {
-            Stock stock = _context.Stocks.Find(id);
+            var stock = _context.Stocks.Find(id);
+
             if (stock == null)
             {
                 throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));

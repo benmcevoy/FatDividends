@@ -1,49 +1,65 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
-        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
-    </head>
-    <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Stocks", "Index", "Stock")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <header>
+                <div id="logo"><a href="/" title="fat dividends"></a></div>
+                <div class="advert">advert</div>
+                <div id="mainNav">
+                    <nav role="navigation">
+                        <ul role="menu">
+                            <li role="menuitem" style="background-color:#333;"><a class="home" href="/" title="Home" role="link">
+                                <img src="/Content/Images/home.png" /></a></li>
+                            <li role="menuitem" style="background-color:#555;"><a href="#" title="Dividend Investing" role="link">Dividend Investing</a></li>
+                            <li role="menuitem" style="background-color:#6E6F71;"><a href="#" title="Investment Calendar" role="link">Investment Calendar</a></li>
+                            <li role="menuitem" style="background-color:#7B7C80;"><a href="#" title="Earnings Calendar" role="link">Earnings Calendar</a></li>
+                            <li role="menuitem" style="background-color:#898A8C;"><a href="#" title="Investment News" role="link">Investment News</a></li>
+                            <li role="menuitem" style="background-color:#96979B;"><a href="http://www.asx.com.au/" title="Home" role="link" target="_blank">ASX 200</a></li>
                         </ul>
                     </nav>
                 </div>
-            </div>
-        </header>
+            </header>
+        </div>
+
+        <div id="asideLeft">
+            <aside>
+                <div class="advert">advert</div>
+            </aside>
+        </div>
+
         <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
+            <section>
                 @RenderBody()
             </section>
         </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
-                </div>
-            </div>
-        </footer>
 
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
-    </body>
+        <div id="asideRight">
+            <aside>
+                <div class="advert">advert</div>
+            </aside>
+        </div>
+
+        <div id="footer">
+            <footer>
+                <div>
+                    copyright and contact
+                </div>
+                <div class="advert">advert</div>
+            </footer>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+</body>
 </html>

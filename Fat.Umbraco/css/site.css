@@ -1,0 +1,157 @@
+﻿html {
+    background-color: #1C1C1A;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #fff;
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #333;
+    outline: none;
+    padding-left: 3px;
+    padding-right: 3px;
+    text-decoration: underline;
+}
+
+    a:link, a:visited,
+    a:active, a:hover {
+        color: #333;
+    }
+
+    a:hover {
+        background-color: #c7d1d6;
+    }
+
+header, footer, hgroup,
+nav, section {
+    display: block;
+}
+
+mark {
+    background-color: #a6dbed;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#main {
+    width: 1380px;
+    margin: 50px auto;
+}
+
+#header {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#header {
+    height: 180px;
+}
+
+#logo {
+    width: 225px;
+    height: 130px;
+    background: url('Images/logo.png') no-repeat left top;
+    float: left;
+}
+
+    #logo a {
+        display: block;
+        width: 225px;
+        height: 130px;
+    }
+
+        #logo a:hover {
+            background-color: transparent;
+        }
+
+#header .advert {
+    float: right;
+    width: 728px;
+    height: 90px;
+}
+
+#mainNav {
+    clear: both;
+}
+
+    #mainNav ul {
+        clear: both;
+        margin: 0;
+        padding: 0;
+        height: 40px;
+        border-bottom: 5px solid #17A9DA;
+        background-color: #6E6F71;
+    }
+
+        #mainNav ul li {
+            list-style: none;
+            float: left;
+            display: inline-block;
+            height: 40px;
+        }
+
+            #mainNav ul li a {
+                height: 40px;
+                width: 184px;
+                display: inline-block;
+                color: #fff;
+                text-align: center;
+            }
+
+                #mainNav ul li a.home {
+                    width: 40px;
+                }
+
+                    #mainNav ul li a.home img {
+                        border: none;
+                        margin: 4px 0 0 0;
+                    }
+
+                #mainNav ul li a:active, #mainNav li a:hover {
+                    background-color: #17A9DA;
+                }
+
+#body {
+    background-color: #fff;
+    color: #000;
+    float: left;
+    padding: 10px;
+    margin: 10px;
+    width: 980px;
+}
+
+.advert {
+    background-color: red;
+}
+
+#asideLeft, #asideRight {
+    width: 180px;
+    margin-top: 10px;
+}
+
+#asideLeft {
+    float: left;
+}
+
+    #asideLeft .advert {
+        height: 660px;
+    }
+
+#asideRight {
+    float: right;
+}
+
+#asideRight .advert {
+        height: 660px;
+    }
+
+#footer {
+    clear: both;
+}

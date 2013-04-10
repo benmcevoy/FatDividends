@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Fat.Umbraco.masterpages.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="/css/site.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <body>
+        <div id="main">
+            <div id="header">
+                <header>
+                    <div id="logo"><a href="/" title="fat dividends"></a></div>
+                    <div class="advert">advert</div>
+                     <umbraco:Macro ID="Macro1" FileLocation="~/macroScripts/MainNav.cshtml" runat="server" />
+                </header>
+            </div>
+
+            <div id="asideLeft">
+                <aside>
+                    <div class="advert">advert</div>
+                </aside>
+            </div>
+
+            <div id="body">
+                <section>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </section>
+            </div>
+
+            <div id="asideRight">
+                <aside>
+                    <div class="advert">advert</div>
+                </aside>
+            </div>
+
+            <div id="footer">
+                <footer>
+                    <div>
+                        copyright and contact
+                    </div>
+                    <div class="advert">advert</div>
+                </footer>
+            </div>
+        </div>
+
+
+    </body>
+</html>

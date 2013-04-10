@@ -25,13 +25,37 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fat.Import", "Fat.Import\Fa
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{871B6931-2845-47DC-9E3D-8B13F88918CF}"
 	ProjectSection(SolutionItems) = preProject
+		lib\businesslogic.dll = lib\businesslogic.dll
+		lib\cms.dll = lib\cms.dll
+		lib\dotNetFx45_Full_setup.exe = lib\dotNetFx45_Full_setup.exe
+		lib\EntityFramework.dll = lib\EntityFramework.dll
+		lib\EntityFramework.xml = lib\EntityFramework.xml
+		lib\Examine.dll = lib\Examine.dll
+		lib\interfaces.dll = lib\interfaces.dll
+		lib\interfaces.xml = lib\interfaces.xml
+		lib\Lucene.Net.dll = lib\Lucene.Net.dll
 		lib\MaasOne.dll = lib\MaasOne.dll
 		lib\MaasOne.pdb = lib\MaasOne.pdb
 		lib\MaasOne.xml = lib\MaasOne.xml
 		lib\MaasOne.Yahoo.dll = lib\MaasOne.Yahoo.dll
 		lib\MaasOne.Yahoo.pdb = lib\MaasOne.Yahoo.pdb
 		lib\MaasOne.Yahoo.XML = lib\MaasOne.Yahoo.XML
+		lib\SSCERuntime_x64-ENU (1).exe = lib\SSCERuntime_x64-ENU (1).exe
+		lib\System.Web.WebPages.dll = lib\System.Web.WebPages.dll
+		lib\System.Web.WebPages.Razor.dll = lib\System.Web.WebPages.Razor.dll
+		lib\System.Web.WebPages.Razor.xml = lib\System.Web.WebPages.Razor.xml
+		lib\System.Web.WebPages.xml = lib\System.Web.WebPages.xml
+		lib\umbraco.dll = lib\umbraco.dll
+		lib\umbraco.MacroEngines.dll = lib\umbraco.MacroEngines.dll
+		lib\umbraco.providers.dll = lib\umbraco.providers.dll
+		lib\UmbracoExamine.dll = lib\UmbracoExamine.dll
+		C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\ProjectTemplatesCache\CSharp\Vega.USiteBuilder\UmbracoProject.zip\Dlls\Vega.USiteBuilder.dll = C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\ProjectTemplatesCache\CSharp\Vega.USiteBuilder\UmbracoProject.zip\Dlls\Vega.USiteBuilder.dll
+		lib\Vega.USiteBuilder.dll = lib\Vega.USiteBuilder.dll
+		C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\ProjectTemplatesCache\CSharp\Vega.USiteBuilder\UmbracoProject.zip\Dlls\Vega.USiteBuilder.XML = C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\ProjectTemplatesCache\CSharp\Vega.USiteBuilder\UmbracoProject.zip\Dlls\Vega.USiteBuilder.XML
+		lib\Vega.USiteBuilder.XML = lib\Vega.USiteBuilder.XML
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fat.Umbraco", "Fat.Umbraco\Fat.Umbraco.csproj", "{ADA700DD-7BFA-4F2C-95B6-ADA9415E378A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +83,10 @@ Global
 		{84A3BDFB-B2E1-4BA5-AC46-4BE995018798}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84A3BDFB-B2E1-4BA5-AC46-4BE995018798}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84A3BDFB-B2E1-4BA5-AC46-4BE995018798}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADA700DD-7BFA-4F2C-95B6-ADA9415E378A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADA700DD-7BFA-4F2C-95B6-ADA9415E378A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADA700DD-7BFA-4F2C-95B6-ADA9415E378A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADA700DD-7BFA-4F2C-95B6-ADA9415E378A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

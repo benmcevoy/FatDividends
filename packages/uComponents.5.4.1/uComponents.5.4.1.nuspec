@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>uComponents</id>
+    <version>5.4.1</version>
+    <title>uComponents</title>
+    <authors>Lee Kelleher, Hendy Racher, James Diacono, Ove Andersen, Shannon Deminick</authors>
+    <owners>Lee Kelleher, Hendy Racher, James Diacono, Ove Andersen, Shannon Deminick</owners>
+    <licenseUrl>http://ucomponents.codeplex.com/license</licenseUrl>
+    <projectUrl>http://ucomponents.org/</projectUrl>
+    <iconUrl>http://ucomponents.org/apple-touch-icon-114x114-precomposed.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>uComponents is a collaborative project for creating components for Umbraco including data types, XSLT extensions, controls and more.
+
+Containing over 30 data types, 10 XSLT extension libraries, keyboard short-cuts, drag-n-drop functionality, as well as great developer utilities - uComponents is one of the must-have packages for any Umbraco-powered website!</description>
+    <summary>uComponents is a collaborative project for creating components for Umbraco including data types, XSLT extensions, controls and more.</summary>
+    <releaseNotes />
+    <copyright>Copyright © 2012 The Umbraco Community</copyright>
+    <language />
+    <tags>umbraco</tags>
+    <references>
+      <reference file="uComponents.Controls.dll" />
+      <reference file="uComponents.Core.dll" />
+      <reference file="uComponents.DataTypes.dll" />
+      <reference file="uComponents.Installer.dll" />
+      <reference file="uComponents.Legacy.dll" />
+      <reference file="uComponents.MacroEngines.dll" />
+      <reference file="uComponents.Mapping.dll" />
+      <reference file="uComponents.NotFoundHandlers.dll" />
+      <reference file="uComponents.UI.dll" />
+      <reference file="uComponents.XsltExtensions.dll" />
+    </references>
+  </metadata>
+</package>

@@ -1,0 +1,10 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Site.Master" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="Fat.Umbraco.masterpages.Home" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <h3><%= CurrentContent.Title %></h3>
+    
+    <sub><%= CurrentContent.HeroCaption %> </sub>
+
+    <p><%= CurrentContent.Content %></p>
+</asp:Content>

@@ -1,0 +1,53 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <BuildOutput>../Umbraco</BuildOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <BuildOutput>../Builds/Release</BuildOutput>
+  </PropertyGroup>
+
+  <Target Name="Umbraco_AfterBuild">
+    <!-- Assembly file definitions -->
+    <ItemGroup>
+      <AssemblyItem Include="bin/Fat.Umbraco.dll" />
+      <AssemblyItem Include="bin/Fat.Services.dll" />
+      <AssemblyItem Include="bin/EntityFramework.dll" />
+      <AssemblyItem Include="bin/uComponents.Core.dll" />
+      <AssemblyItem Include="bin/Vega.uSiteBuilder.dll" />
+      <AssemblyItem Include="bin/System.Web.Http.dll" />
+      <AssemblyItem Include="bin/System.Web.Http.WebHost.dll" />
+      <AssemblyItem Include="bin/System.Net.Http.Formatting.dll" />
+      <AssemblyItem Include="bin/Newtonsoft.Json.dll" />
+    </ItemGroup>
+    <!-- Exclude configuration files out of the @Content item group -->
+    <ItemGroup>
+      <Content Remove="**/umbracoSettings.*.config" />
+      <Content Remove="*.config" />
+    </ItemGroup>
+    <!-- Copy project and necessary dependent assemblies -->
+    <Copy SourceFiles="@(AssemblyItem)" DestinationFolder="$(BuildOutput)/bin" SkipUnchangedFiles="true" />
+    <!-- Copy project content files -->
+    <Copy SourceFiles="@(Content)" DestinationFolder="$(BuildOutput)/%(relativedir)" SkipUnchangedFiles="true" />
+    <PropertyGroup>
+      <TransformInputFile>Web.config</TransformInputFile>
+      <TransformFile>Web.$(Configuration).config</TransformFile>
+      <TransformOutputFile>$(BuildOutput)/Web.config</TransformOutputFile>
+      <StackTraceEnabled>False</StackTraceEnabled>
+    </PropertyGroup>
+    <!--<PropertyGroup>
+      <UmbracoTransformInputFile>config/umbracoSettings.config</UmbracoTransformInputFile>
+      <UmbracoTransformFile>config/umbracoSettings.$(Configuration).config</UmbracoTransformFile>
+      <UmbracoTransformOutputFile>$(BuildOutput)/config/umbracoSettings.config</UmbracoTransformOutputFile>
+      <UmbracoStackTraceEnabled>False</UmbracoStackTraceEnabled>
+    
+  </PropertyGroup>-->
+    <TransformXml Source="$(TransformInputFile)"
+      Transform="$(TransformFile)"
+      Destination="$(TransformOutputFile)"
+      StackTrace="$(StackTraceEnabled)" />
+    <!--<TransformXml Source="$(UmbracoTransformInputFile)"
+      Transform="$(UmbracoTransformFile)"
+      Destination="$(UmbracoTransformOutputFile)"
+      StackTrace="$(UmbracoStackTraceEnabled)" />-->
+  </Target>
+</Project>

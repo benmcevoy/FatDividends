@@ -1,0 +1,71 @@
+﻿<div id="search">
+    <form>
+        <label for="keywords">Search for stock name or ASX code</label><br/>
+        <input type="text" id="keywords" name="keywords" />
+        <input type="button" id="searchButton" value="GO" />
+    </form>
+</div>
+
+<div id="searchResultsTitle" style="display:none">
+    Search for <span id="searchTerm"></span> returned <span id="searchCount"></span> results
+</div>
+
+<div id="searchResults"></div>
+
+<script type="text/javascript">
+    $(function ($) {
+        $('#searchButton').click(function () {
+            search();
+        });
+
+        $('#keywords').keypress(function (e) {
+            if (e.which == 13) {
+                e.preventDefault();
+                $(this).blur();
+                $('#searchButton').focus().click();
+                return false;
+            }
+        });
+
+        var watermark = 'Search';
+
+        $('#keywords').val(watermark).addClass('watermark');
+
+        $('#keywords').blur(function () {
+            if ($(this).val().length == 0) {
+                $(this).val(watermark).addClass('watermark');
+            }
+        });
+
+        $('#keywords').focus(function () {
+            if ($(this).val() == watermark) {
+                $(this).val('').removeClass('watermark');
+            }
+        });
+
+        var search = function () {
+            var keywords = $('#keywords').val();
+            if (keywords.length > 2) {
+                $.ajax({
+                    url: '/api/search/' + keywords
+                }).done(function (data) {
+                    $('#searchTerm').text(keywords);
+                    $('#searchCount').text(data.length);
+                    $('#searchResultsTitle').show();
+                    $('#searchResults').empty();
+                    $('#searchResultTemplate').tmpl(data).appendTo('#searchResults');
+                });
+            }
+        };
+    });
+</script>
+
+<script id="searchResultTemplate" type="text/x-jQuery-tmpl">
+    <div class="search-result">
+        <a href="/stock-information/${Code}">
+            <span class="code">${Code}</span> - 
+            <span class="name">${Name}</span>
+            <span class="industry">(${Industry})</span>
+        </a>
+    </div>
+</script>

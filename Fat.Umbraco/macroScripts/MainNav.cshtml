@@ -1,11 +1,41 @@
-﻿@using umbraco.MacroEngines
+﻿@using Fat.Umbraco.DocumentTypes
+@using Vega.USiteBuilder
+@using umbraco.MacroEngines
 
-@inherits umbraco.MacroEngines.DynamicNodeContext
+@inherits DynamicNodeContext
 
-<div id="mainNav">
-    <nav role="navigation">
+@{
+    var startNodeId = Parameter.StartNodeId;
+    if (startNodeId != null)
+    {
+        var startNode = Library.NodeById(startNodeId);
 
-        @DateTime.Now
-        
-    </nav>
-</div>
+        if (startNode.Children.Any())
+        {
+            var index = 1;
+            var active = "";
+    <div id="mainNav">
+        <nav role="navigation">
+            <ul role="menu">
+                <li role="menuitem" class="home @Fat.Umbraco.HtmlHelper.RenderHomeNodeActiveClass(Current.Id)">
+                    <a class="home" href="/" title="Home"><img src="/css/Images/home.png" /></a>
+                </li>
+                @foreach (var item in startNode.Children)
+                {
+                    var linkItem = ContentHelper.GetByNodeId<LinkItem>(item.Id);
+
+                    if (Current.Id == linkItem.LocalHref) { active = "active"; }
+                    
+                    <li role="menuitem" class="@active index@(index)"><a href="@linkItem.EffectiveUrl" title="@linkItem.RenderTitle" @linkItem.Target>@linkItem.RenderTitle</a></li>
+
+                    index++;
+                    active = "";
+                }
+            </ul>
+        </nav>
+    </div>
+        }
+    }
+}
+
+

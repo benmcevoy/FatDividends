@@ -1,10 +1,23 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Site.Master" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="Fat.Umbraco.masterpages.Home" %>
+<%@ Import Namespace="Fat.Umbraco" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h3><%= CurrentContent.Title %></h3>
-    
-    <sub><%= CurrentContent.HeroCaption %> </sub>
+    <% if (CurrentContent.HasHero)
+       { %>
+    <div id="hero">
+        <img src="/imagegen.ashx?image=<%= CurrentContent.HeroImageUrl %>" />
+        <sub><%= CurrentContent.HeroCaption %></sub>
+    </div>
+    <% } %>
 
-    <p><%= CurrentContent.Content %></p>
+    <div class="clear"><%= CurrentContent.Content %></div>
+    
+    
+</asp:Content>
+
+
+<asp:Content ID="Content3" ContentPlaceHolderID="Widgets" runat="server">
+    <umbraco:Macro ID="Macro1" FileLocation="~/macroScripts/SearchWidget.cshtml" runat="server" />
 </asp:Content>

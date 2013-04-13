@@ -9,7 +9,7 @@ namespace Fat.Quotes.Yahoo
 {
     public class QuoteProvider : IQuoteProvider
     {
-        private const string ASXExchangePostFix = ".AX";
+        private const string AsxExchangePostFix = ".AX";
 
         private readonly IEnumerable<QuoteProperty> _quoteProperties = new[]
             {
@@ -37,7 +37,7 @@ namespace Fat.Quotes.Yahoo
 
                 if (result != null)
                 {
-                    return new StockQuote(result.Name,
+                    return new StockQuote(stockCode.ToUpper(),
                         Convert.ToDecimal(result.LastTradePriceOnly),
                         result.LastTradeDate);
                 }
@@ -72,7 +72,7 @@ namespace Fat.Quotes.Yahoo
 
         private static string PostFixStockCode(string stockCode)
         {
-            return string.Concat(stockCode, ASXExchangePostFix);
+            return string.Concat(stockCode, AsxExchangePostFix);
         }
     }
 }

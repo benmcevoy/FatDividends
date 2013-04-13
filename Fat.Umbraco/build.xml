@@ -18,6 +18,8 @@
       <AssemblyItem Include="bin/System.Web.Http.WebHost.dll" />
       <AssemblyItem Include="bin/System.Net.Http.Formatting.dll" />
       <AssemblyItem Include="bin/Newtonsoft.Json.dll" />
+      <AssemblyItem Include="bin/SquishIt.Framework.dll" />
+      <AssemblyItem Include="bin/AjaxMin.dll" />
     </ItemGroup>
     <!-- Exclude configuration files out of the @Content item group -->
     <ItemGroup>

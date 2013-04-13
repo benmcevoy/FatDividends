@@ -1,0 +1,31 @@
+﻿#search {
+}
+
+    #search label {
+        font-style: italic;
+    }
+
+#searchResultsTitle {
+    margin: 20px 0;
+}
+
+#searchTerm {
+    font-weight: 900;
+}
+
+#searchCount {
+    font-weight: 900;
+}
+
+#searchResults .search-result {
+    margin-bottom: 10px;
+}
+
+    #searchResults .search-result .code {
+    }
+
+    #searchResults .search-result .name {
+    }
+
+    #searchResults .search-result .industry {
+    }

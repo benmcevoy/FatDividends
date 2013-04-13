@@ -1,54 +1,85 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Fat.Umbraco.masterpages.Site" %>
 
+<%@ Import Namespace="SquishIt.Framework" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link href="/css/site.css" rel="stylesheet" />
+<head>
+    <title>
+        <umbraco:Item ID="Item1" Field="title" runat="server" />
+        - Fat Dividends</title>
+    <meta name="description" content="<%= CurrentContent.Description %>" />
+    <meta name="description" content="<%= CurrentContent.Keywords %>" />
+
+    <%= Bundle.Css()
+            .Add("~/css/site.css")
+            .Add("~/css/mainNav.css")
+            .Add("~/css/search.css")
+            .Add("~/css/searchWidget.css")
+            .Add("~/css/textStyles.css")
+            .Render("~/css/combined_#.css") %>
+
+    <%= Bundle.JavaScript()
+        .Add("~/scripts/modernizr-2.5.3.js")
+        .Add("~/scripts/jquery-1.7.1.min.js")
+        .Add("~/scripts/jQuery.tmpl.min.js")
+        .Render("~/scripts/jquery_#.js") %>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <body>
-        <div id="main">
+    <div id="main">
+        <div id="asideLeft">
+            <aside>
+                <div class="advert">advert</div>
+            </aside>
+        </div>
+
+        <div id="asideRight">
+            <aside>
+                <div class="advert">advert</div>
+            </aside>
+        </div>
+
+        <div id="content">
             <div id="header">
                 <header>
                     <div id="logo"><a href="/" title="fat dividends"></a></div>
                     <div class="advert">advert</div>
-                     <umbraco:Macro ID="Macro1" FileLocation="~/macroScripts/MainNav.cshtml" runat="server" />
+                    <umbraco:Macro ID="Macro1" StartNodeId="<%$ fat: mainNavigationStartNodeId %>" Alias="MainNav" runat="server"></umbraco:Macro>
+                    <%--<umbraco:Macro ID="Macro1" FileLocation="~/macroScripts/MainNav.cshtml" runat="server" />--%>
                 </header>
             </div>
 
-            <div id="asideLeft">
-                <aside>
-                    <div class="advert">advert</div>
-                </aside>
-            </div>
+            <div id="container">
+                <div id="body">
+                    <section>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </section>
+                </div>
 
-            <div id="body">
-                <section>
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                    </asp:ContentPlaceHolder>
-                </section>
-            </div>
-
-            <div id="asideRight">
-                <aside>
-                    <div class="advert">advert</div>
-                </aside>
+                <div id="widgets">
+                    <section>
+                        <asp:ContentPlaceHolder ID="Widgets" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </section>
+                </div>
             </div>
 
             <div id="footer">
                 <footer>
-                    <div>
-                        copyright and contact
+                    <div id="copyright">
+                        &copy;Fat Dividends | <a href="/contact/">Contact</a>
                     </div>
                     <div class="advert">advert</div>
                 </footer>
             </div>
         </div>
-
-
-    </body>
+    </div>
+    <%--TODO: google analytics--%>
+</body>
 </html>
+

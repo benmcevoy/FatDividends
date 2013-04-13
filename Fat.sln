@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fat.Web", "Fat.Web\Fat.Web.csproj", "{34EDDAA5-73FB-4FD1-B08A-D51DE9890385}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fat.Tests", "Fat.Tests\Fat.Tests.csproj", "{F414194E-6DB6-4C95-8CBE-9F0EB8B0E135}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fat.Quotes", "Fat.Quotes\Fat.Quotes.csproj", "{608B3493-2926-438E-9FB2-271473C99326}"
@@ -57,16 +55,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{871B6931-284
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fat.Umbraco", "Fat.Umbraco\Fat.Umbraco.csproj", "{ADA700DD-7BFA-4F2C-95B6-ADA9415E378A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UmbracoPackages", "UmbracoPackages", "{3CF53D6D-B83E-4FF8-8CAE-2CB7C7F4B08C}"
+	ProjectSection(SolutionItems) = preProject
+		UmbracoPackages\ImageGen_2.5.7.zip = UmbracoPackages\ImageGen_2.5.7.zip
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{34EDDAA5-73FB-4FD1-B08A-D51DE9890385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{34EDDAA5-73FB-4FD1-B08A-D51DE9890385}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{34EDDAA5-73FB-4FD1-B08A-D51DE9890385}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{34EDDAA5-73FB-4FD1-B08A-D51DE9890385}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F414194E-6DB6-4C95-8CBE-9F0EB8B0E135}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F414194E-6DB6-4C95-8CBE-9F0EB8B0E135}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F414194E-6DB6-4C95-8CBE-9F0EB8B0E135}.Release|Any CPU.ActiveCfg = Release|Any CPU

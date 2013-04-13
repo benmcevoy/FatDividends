@@ -1,0 +1,31 @@
+﻿@using Fat.Umbraco.DocumentTypes
+@using Vega.USiteBuilder
+@using umbraco.MacroEngines
+
+@inherits DynamicNodeContext
+@{
+    var stock = Fat.Umbraco.Data.StockRepository.GetStock(this);
+
+    if(stock != null)
+    {
+        <div id="stockDetail">
+            <div class="code">@stock.Code</div>
+            <div class="name">
+                <h2>@stock.Name</h2>
+            </div>
+            <div class="industry">@stock.Industry</div>
+            <div class="quotes">
+                <span>TODO: quotes are listed here, could be table or  a chart?</span>
+                @foreach (var quote in stock.StockQuotes)
+                {
+                    <div class="quote">
+                        <span class="closing-date">
+                            @quote.ClosingDate
+                        </span>
+                        <span class="price">@quote.Price</span>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+}

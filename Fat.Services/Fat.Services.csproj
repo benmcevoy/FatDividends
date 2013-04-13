@@ -46,56 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\FatModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FatModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\FatModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FatModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\FatModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FatModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Stock.cs">
-      <DependentUpon>FatModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\StockQuote.cs">
-      <DependentUpon>FatModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\FatDataContext.cs" />
+    <Compile Include="Models\Mappings\StockMap.cs" />
+    <Compile Include="Models\Mappings\StockQuoteMap.cs" />
     <Compile Include="Models\Stock.cs" />
     <Compile Include="Models\StockQuote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="Data\FatModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>FatModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
+    <Compile Include="StockService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <None Include="Data\FatModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FatModel.edmx</DependentUpon>
-      <LastGenOutput>FatModel.Context.cs</LastGenOutput>
-    </None>
-    <None Include="Data\FatModel.edmx.diagram">
-      <DependentUpon>FatModel.edmx</DependentUpon>
-    </None>
-    <None Include="Data\FatModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FatModel.edmx</DependentUpon>
-      <LastGenOutput>FatModel.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

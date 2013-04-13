@@ -7,14 +7,20 @@ namespace Fat.Services.Models
         public StockQuote(string code, decimal price, DateTime closingDate)
         {
             Code = code;
-            ClosingPrice = price;
+            Price = price;
             ClosingDate = closingDate;
         }
 
-        public string Code { get; private set; }
+        public string Code { get; set; }
 
-        public decimal ClosingPrice { get; private set; }
+        public decimal Price { get; set; }
 
-        public DateTime ClosingDate { get; private set; }
+        public DateTime ClosingDate { get; set; }
+
+        public DateTime CreatedUtcDate { get; set; }
+
+        public DateTime? ModifiedUtcDate { get; set; }
+
+        internal virtual Stock Stock { get; set; }
     }
 }

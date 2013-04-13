@@ -7,7 +7,7 @@
 body {
     color: #fff;
     font-size: .85em;
-    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    font-family: Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
 }
@@ -40,18 +40,28 @@ mark {
     padding-right: 5px;
 }
 
+.clear {
+    clear: both;
+}
+
 #main {
-    width: 1380px;
+    width: 1450px;
     margin: 50px auto;
+}
+
+#content {
+    width: 1000px;
+    margin: auto;
 }
 
 #header {
     width: 1000px;
-    margin: 0 auto;
 }
 
-#header {
-    height: 180px;
+#container {
+    min-height: 660px;
+    background-color: #fff;
+    display: inline-block;
 }
 
 #logo {
@@ -75,68 +85,29 @@ mark {
     float: right;
     width: 728px;
     height: 90px;
+    margin-top: 20px;
 }
-
-#mainNav {
-    clear: both;
-}
-
-    #mainNav ul {
-        clear: both;
-        margin: 0;
-        padding: 0;
-        height: 40px;
-        border-bottom: 5px solid #17A9DA;
-        background-color: #6E6F71;
-    }
-
-        #mainNav ul li {
-            list-style: none;
-            float: left;
-            display: inline-block;
-            height: 40px;
-        }
-
-            #mainNav ul li a {
-                height: 40px;
-                width: 184px;
-                display: inline-block;
-                color: #fff;
-                text-align: center;
-            }
-
-                #mainNav ul li a.home {
-                    width: 40px;
-                }
-
-                    #mainNav ul li a.home img {
-                        border: none;
-                        margin: 4px 0 0 0;
-                    }
-
-                #mainNav ul li a:active, #mainNav li a:hover {
-                    background-color: #17A9DA;
-                }
 
 #body {
     background-color: #fff;
     color: #000;
     float: left;
     padding: 10px;
-    margin: 10px;
-    width: 980px;
+    margin: 5px 0 0 0;
+    width: 660px;
+    min-height: 650px;
+    height: 100%;
 }
 
+/* TODO: */
 .advert {
     background-color: red;
-}
-
-#asideLeft, #asideRight {
-    width: 180px;
-    margin-top: 10px;
+    display: none;
 }
 
 #asideLeft {
+    width: 175px;
+    margin: 180px 0 0 40px;
     float: left;
 }
 
@@ -146,12 +117,56 @@ mark {
 
 #asideRight {
     float: right;
+    margin: 180px 20px 0 0;
+    width: 195px;
 }
 
-#asideRight .advert {
+    #asideRight .advert {
         height: 660px;
     }
 
 #footer {
     clear: both;
+    border-top: 1px solid #1C1C1A;
+}
+
+    #footer .advert {
+        clear: both;
+        width: 730px;
+        height: 90px;
+        margin: 20px auto;
+    }
+
+#hero {
+    width: 600px;
+}
+
+    #hero sub {
+        display: block;
+        float: right;
+        font-style: italic;
+    }
+
+#copyright {
+    height: 50px;
+    background-color: #eee;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    padding: 0 10px;
+    color: #555;
+    width: 1000px;
+}
+
+#widgets {
+    background-color: #fff;
+    float: right;
+    width: 300px;
+    padding: 10px;
+    margin: 5px 0 0 0;
+    height: 100%;
+}
+
+input.watermark {
+    color: #999;
 }

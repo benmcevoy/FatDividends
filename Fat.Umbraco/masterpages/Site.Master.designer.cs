@@ -13,6 +13,15 @@ namespace Fat.Umbraco.masterpages {
     public partial class Site {
         
         /// <summary>
+        /// Item1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::umbraco.presentation.templateControls.Item Item1;
+        
+        /// <summary>
         /// head control.
         /// </summary>
         /// <remarks>
@@ -38,5 +47,14 @@ namespace Fat.Umbraco.masterpages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        
+        /// <summary>
+        /// Widgets control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Widgets;
     }
 }

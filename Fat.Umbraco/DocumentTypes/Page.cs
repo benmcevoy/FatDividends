@@ -11,6 +11,9 @@ namespace Fat.Umbraco.DocumentTypes
         [DocumentTypeProperty(UmbracoPropertyType.TextboxMultiple, Mandatory = false, Tab = "Content")]
         public string Description { get; set; }
 
+        [DocumentTypeProperty(UmbracoPropertyType.Textstring, Mandatory = false, Tab = "Content")]
+        public string Keywords { get; set; }
+
         [DocumentTypeProperty(UmbracoPropertyType.RichtextEditor, Mandatory = false, Tab = "Content")]
         public string Content { get; set; }
     }

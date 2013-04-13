@@ -1,0 +1,26 @@
+﻿#searchWidget {
+    width: 300px;
+    border-bottom: 3px solid #1c1c1a;
+}
+
+    #searchWidget .title {
+        margin: 0 0 5px 0;
+        color: #000;
+    }
+
+    #searchWidget input[type="submit"] {
+        width: 30px;
+        height: 20px;
+        border-style: none;
+        background-color: #17A9DA;
+        color: #fff;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    #searchWidget a {
+        color: #17A9DA;
+        font-size: 0.85em;
+        text-decoration: none;
+    }

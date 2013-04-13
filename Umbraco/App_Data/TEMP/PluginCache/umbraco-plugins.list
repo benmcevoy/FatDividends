@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <plugins>
   <baseType type="umbraco.interfaces.IApplicationStartupHandler" resolutionType="FindAllTypes">
-    <add type="Vega.USiteBuilder.SiteBuilderApplicationBase, Vega.USiteBuilder, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Strategies.DataTypes.LegacyUploadFieldWorkaround, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Strategies.Migrations.PublishAfterUpgradeToVersionSixth, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Strategies.Publishing.UpdateCacheAfterPublish, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
@@ -12,9 +11,10 @@
     <add type="umbraco.presentation.EnsureSystemPathsApplicationStartupHandler, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.presentation.umbraco.Search.ExamineEvents, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="UmbracoExamine.UmbracoEventManager, UmbracoExamine, Version=0.1.42.2941, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.editorControls.PickerRelations.PickerRelationsEventHandler, umbraco.editorControls, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.BusinessLogic.ApplicationRegistrar, businesslogic, Version=1.0.4834.18855, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.BusinessLogic.ApplicationTreeRegistrar, businesslogic, Version=1.0.4834.18855, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.PickerRelations.PickerRelationsEventHandler, umbraco.editorControls, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
+    <add type="Vega.USiteBuilder.SiteBuilderApplicationBase, Vega.USiteBuilder, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="Umbraco.Core.Models.IMacroPropertyType" resolutionType="FindAllTypes" />
   <baseType type="Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter" resolutionType="FindAllTypes" />
@@ -69,8 +69,6 @@
     <add type="umbraco.ActionHandlers.umbEnsureUniqueName, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.interfaces.ITree" resolutionType="FindAllTypes">
-    <add type="umbraco.editorControls.MultiNodeTreePicker.FilteredContentTree, umbraco.editorControls, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.editorControls.MultiNodeTreePicker.FilteredMediaTree, umbraco.editorControls, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Trees.PartialViewsTree, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Trees.PartialViewMacrosTree, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.loadDLRScripts, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
@@ -105,6 +103,8 @@
     <add type="umbraco.cms.presentation.Trees.LegacyTree, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.cms.presentation.Trees.UserPermissions, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.cms.presentation.Trees.UserTypes, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.MultiNodeTreePicker.FilteredContentTree, umbraco.editorControls, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.MultiNodeTreePicker.FilteredMediaTree, umbraco.editorControls, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.interfaces.IDataType" resolutionType="FindAllTypes">
     <add type="umbraco.editorControls.PickerRelations.PickerRelationsDataType, umbraco.editorControls, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
@@ -144,7 +144,14 @@
     <add type="umbraco.editorControls.yesno.YesNoDataType, umbraco.editorControls, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.cms.businesslogic.macro.IMacroEngine" resolutionType="FindAllTypes">
-    <add type="umbraco.MacroEngines.RazorMacroEngine, umbraco.MacroEngines, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Macros.PartialViewMacroEngine, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.MacroEngines.RazorMacroEngine, umbraco.MacroEngines, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
+  </baseType>
+  <baseType type="umbraco.MacroEngines.IRazorDataTypeModel" resolutionType="FindTypesWithAttribute">
+    <add type="umbraco.MacroEngines.RazorDataTypeModels.HtmlStringDataTypeModel, umbraco.MacroEngines, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.MacroEngines.RazorDataTypeModels.IntegerDataTypeModel, umbraco.MacroEngines, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
+  </baseType>
+  <baseType type="Umbraco.Web.BaseRest.RestExtensionAttribute" resolutionType="FindAttributedTypes">
+    <add type="Umbraco.Web.WebServices.FolderBrowserService, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
   </baseType>
 </plugins>

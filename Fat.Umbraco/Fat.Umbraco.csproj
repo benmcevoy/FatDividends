@@ -199,6 +199,7 @@
     <Compile Include="API\StockController.cs" />
     <Compile Include="API\TestController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Data\SearchRepository.cs" />
     <Compile Include="Data\StockRepository.cs" />
     <Compile Include="DocumentTypes\ContentPage.cs" />
     <Compile Include="DocumentTypes\Folder.cs" />

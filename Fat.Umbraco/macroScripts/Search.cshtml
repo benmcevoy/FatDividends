@@ -1,21 +1,47 @@
-﻿<div id="search">
-    <form>
-        <label for="keywords">Search for stock name or ASX code</label><br/>
+﻿@using umbraco.MacroEngines
+
+@inherits DynamicNodeContext
+<div id="search">
+    <form id="searchForm" method="GET">
         <input type="text" id="keywords" name="keywords" />
         <input type="button" id="searchButton" value="GO" />
     </form>
 </div>
 
-<div id="searchResultsTitle" style="display:none">
-    Search for <span id="searchTerm"></span> returned <span id="searchCount"></span> results
-</div>
 
-<div id="searchResults"></div>
+@{
+    var searchResults = Fat.Umbraco.Data.SearchRepository.SearchStock(this);
+
+    if (searchResults != null)
+    {
+
+    <div id="searchResultsTitle">
+        Search for <span id="searchTerm">@Server.HtmlEncode(HttpContext.Current.Request.QueryString["keywords"])</span> returned <span id="searchCount">@searchResults.Count()</span> results
+    </div>        
+        
+    <div id="searchResults">
+        @{
+        foreach (var searchResult in searchResults)
+        {
+            <div class="search-result">
+                <a href="/stock-information/@searchResult.Code">
+                    <span class="code">@searchResult.Code</span> - 
+                    <span class="name">@searchResult.Name</span>
+                </a>
+                <div class="industry">found in industry @searchResult.Industry</div>
+            </div>
+        }
+        }
+    </div>
+    }
+}
 
 <script type="text/javascript">
     $(function ($) {
         $('#searchButton').click(function () {
-            search();
+            if ($('#keywords').val() != watermark) {
+                $('#searchForm').submit();
+            }
         });
 
         $('#keywords').keypress(function (e) {
@@ -42,30 +68,5 @@
                 $(this).val('').removeClass('watermark');
             }
         });
-
-        var search = function () {
-            var keywords = $('#keywords').val();
-            if (keywords.length > 2) {
-                $.ajax({
-                    url: '/api/search/' + keywords
-                }).done(function (data) {
-                    $('#searchTerm').text(keywords);
-                    $('#searchCount').text(data.length);
-                    $('#searchResultsTitle').show();
-                    $('#searchResults').empty();
-                    $('#searchResultTemplate').tmpl(data).appendTo('#searchResults');
-                });
-            }
-        };
     });
-</script>
-
-<script id="searchResultTemplate" type="text/x-jQuery-tmpl">
-    <div class="search-result">
-        <a href="/stock-information/${Code}">
-            <span class="code">${Code}</span> - 
-            <span class="name">${Name}</span>
-            <span class="industry">(${Industry})</span>
-        </a>
-    </div>
 </script>

@@ -22,10 +22,12 @@
 }
 
     #searchResults .search-result .code {
+        font-weight: 900;
     }
 
     #searchResults .search-result .name {
     }
 
     #searchResults .search-result .industry {
+        font-style: italic;
     }

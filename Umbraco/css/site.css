@@ -101,8 +101,7 @@ mark {
 
 /* TODO: */
 .advert {
-    background-color: red;
-    display: none;
+    border: 3px solid red;
 }
 
 #asideLeft {

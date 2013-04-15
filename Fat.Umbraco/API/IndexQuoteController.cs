@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web.Http;
 using Fat.Services;
 using Fat.Services.Models;
+using Fat.Umbraco.Filters;
 
 namespace Fat.Umbraco.API
 {
@@ -15,6 +16,7 @@ namespace Fat.Umbraco.API
             _indexQuoteService = new IndexQuoteService();
         }
 
+        [ApiCache(600)]
         public IEnumerable<Quote> Get()
         {
             return _indexQuoteService.Get(30).Select(q =>

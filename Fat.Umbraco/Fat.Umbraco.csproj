@@ -223,6 +223,7 @@
     <Compile Include="DocumentTypes\StockDetail.cs" />
     <Compile Include="FatConfigSection.cs" />
     <Compile Include="FatExpressionBuilder.cs" />
+    <Compile Include="Filters\ApiCacheAttribute.cs" />
     <Compile Include="HtmlHelper.cs" />
     <Compile Include="masterpages\Content.master.cs">
       <DependentUpon>Content.master</DependentUpon>

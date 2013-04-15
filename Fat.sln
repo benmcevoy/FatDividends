@@ -47,9 +47,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{871B6931-284
 		lib\umbraco.MacroEngines.dll = lib\umbraco.MacroEngines.dll
 		lib\umbraco.providers.dll = lib\umbraco.providers.dll
 		lib\UmbracoExamine.dll = lib\UmbracoExamine.dll
-		C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\ProjectTemplatesCache\CSharp\Vega.USiteBuilder\UmbracoProject.zip\Dlls\Vega.USiteBuilder.dll = C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\ProjectTemplatesCache\CSharp\Vega.USiteBuilder\UmbracoProject.zip\Dlls\Vega.USiteBuilder.dll
+		lib\uSiteBuilder.Admin.dll = lib\uSiteBuilder.Admin.dll
 		lib\Vega.USiteBuilder.dll = lib\Vega.USiteBuilder.dll
-		C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\ProjectTemplatesCache\CSharp\Vega.USiteBuilder\UmbracoProject.zip\Dlls\Vega.USiteBuilder.XML = C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\ProjectTemplatesCache\CSharp\Vega.USiteBuilder\UmbracoProject.zip\Dlls\Vega.USiteBuilder.XML
 		lib\Vega.USiteBuilder.XML = lib\Vega.USiteBuilder.XML
 	EndProjectSection
 EndProject
@@ -58,6 +57,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UmbracoPackages", "UmbracoPackages", "{3CF53D6D-B83E-4FF8-8CAE-2CB7C7F4B08C}"
 	ProjectSection(SolutionItems) = preProject
 		UmbracoPackages\ImageGen_2.5.7.zip = UmbracoPackages\ImageGen_2.5.7.zip
+		UmbracoPackages\uSiteBuilderAdmin_2.1.1-beta.zip = UmbracoPackages\uSiteBuilderAdmin_2.1.1-beta.zip
 	EndProjectSection
 EndProject
 Global

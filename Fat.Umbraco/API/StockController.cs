@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Fat.Services;
 using Fat.Services.Models;
+using Fat.Umbraco.Filters;
 
 namespace Fat.Umbraco.API
 {
@@ -23,6 +24,7 @@ namespace Fat.Umbraco.API
         /// Get all stock information
         /// </summary>
         /// <returns></returns>
+        [ApiCache(600)]
         public IEnumerable<Stock> Get()
         {
             return _stockService.Get();
@@ -34,6 +36,7 @@ namespace Fat.Umbraco.API
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [ApiCache(600)]
         public Stock Get(string id)
         {
             var stock = _stockService.Get(id);
@@ -47,6 +50,7 @@ namespace Fat.Umbraco.API
         }
 
         [AcceptVerbs("GET")]
+        [ApiCache(600)]
         public IEnumerable<Quote> Quotes(string id)
         {
             var endDate = DateTime.Now;

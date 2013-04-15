@@ -5,7 +5,7 @@ namespace Fat.Umbraco.DocumentTypes
     [DocumentType(IconUrl = "developerPython.gif")]
     public class LinkItem : Item
     {
-        [DocumentTypeProperty(UmbracoPropertyType.Textstring, Mandatory = false, Tab = "Link", Description = "Leave blank to use item name.")]
+        [DocumentTypeProperty(UmbracoPropertyType.Textstring, Mandatory = true, Tab = "Link")]
         public string Title { get; set; }
 
         [DocumentTypeProperty(UmbracoPropertyType.ContentPicker, Mandatory = false, Tab = "Link", Name = "Local Link Url", Description = "A local link will take precedence over an external link.")]

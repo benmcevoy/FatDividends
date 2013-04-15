@@ -1,9 +1,4 @@
-﻿/* TODO: */
-.advert {
-    border: 3px solid red;
-}
-
-#main {
+﻿#main {
     width: 1450px;
     margin: 50px auto;
 }
@@ -19,8 +14,8 @@
 
     #header .advert {
         float: right;
-        width: 728px;
-        height: 90px;
+        width: 468px;
+        height: 60px;
         margin-top: 20px;
     }
 
@@ -60,23 +55,23 @@
 }
 
 #asideLeft {
-    width: 175px;
-    margin: 180px 0 0 40px;
+    width: 160px;
+    margin: 180px 0 0 55px;
     float: left;
 }
 
     #asideLeft .advert {
-        height: 660px;
+        height: 600px;
     }
 
 #asideRight {
     float: right;
-    margin: 180px 20px 0 0;
-    width: 195px;
+    margin: 180px 50px 0 0;
+    width: 160px;
 }
 
     #asideRight .advert {
-        height: 660px;
+        height: 600px;
     }
 
 #footer {
@@ -86,8 +81,8 @@
 
     #footer .advert {
         clear: both;
-        width: 730px;
-        height: 90px;
+        width: 468px;
+        height: 60px;
         margin: 20px auto;
     }
 

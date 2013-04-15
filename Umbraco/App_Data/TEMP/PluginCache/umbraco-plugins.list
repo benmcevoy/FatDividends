@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <plugins>
   <baseType type="umbraco.interfaces.IApplicationStartupHandler" resolutionType="FindAllTypes">
+    <add type="Vega.USiteBuilder.SiteBuilderApplicationBase, Vega.USiteBuilder, Version=1.2.5.0, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.BusinessLogic.ApplicationRegistrar, businesslogic, Version=1.0.4834.18855, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.BusinessLogic.ApplicationTreeRegistrar, businesslogic, Version=1.0.4834.18855, Culture=neutral, PublicKeyToken=null" />
+    <add type="UmbracoExamine.UmbracoEventManager, UmbracoExamine, Version=0.1.42.2941, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.PickerRelations.PickerRelationsEventHandler, umbraco.editorControls, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Strategies.DataTypes.LegacyUploadFieldWorkaround, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Strategies.Migrations.PublishAfterUpgradeToVersionSixth, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Strategies.Publishing.UpdateCacheAfterPublish, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
@@ -12,9 +15,6 @@
     <add type="umbraco.presentation.nodeFactory.UmbracoSiteMapProviderAccessUpdate, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.presentation.EnsureSystemPathsApplicationStartupHandler, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.presentation.umbraco.Search.ExamineEvents, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.editorControls.PickerRelations.PickerRelationsEventHandler, umbraco.editorControls, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
-    <add type="Vega.USiteBuilder.SiteBuilderApplicationBase, Vega.USiteBuilder, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="UmbracoExamine.UmbracoEventManager, UmbracoExamine, Version=0.1.42.2941, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="Umbraco.Core.Models.IMacroPropertyType" resolutionType="FindAllTypes" />
   <baseType type="Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter" resolutionType="FindAllTypes" />
@@ -69,6 +69,8 @@
     <add type="umbraco.ActionHandlers.umbEnsureUniqueName, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.interfaces.ITree" resolutionType="FindAllTypes">
+    <add type="umbraco.editorControls.MultiNodeTreePicker.FilteredContentTree, umbraco.editorControls, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.MultiNodeTreePicker.FilteredMediaTree, umbraco.editorControls, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Trees.PartialViewsTree, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Trees.PartialViewMacrosTree, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.loadDLRScripts, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
@@ -103,8 +105,6 @@
     <add type="umbraco.cms.presentation.Trees.LegacyTree, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.cms.presentation.Trees.UserPermissions, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.cms.presentation.Trees.UserTypes, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.editorControls.MultiNodeTreePicker.FilteredContentTree, umbraco.editorControls, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.editorControls.MultiNodeTreePicker.FilteredMediaTree, umbraco.editorControls, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.interfaces.IDataType" resolutionType="FindAllTypes">
     <add type="umbraco.editorControls.PickerRelations.PickerRelationsDataType, umbraco.editorControls, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
@@ -153,5 +153,19 @@
   </baseType>
   <baseType type="Umbraco.Web.BaseRest.RestExtensionAttribute" resolutionType="FindAttributedTypes">
     <add type="Umbraco.Web.WebServices.FolderBrowserService, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
+  </baseType>
+  <baseType type="umbraco.interfaces.IPackageAction" resolutionType="FindAllTypes">
+    <add type="umbraco.cms.businesslogic.packager.standardPackageActions.addApplication, cms, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.businesslogic.packager.standardPackageActions.addDashboardSection, cms, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.businesslogic.packager.standardPackageActions.addProxyFeedHost, cms, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.businesslogic.packager.standardPackageActions.addRestExtension, cms, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.businesslogic.packager.standardPackageActions.addStringToHtmlElement, cms, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.businesslogic.packager.standardPackageActions.addXsltExtension, cms, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.businesslogic.packager.standardPackageActions.allowDoctype, cms, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.businesslogic.packager.standardPackageActions.moveRootDocument, cms, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.businesslogic.packager.standardPackageActions.publishRootDocument, cms, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.businesslogic.packager.standardPackageActions.removeStringFromTemplate, cms, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.businesslogic.packager.standardPackageActions.addApplicationTree, cms, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
+    <add type="Our.Umbraco.uGoLive.PackageActions.AddRestExtension, Our.Umbraco.uGoLive, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
   </baseType>
 </plugins>

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -43,6 +44,15 @@ namespace Fat.Umbraco.API
             }
 
             return stock;
+        }
+
+        [AcceptVerbs("GET")]
+        public IEnumerable<Quote> Quotes(string id)
+        {
+            var endDate = DateTime.Now;
+            var startDate = endDate.AddDays(-90);
+
+            return _stockService.GetQuotes(id, startDate, endDate);
         }
     }
 }

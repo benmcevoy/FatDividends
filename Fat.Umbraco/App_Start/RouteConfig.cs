@@ -10,8 +10,13 @@ namespace Fat.Umbraco.App_Start
     {
         public static void PreStart()
         {
-            RouteTable.Routes.MapHttpRoute("DefaultApi", 
-                "api/{controller}/{id}", 
+            RouteTable.Routes.MapHttpRoute(
+                name: "ActionApi",
+                routeTemplate: "api/{controller}/{action}/{id}",
+                defaults: new { id = RouteParameter.Optional } );
+
+            RouteTable.Routes.MapHttpRoute("DefaultApi",
+                "api/{controller}/{id}",
                 new { id = RouteParameter.Optional });
 
             var appXmlType = GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");

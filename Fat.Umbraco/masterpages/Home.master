@@ -20,4 +20,5 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="Widgets" runat="server">
     <umbraco:Macro ID="Macro1" FileLocation="~/macroScripts/SearchWidget.cshtml" runat="server" />
+    <umbraco:Macro ID="Macro2" FileLocation="~/macroScripts/IndexWidget.cshtml" runat="server" />
 </asp:Content>

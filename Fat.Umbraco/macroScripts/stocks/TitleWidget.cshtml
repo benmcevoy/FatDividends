@@ -1,0 +1,21 @@
+﻿@using Fat.Umbraco.DocumentTypes
+@using Vega.USiteBuilder
+@using umbraco.MacroEngines
+
+@inherits DynamicNodeContext
+@{
+    var stock = Fat.Umbraco.Data.StockRepository.GetStock(this);
+
+    if (stock != null)
+    {
+        <div id="stockTitle" class="widget">
+            <header>
+                <div class="title">
+                    <span class="code">@stock.Code</span>
+                    <span class="name">@stock.Name</span>
+                </div>
+                <div class="industry">@stock.Industry</div>
+            </header>
+        </div>
+    }
+}

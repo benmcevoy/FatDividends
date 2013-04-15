@@ -9,14 +9,18 @@
     <title>
         <umbraco:Item ID="Item1" Field="title" runat="server" />
         - Fat Dividends</title>
+    
     <meta name="description" content="<%= CurrentContent.Description %>" />
-    <meta name="description" content="<%= CurrentContent.Keywords %>" />
+    <meta name="keywords" content="<%= CurrentContent.Keywords %>" />
 
     <%= Bundle.Css()
             .Add("~/css/site.css")
+            .Add("~/css/layout.css")
             .Add("~/css/mainNav.css")
             .Add("~/css/search.css")
             .Add("~/css/searchWidget.css")
+            .Add("~/css/indexWidget.css")
+            .Add("~/css/stockDetail.css")
             .Add("~/css/textStyles.css")
             .Render("~/css/combined_#.css") %>
 
@@ -28,6 +32,8 @@
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 </head>
 <body>
     <div id="main">

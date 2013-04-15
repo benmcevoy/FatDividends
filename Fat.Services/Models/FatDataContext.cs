@@ -18,10 +18,13 @@ namespace Fat.Services.Models
             // explicit
             modelBuilder.Configurations.Add(new StockMap());
             modelBuilder.Configurations.Add(new StockQuoteMap());
+            modelBuilder.Configurations.Add(new IndexQuoteMap());
         }
     
         public DbSet<Stock> Stocks { get; set; }
 
         public virtual DbSet<StockQuote> StockQuotes { get; set; }
+
+        public virtual DbSet<IndexQuote> IndexQuotes { get; set; }
     }
 }

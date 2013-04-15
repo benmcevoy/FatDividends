@@ -46,9 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IndexQuoteService.cs" />
     <Compile Include="Models\FatDataContext.cs" />
+    <Compile Include="Models\IndexQuote.cs" />
+    <Compile Include="Models\Mappings\IndexQuoteMap.cs" />
     <Compile Include="Models\Mappings\StockMap.cs" />
     <Compile Include="Models\Mappings\StockQuoteMap.cs" />
+    <Compile Include="Models\Quote.cs" />
     <Compile Include="Models\Stock.cs" />
     <Compile Include="Models\StockQuote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,9 +66,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

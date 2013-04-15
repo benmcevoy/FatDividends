@@ -1,0 +1,41 @@
+﻿#stockTitle {
+}
+
+    #stockTitle .title {
+    }
+
+    #stockTitle span.code {
+        text-transform: uppercase;
+        font-size: 2em;
+        font-weight: normal;
+    }
+
+    #stockTitle span.name {
+        text-transform: uppercase;
+        font-weight: 900;
+        color: #17A9DA;
+        font-size: 2em;
+    }
+
+    #stockTitle div.industry {
+        text-transform: uppercase;
+        font-style: italic;
+        font-size: 0.85em;
+        color: #999;
+    }
+
+#stockChart, #stockSummary {
+    min-height: 150px;
+}
+
+#stockPrice, #stockDividends, #stockEarnings {
+    float: left;
+    width: 200px;
+    height: 150px;
+}
+
+    #stockPrice .price {
+        font-size: 5em;
+        font-weight: 900;
+        color: #17A9DA;
+    }

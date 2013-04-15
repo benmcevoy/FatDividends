@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
@@ -42,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\StockRepository.cs" />
+    <Compile Include="Data\ImportRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -50,6 +51,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Fat.Quotes\Fat.Quotes.csproj">
+      <Project>{608b3493-2926-438e-9fb2-271473c99326}</Project>
+      <Name>Fat.Quotes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Fat.Services\Fat.Services.csproj">
       <Project>{0135e795-f0cc-42b6-8ab0-599022d8efd3}</Project>
       <Name>Fat.Services</Name>

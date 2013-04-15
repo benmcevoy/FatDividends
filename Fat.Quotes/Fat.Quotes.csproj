@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="MaasOne, Version=0.11.2.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\MaasOne.dll</HintPath>
@@ -50,8 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Google\IndexQuoteProvider.cs" />
     <Compile Include="Google\QuoteDTO.cs" />
     <Compile Include="Google\QuoteProvider.cs" />
+    <Compile Include="Google\ScrapeProvider.cs" />
+    <Compile Include="Google\ScrapeQuoteDTO.cs" />
     <Compile Include="IQuoteProvider.cs" />
     <Compile Include="IStockCodeProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,0 +1,24 @@
+﻿@using Fat.Umbraco.DocumentTypes
+@using Vega.USiteBuilder
+@using umbraco.MacroEngines
+
+@inherits DynamicNodeContext
+@{
+    var quote = Fat.Umbraco.Data.StockRepository.GetLatestQuote(this);
+
+    if (quote != null)
+    {
+        <div id="stockPrice" class="widget">
+            <section>
+                <h3>Latest Price</h3>
+                <div class="subheading">
+                    <span class="currency">AUD</span>
+                    <span class="date">@quote.ClosingDate.ToString("dd MMM yyyy")</span>
+                </div>
+                <div class="price">
+                    @quote.Price
+                </div>
+            </section>
+        </div>
+    }
+}

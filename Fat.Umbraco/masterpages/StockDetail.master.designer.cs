@@ -20,5 +20,50 @@ namespace Fat.Umbraco.masterpages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::umbraco.presentation.templateControls.Macro Macro1;
+        
+        /// <summary>
+        /// Macro2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::umbraco.presentation.templateControls.Macro Macro2;
+        
+        /// <summary>
+        /// Macro3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::umbraco.presentation.templateControls.Macro Macro3;
+        
+        /// <summary>
+        /// Macro4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::umbraco.presentation.templateControls.Macro Macro4;
+        
+        /// <summary>
+        /// Macro5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::umbraco.presentation.templateControls.Macro Macro5;
+        
+        /// <summary>
+        /// Macro6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::umbraco.presentation.templateControls.Macro Macro6;
     }
 }

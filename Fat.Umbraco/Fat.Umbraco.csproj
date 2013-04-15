@@ -175,16 +175,27 @@
     <Content Include="App_Data\fattyd.database.sdf" />
     <Content Include="css\Images\home.png" />
     <Content Include="css\Images\logo.png" />
+    <Content Include="css\indexWidget.css" />
+    <Content Include="css\layout.css" />
     <Content Include="css\mainNav.css" />
     <Content Include="css\search.css" />
     <Content Include="css\searchWidget.css" />
     <Content Include="css\site.css" />
+    <Content Include="css\stockDetail.css" />
     <Content Include="css\textStyles.css" />
     <Content Include="macroScripts\SearchWidget.cshtml" />
     <Content Include="macroScripts\StockDetail.cshtml" />
     <Content Include="robots.txt" />
     <Content Include="Config\UrlRewriting.config" />
     <Content Include="masterpages\StockDetail.master" />
+    <Content Include="Config\umbracoSettings.config" />
+    <Content Include="macroScripts\stocks\PriceWidget.cshtml" />
+    <Content Include="macroScripts\stocks\ChartWidget.cshtml" />
+    <Content Include="macroScripts\stocks\SummaryWidget.cshtml" />
+    <Content Include="macroScripts\stocks\TitleWidget.cshtml" />
+    <Content Include="macroScripts\stocks\EarningsWidget.cshtml" />
+    <Content Include="macroScripts\stocks\DividendsWidget.cshtml" />
+    <Content Include="macroScripts\IndexWidget.cshtml" />
     <None Include="scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="scripts\jquery-1.7.1.min.js" />
     <Content Include="scripts\jQuery.tmpl.min.js" />
@@ -195,6 +206,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\IndexQuoteController.cs" />
     <Compile Include="API\SearchController.cs" />
     <Compile Include="API\StockController.cs" />
     <Compile Include="API\TestController.cs" />

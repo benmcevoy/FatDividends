@@ -14,7 +14,7 @@ namespace Fat.Tests.Quotes
             var qp = new Fat.Quotes.Google.QuoteProvider();
             var quote = qp.Get(code);
 
-            Assert.AreEqual(code, quote.Code);
+            Assert.AreEqual(code, quote.StockCode);
         }
 
         [TestMethod]
@@ -24,7 +24,7 @@ namespace Fat.Tests.Quotes
             var qp = new Fat.Quotes.Yahoo.QuoteProvider();
             var quote = qp.Get(code);
 
-            Assert.AreEqual(code, quote.Code);
+            Assert.AreEqual(code, quote.StockCode);
         }
 
         [TestMethod]
@@ -34,7 +34,7 @@ namespace Fat.Tests.Quotes
             var qp = new Fat.Quotes.Yahoo.QuoteProvider();
             var quote = qp.Get(code, new DateTime(2013, 3, 1));
 
-            Assert.AreEqual(code, quote.Code);
+            Assert.AreEqual(code, quote.StockCode);
         }
 
         [TestMethod]
@@ -50,7 +50,7 @@ namespace Fat.Tests.Quotes
             
             if (firstOrDefault != null)
             {
-                Assert.AreEqual(code, firstOrDefault.Code);
+                Assert.AreEqual(code, firstOrDefault.StockCode);
             }
             else
             {
@@ -67,6 +67,27 @@ namespace Fat.Tests.Quotes
             s.Search(search);
 
             Assert.AreEqual(1,1);
+        }
+
+        [TestMethod]
+        public void GetQuoteFromGoogleScrapeForDateRange()
+        {
+            var code = "ACS";
+            var qp = new Fat.Quotes.Google.ScrapeProvider();
+            var start = new DateTime(2013, 3, 1);
+            var end = DateTime.Now;
+            var quotes = qp.Get(code, start, end);
+
+            var firstOrDefault = quotes.FirstOrDefault();
+
+            if (firstOrDefault != null)
+            {
+                Assert.AreEqual(code, firstOrDefault.StockCode);
+            }
+            else
+            {
+                Assert.Fail();
+            }
         }
     }
 }

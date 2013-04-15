@@ -1,0 +1,36 @@
+﻿<div id="stockChart" class="widget">
+    <section>
+        <h3>Closing Price Last 90 Days</h3>
+        <div id="chart"></div>
+    </section>
+</div>
+
+<script type="text/javascript">
+    google.load('visualization', '1.0', { 'packages': ['linechart'] });
+    google.setOnLoadCallback(drawVisualization);
+
+    function drawVisualization() {
+        $.ajax({
+            url: '/api/stock/quotes/@HttpContext.Current.Request.QueryString["code"]'
+        }).done(function (data) {
+            
+            // reproject to google format (array of array)
+            data = $.map(data, function (value, key) { return [[value.Price, value.Date]]; });
+
+            // Create and populate the data table.
+            var chartData = google.visualization.arrayToDataTable(data);
+
+            chartData.addColumn('number', 'Price');
+
+            // Create and draw the visualization.
+            new google.visualization.LineChart(document.getElementById('chart')).
+                draw(chartData, {
+                    curveType: 'function',
+                    width: 600, height: 200,
+                    legend: 'none',
+                    pointSize: 3,
+                    colors: ['#17A9DA']
+                });
+        });
+    };
+</script>

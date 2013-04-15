@@ -2,15 +2,14 @@
 
 namespace Fat.Services.Models.Mappings
 {
-    class StockQuoteMap: EntityTypeConfiguration<StockQuote>
+    class StockQuoteMap : EntityTypeConfiguration<StockQuote>
     {
         public StockQuoteMap()
         {
-            HasKey(x => x.Code);
+            HasKey(x => new { x.StockCode, x.ClosingDate });
 
             ToTable("StockQuote");
         }
     }
 }
 
-    

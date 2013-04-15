@@ -2,7 +2,7 @@
 
 namespace Fat.Quotes.Google
 {
-    class QuoteDTO
+    class QuoteDto
     {
         public string id { get; set; }
 

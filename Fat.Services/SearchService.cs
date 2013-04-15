@@ -20,6 +20,9 @@ namespace Fat.Services
         {
             EnsureCache();
 
+            if (string.IsNullOrWhiteSpace(keyword))
+                return null;
+
             var results = _stockCache.Where(s =>
                 s.Code.StartsWith(keyword, StringComparison.CurrentCultureIgnoreCase) ||
                 s.Industry.StartsWith(keyword, StringComparison.CurrentCultureIgnoreCase) ||

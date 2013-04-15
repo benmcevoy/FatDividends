@@ -22,9 +22,12 @@ namespace Fat.Quotes.Google
                 json = json.Remove(0, 5);
                 json = json.Trim("\n]\n".ToCharArray());
 
-                var quote = Newtonsoft.Json.JsonConvert.DeserializeObject<QuoteDTO>(json);
+                var quote = Newtonsoft.Json.JsonConvert.DeserializeObject<QuoteDto>(json);
 
-                var closingDate = DateTimeOffset.ParseExact(quote.lt + " " + DateTime.Now.Year.ToString(), "MMM d, h:mmtt 'GMT'zzz yyyy", CultureInfo.InvariantCulture);
+                var closingDate = DateTimeOffset.ParseExact(quote.lt + " " +
+                    DateTime.Now.Year.ToString(CultureInfo.InvariantCulture), 
+                    "MMM d, h:mmtt 'GMT'zzz yyyy", 
+                    CultureInfo.InvariantCulture);
 
                 return new StockQuote(quote.t, quote.l, closingDate.Date);
             }

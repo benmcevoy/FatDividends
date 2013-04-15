@@ -2,11 +2,11 @@
 
 namespace Fat.Services.Models
 {
-    public class StockQuote
+    public class IndexQuote
     {
-        public StockQuote() { }
+        public IndexQuote() { }
 
-        public StockQuote(string code, decimal price, DateTime closingDate)
+        public IndexQuote(string code, decimal price, DateTime closingDate)
         {
             StockCode = code;
             Price = price;
@@ -33,7 +33,5 @@ namespace Fat.Services.Models
         public DateTime CreatedUtcDate { get; set; }
 
         public DateTime? ModifiedUtcDate { get; set; }
-
-        internal virtual Stock Stock { get; set; }
     }
 }

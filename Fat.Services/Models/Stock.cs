@@ -17,6 +17,8 @@ namespace Fat.Services.Models
         public DateTime CreatedUtcDate { get; set; }
         
         public DateTime? ModifiedUtcDate { get; set; }
+
+        public DateTime? LastRefreshDateTime { get; set; }
         
         public bool IsActive { get; set; }
         

@@ -8,6 +8,8 @@ namespace Fat.Services.Models
         public Stock()
         {
             StockQuotes = new HashSet<StockQuote>();
+            StockEarnings = new HashSet<StockEarning>();
+            StockDividends = new HashSet<StockDividend>();
         }
 
         public string Code { get; set; }
@@ -25,5 +27,9 @@ namespace Fat.Services.Models
         public string Industry { get; set; }
 
         public virtual ICollection<StockQuote> StockQuotes { get; set; }
+
+        public virtual ICollection<StockEarning> StockEarnings { get; set; }
+
+        public virtual ICollection<StockDividend> StockDividends { get; set; }
     }
 }

@@ -16,8 +16,12 @@ namespace Fat.Umbraco
             if (_config == null)
             {
                 lock (ConfigLock)
+                {
                     if (_config == null)
-                        _config = (FatConfigSection)ConfigurationManager.GetSection("fatConfig");
+                    {
+                        _config = (FatConfigSection) ConfigurationManager.GetSection("fatConfig");
+                    }
+                }
             }
         }
 

@@ -46,14 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EarningService.cs" />
+    <Compile Include="DividendService.cs" />
     <Compile Include="IndexQuoteService.cs" />
     <Compile Include="Models\FatDataContext.cs" />
     <Compile Include="Models\IndexQuote.cs" />
     <Compile Include="Models\Mappings\IndexQuoteMap.cs" />
+    <Compile Include="Models\Mappings\StockDividendMap.cs" />
+    <Compile Include="Models\Mappings\StockEarningMap.cs" />
     <Compile Include="Models\Mappings\StockMap.cs" />
     <Compile Include="Models\Mappings\StockQuoteMap.cs" />
     <Compile Include="Models\Quote.cs" />
     <Compile Include="Models\Stock.cs" />
+    <Compile Include="Models\StockDividend.cs" />
+    <Compile Include="Models\StockEarning.cs" />
     <Compile Include="Models\StockQuote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchService.cs" />

@@ -43,9 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\CsvMapper.cs" />
     <Compile Include="Data\ImportRepository.cs" />
+    <Compile Include="DividendCalendarImporter.cs" />
+    <Compile Include="EarningsCalendarImporter.cs" />
+    <Compile Include="IndexImporter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuoteImporter.cs" />
+    <Compile Include="StockImporter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

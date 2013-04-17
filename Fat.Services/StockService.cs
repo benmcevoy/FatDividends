@@ -22,8 +22,9 @@ namespace Fat.Services
         {
             return DataContext.Stocks
                 .Where(s =>
-                        !s.LastRefreshDateTime.HasValue ||
-                        s.LastRefreshDateTime <= staleDate)
+                        (!s.LastRefreshDateTime.HasValue ||
+                        s.LastRefreshDateTime <= staleDate) &&
+                        s.IsActive)
                 .AsEnumerable();
         }
 

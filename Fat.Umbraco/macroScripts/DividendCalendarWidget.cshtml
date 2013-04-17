@@ -1,0 +1,25 @@
+﻿@using Vega.USiteBuilder
+@using umbraco.MacroEngines
+
+@inherits DynamicNodeContext
+@{
+    var dividends = Fat.Umbraco.Data.DividendRepository.GetLatest(this, 5);
+    
+    <div id="dividendCalendar" class="widget">
+        <section>
+            <h3>Dividend Calendar</h3>
+            <ul id="dividendCalendarEntries">
+                @{
+                    foreach (var dividend in dividends)
+                    {
+                        <li role="link" class="calendarEntry">
+                            <a href="/stock-information/@dividend.StockCode">
+                                @dividend.StockName - @dividend.PayableDate.ToString("dd/MM/yy")
+                            </a>
+                        </li>
+                    }
+                }
+            </ul>
+        </section>
+    </div>
+}

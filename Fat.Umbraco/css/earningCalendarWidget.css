@@ -1,0 +1,19 @@
+﻿#earningCalendar {
+}
+
+    #earningCalendar ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+        #earningCalendar ul li {
+            border-bottom: 1px solid #aaa;
+            padding: 3px 0;
+        }
+
+            #earningCalendar ul li a {
+                color: #17A9DA;
+                font-size: 0.85em;
+                text-decoration: none;
+            }

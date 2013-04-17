@@ -53,11 +53,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Google\GoogleSummaryProvider.cs" />
     <Compile Include="Google\IndexQuoteProvider.cs" />
     <Compile Include="Google\QuoteDTO.cs" />
     <Compile Include="Google\QuoteProvider.cs" />
     <Compile Include="Google\ScrapeProvider.cs" />
     <Compile Include="Google\ScrapeQuoteDTO.cs" />
+    <Compile Include="Google\SummaryDTO.cs" />
     <Compile Include="IQuoteProvider.cs" />
     <Compile Include="IStockCodeProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

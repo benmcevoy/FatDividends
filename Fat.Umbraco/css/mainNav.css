@@ -8,6 +8,7 @@
         padding: 0;
         height: 45px;
         border-bottom: 5px solid #17A9DA;
+        width: 100%;
     }
 
         #mainNav ul li {
@@ -20,7 +21,7 @@
 
             #mainNav ul li a {
                 height: 40px;
-                width: 184px;
+                width: 190px;
                 color: #fff;
                 text-decoration: none;
                 display: table-cell;
@@ -30,7 +31,7 @@
             }
 
                 #mainNav ul li a.home {
-                    width: 44px;
+                    width: 50px;
                 }
 
                     #mainNav ul li a.home img {

@@ -1,9 +1,5 @@
 ﻿#stockTitle {
 }
-
-    #stockTitle .title {
-    }
-
     #stockTitle span.code {
         text-transform: uppercase;
         font-size: 2em;
@@ -30,7 +26,7 @@
 
 #stockPrice, #stockDividends, #stockEarnings {
     float: left;
-    width: 200px;
+    width: 323px;
     height: 150px;
 }
 

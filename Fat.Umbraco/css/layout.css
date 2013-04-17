@@ -10,6 +10,7 @@
 
 #header {
     width: 1000px;
+    height: 180px;
 }
 
     #header .advert {
@@ -41,6 +42,7 @@
     min-height: 660px;
     background-color: #fff;
     display: inline-block;
+    width: 1000px;
 }
 
 #body {
@@ -49,7 +51,6 @@
     float: left;
     padding: 10px;
     margin: 5px 0 0 0;
-    width: 600px;
     min-height: 650px;
     height: 100%;
 }
@@ -125,3 +126,7 @@
         margin: 5px 0;
         color: #000;
     }
+
+.homecontent {
+    width: 600px;
+}

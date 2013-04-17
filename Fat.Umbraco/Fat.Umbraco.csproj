@@ -187,6 +187,7 @@
     <Content Include="css\searchWidget.css" />
     <Content Include="css\site.css" />
     <Content Include="css\stockDetail.css" />
+    <Content Include="css\tabs.css" />
     <Content Include="css\textStyles.css" />
     <Content Include="favicon.ico" />
     <Content Include="macroScripts\SearchWidget.cshtml" />
@@ -204,6 +205,8 @@
     <Content Include="macroScripts\IndexWidget.cshtml" />
     <Content Include="macroScripts\DividendCalendarWidget.cshtml" />
     <Content Include="macroScripts\EarningsCalendarWidget.cshtml" />
+    <Content Include="macroScripts\TabWidget.cshtml" />
+    <Content Include="macroScripts\CalendarWidget.cshtml" />
     <None Include="scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="scripts\jquery-1.7.1.min.js" />
     <Content Include="scripts\jQuery.tmpl.min.js" />

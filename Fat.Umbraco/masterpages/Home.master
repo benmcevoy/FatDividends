@@ -12,15 +12,13 @@
     </div>
     <% } %>
 
-    <div class="clear"><%= CurrentContent.Content %></div>
-    
-    
+    <div class="homecontent clear"><%= CurrentContent.Content %></div>
 </asp:Content>
 
 
 <asp:Content ID="Content3" ContentPlaceHolderID="Widgets" runat="server">
     <umbraco:Macro ID="Macro1" FileLocation="~/macroScripts/SearchWidget.cshtml" runat="server" />
+    <umbraco:Macro ID="Macro5" FileLocation="~/macroScripts/CalendarWidget.cshtml" runat="server" />
     <umbraco:Macro ID="Macro2" FileLocation="~/macroScripts/IndexWidget.cshtml" runat="server" />
-    <umbraco:Macro ID="Macro3" FileLocation="~/macroScripts/DividendCalendarWidget.cshtml" runat="server" />
-    <umbraco:Macro ID="Macro4" FileLocation="~/macroScripts/EarningsCalendarWidget.cshtml" runat="server" />
+    
 </asp:Content>

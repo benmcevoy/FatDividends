@@ -23,6 +23,7 @@
             .Add("~/css/earningCalendarWidget.css")
             .Add("~/css/dividendCalendarWidget.css")
             .Add("~/css/stockDetail.css")
+            .Add("~/css/tabs.css")
             .Add("~/css/textStyles.css")
             .Render("~/css/combined_#.css") %>
 

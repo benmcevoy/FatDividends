@@ -1,0 +1,17 @@
+﻿
+#mainNav {
+    float: left;
+}
+
+    #mainNav ul {
+        width: 1000px;
+    }
+
+        #mainNav ul li {
+            width: 184px;
+        }
+
+         #mainNav ul li.home {
+            width: 44px;
+         }
+

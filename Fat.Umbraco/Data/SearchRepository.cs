@@ -8,8 +8,6 @@ namespace Fat.Umbraco.Data
 {
     public static class SearchRepository
     {
-        private static readonly SearchService SearchService = new SearchService();
-
         public static IEnumerable<Stock> SearchStock(DynamicNodeContext nodeContext)
         {
             var keywords = HttpContext.Current.Request.QueryString["keywords"];
@@ -17,7 +15,10 @@ namespace Fat.Umbraco.Data
             if (string.IsNullOrEmpty(keywords))
                 return null;
 
-            return SearchService.Search(keywords);
+            using (var service = new SearchService())
+            {
+                return service.Search(keywords);
+            }
         }
     }
 }

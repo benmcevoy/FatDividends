@@ -5,20 +5,13 @@ using System.Collections.Generic;
 
 namespace Fat.Services
 {
-    public class IndexQuoteService
+    public class IndexQuoteService : Service
     {
-        private readonly FatDataContext _context;
-
-        public IndexQuoteService()
-        {
-            _context = new FatDataContext();
-        }
-
         public IEnumerable<IndexQuote> Get(int lastCount)
         {
-            return _context.IndexQuotes
+            return DataContext.IndexQuotes
                 .OrderBy(q => q.ClosingDate)
-                .Skip(Math.Max(0, _context.IndexQuotes.Count() - lastCount))
+                .Skip(Math.Max(0, DataContext.IndexQuotes.Count() - lastCount))
                 .Take(lastCount);
         }
 

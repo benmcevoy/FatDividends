@@ -6,31 +6,32 @@
 </div>
 
 <script type="text/javascript">
-    google.load('visualization', '1.0', { 'packages': ['linechart'] });
-    google.setOnLoadCallback(drawVisualization);
+    google.load("visualization", "1", { packages: ["corechart"] });
+    google.setOnLoadCallback(drawStockChart);
 
-    function drawVisualization() {
+    function drawStockChart() {
         $.ajax({
             url: '/api/stock/quotes/@HttpContext.Current.Request.QueryString["code"]'
         }).done(function (data) {
             
             // reproject to google format (array of array)
-            data = $.map(data, function (value, key) { return [[value.Price, value.Date]]; });
+            data = $.map(data, function (value, key) { return [[value.FormattedDate, value.Price]]; });
 
-            // Create and populate the data table.
             var chartData = google.visualization.arrayToDataTable(data);
+            var chart = new google.visualization.LineChart(document.getElementById('chart'));
 
             chartData.addColumn('number', 'Price');
 
-            // Create and draw the visualization.
-            new google.visualization.LineChart(document.getElementById('chart')).
-                draw(chartData, {
+            var chartOptions = {
                     curveType: 'function',
-                    width: 600, height: 200,
+                    width: 600,
+                    height: 200,
                     legend: 'none',
                     pointSize: 3,
                     colors: ['#17A9DA']
-                });
+            };
+            
+            chart.draw(chartData, chartOptions);
         });
     };
 </script>

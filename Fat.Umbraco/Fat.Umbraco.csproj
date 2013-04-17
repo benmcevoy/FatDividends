@@ -173,6 +173,7 @@
   <ItemGroup>
     <None Include="build.xml" />
     <Content Include="App_Data\fattyd.database.sdf" />
+    <Content Include="css\ie7.css" />
     <Content Include="css\Images\home.png" />
     <Content Include="css\Images\logo.png" />
     <Content Include="css\indexWidget.css" />
@@ -183,6 +184,7 @@
     <Content Include="css\site.css" />
     <Content Include="css\stockDetail.css" />
     <Content Include="css\textStyles.css" />
+    <Content Include="favicon.ico" />
     <Content Include="macroScripts\SearchWidget.cshtml" />
     <Content Include="macroScripts\StockDetail.cshtml" />
     <Content Include="robots.txt" />
@@ -209,7 +211,6 @@
     <Compile Include="API\IndexQuoteController.cs" />
     <Compile Include="API\SearchController.cs" />
     <Compile Include="API\StockController.cs" />
-    <Compile Include="API\TestController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Data\SearchRepository.cs" />
     <Compile Include="Data\StockRepository.cs" />
@@ -223,6 +224,7 @@
     <Compile Include="DocumentTypes\StockDetail.cs" />
     <Compile Include="FatConfigSection.cs" />
     <Compile Include="FatExpressionBuilder.cs" />
+    <Compile Include="Filters\AllowCrossOriginAttribute.cs" />
     <Compile Include="Filters\ApiCacheAttribute.cs" />
     <Compile Include="HtmlHelper.cs" />
     <Compile Include="masterpages\Content.master.cs">

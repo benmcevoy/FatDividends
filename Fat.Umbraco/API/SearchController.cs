@@ -19,5 +19,11 @@ namespace Fat.Umbraco.API
         {
             return _searchService.Search(id);
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            _searchService.Dispose();
+            base.Dispose(disposing);
+        }
     }
 }

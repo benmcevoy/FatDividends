@@ -16,7 +16,9 @@ namespace Fat.Umbraco.Filters
             // TODO: would need vary-by-param or something
             // all users are getting the same cached response
             // but there is only one user at the moment...
+#if !DEBUG
             actionExecutedContext.Response.Headers.Add("Cache-Control", "public, max-age=" + _cacheDurationSeconds );
+#endif
             base.OnActionExecuted(actionExecutedContext);
         }
     }

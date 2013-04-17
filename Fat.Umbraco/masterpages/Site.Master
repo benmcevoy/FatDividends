@@ -7,8 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>
-        <umbraco:Item ID="Item1" Field="title" runat="server" />
-        - Fat Dividends</title>
+        <umbraco:Item ID="Item1" Field="title" runat="server" /> - Fat Dividends</title>
 
     <meta name="description" content="<%= CurrentContent.Description %>" />
     <meta name="keywords" content="<%= CurrentContent.Keywords %>" />
@@ -30,10 +29,13 @@
         .Add("~/scripts/jQuery.tmpl.min.js")
         .Render("~/scripts/jquery_#.js") %>
 
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
 
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<!--[if IE 7]>
+    <link href="../css/ie7.css" type="text/css" rel="stylesheet" />
+<![endif]-->
 </head>
 <body>
     <div id="main">
@@ -46,7 +48,7 @@
                         google_ad_slot = "1323143562";
                         google_ad_width = 160;
                         google_ad_height = 600;
-                        //-->
+                    //-->
                     </script>
                     <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
                 </div>
@@ -62,7 +64,7 @@
                         google_ad_slot = "1323143562";
                         google_ad_width = 160;
                         google_ad_height = 600;
-                        //-->
+                    //-->
                     </script>
                     <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>                    
                 </div>
@@ -76,11 +78,11 @@
                     <div class="advert">
                         <script type="text/javascript"><!--
                             google_ad_client = "ca-pub-5756725000793640";
-                            /* Banner */
-                            google_ad_slot = "7369677161";
-                            google_ad_width = 468;
-                            google_ad_height = 60;
-                            //-->
+                            /* Main Banner */
+                            google_ad_slot = "5458965164";
+                            google_ad_width = 728;
+                            google_ad_height = 90;
+                        //-->
                         </script>
                         <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
                     </div>
@@ -113,11 +115,11 @@
                     <div class="advert">
                         <script type="text/javascript"><!--
                             google_ad_client = "ca-pub-5756725000793640";
-                            /* Banner */
-                            google_ad_slot = "7369677161";
-                            google_ad_width = 468;
-                            google_ad_height = 60;
-                            //-->
+                            /* Main Banner */
+                            google_ad_slot = "5458965164";
+                            google_ad_width = 728;
+                            google_ad_height = 90;
+                        //-->
                         </script>
                         <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
                     </div>

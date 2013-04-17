@@ -8,49 +8,52 @@ namespace Fat.Import
     {
         static void Main(string[] args)
         {
-            //RefreshIndex();
+           // RefreshIndex();
             RefreshStockQuotes();
         }
 
         private static void RefreshIndex()
         {
             var quoteProvider = new Quotes.Google.IndexQuoteProvider();
-            var service = new Services.IndexQuoteService();
-            var quotes = quoteProvider.Get(new DateTime(2013, 1, 1), DateTime.Now);
 
-            if (quotes == null) return;
+            using (var service = new Services.IndexQuoteService())
+            {
+                var quotes = quoteProvider.Get(new DateTime(2013, 4, 1), DateTime.Now);
 
-            service.AddIndexQuotes(quotes);
+                if (quotes == null) return;
+
+                service.AddIndexQuotes(quotes);
+            }
         }
 
         private static void RefreshStockQuotes()
         {
+            var staleDate = new DateTime(2013, 4, 15);
+
             var quoteProvider = new Quotes.Google.ScrapeProvider();
-            var service = new Services.StockService();
-
-            var stocks = service.GetStocksForRefresh(new DateTime(2013, 4, 12)).ToList();
-            var i = 0;
-
-            foreach (var stock in stocks)
+            using (var service = new Services.StockService())
             {
-                i++;
+                var stocks = service.GetStocksForRefresh(staleDate).ToList();
+                var i = 0;
 
-                Console.WriteLine("{0}/{1} - {2}", i, stocks.Count, stock.Code);
-
-                if (stock.StockQuotes.Any())
-                    continue;
-
-                var quotes = quoteProvider.Get(stock.Code, new DateTime(2013, 1, 1), DateTime.Now);
-
-                if (quotes == null)
+                foreach (var stock in stocks)
                 {
-                    service.SetLastRefreshDate(stock.Code);
-                    continue;
+                    i++;
+
+                    Console.WriteLine("{0}/{1} - {2}", i, stocks.Count, stock.Code);
+
+                    var quotes = quoteProvider.Get(stock.Code, staleDate.AddDays(-7), DateTime.Now);
+
+                    if (quotes == null)
+                    {
+                        service.SetLastRefreshDate(stock.Code);
+                        continue;
+                    }
+
+                    service.AddQuotes(quotes);
+
+                    Thread.Sleep(1000);
                 }
-
-                service.AddQuotes(quotes);
-
-                Thread.Sleep(1000);
             }
         }
 

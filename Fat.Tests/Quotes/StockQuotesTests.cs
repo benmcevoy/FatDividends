@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Fat.Quotes;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Linq;
 
@@ -11,7 +12,7 @@ namespace Fat.Tests.Quotes
         public void GetQuoteFromGoogle()
         {
             var code = "ACS";
-            var qp = new Fat.Quotes.Google.QuoteProvider();
+            var qp = new Fat.Quotes.Google.QuoteProvider() as IQuoteProvider;
             var quote = qp.Get(code);
 
             Assert.AreEqual(code, quote.StockCode);
@@ -21,7 +22,7 @@ namespace Fat.Tests.Quotes
         public void GetQuoteFromYahoo()
         {
             var code = "ACS";
-            var qp = new Fat.Quotes.Yahoo.QuoteProvider();
+            var qp = new Fat.Quotes.Yahoo.QuoteProvider() as IQuoteProvider;
             var quote = qp.Get(code);
 
             Assert.AreEqual(code, quote.StockCode);
@@ -31,7 +32,7 @@ namespace Fat.Tests.Quotes
         public void GetQuoteFromYahooForClosingDate()
         {
             var code = "ACS";
-            var qp = new Fat.Quotes.Yahoo.QuoteProvider();
+            var qp = new Fat.Quotes.Yahoo.QuoteProvider() as IQuoteProvider;
             var quote = qp.Get(code, new DateTime(2013, 3, 1));
 
             Assert.AreEqual(code, quote.StockCode);
@@ -41,7 +42,7 @@ namespace Fat.Tests.Quotes
         public void GetQuoteFromYahooForDateRange()
         {
             var code = "ACS";
-            var qp = new Fat.Quotes.Yahoo.QuoteProvider();
+            var qp = new Fat.Quotes.Yahoo.QuoteProvider() as IQuoteProvider;
             var start = new DateTime(2013, 3, 1);
             var end = DateTime.Now;
             var quotes = qp.Get(code, start, end);
@@ -62,7 +63,7 @@ namespace Fat.Tests.Quotes
         public void SearchYahooForSymbol()
         {
             var search = "ACS";
-            var s = new Fat.Quotes.Yahoo.StockCodeProvider();
+            var s = new Fat.Quotes.Yahoo.StockCodeProvider() as IStockCodeProvider;
 
             s.Search(search);
 
@@ -73,7 +74,7 @@ namespace Fat.Tests.Quotes
         public void GetQuoteFromGoogleScrapeForDateRange()
         {
             var code = "ACS";
-            var qp = new Fat.Quotes.Google.ScrapeProvider();
+            var qp = new Fat.Quotes.Google.ScrapeProvider() as IQuoteProvider; 
             var start = new DateTime(2013, 3, 1);
             var end = DateTime.Now;
             var quotes = qp.Get(code, start, end);

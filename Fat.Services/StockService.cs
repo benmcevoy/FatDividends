@@ -6,28 +6,21 @@ using Fat.Services.Models;
 
 namespace Fat.Services
 {
-    public class StockService
+    public class StockService : Service
     {
-        private readonly FatDataContext _context;
-
-        public StockService()
-        {
-            _context = new FatDataContext();
-        }
-
         public IEnumerable<Stock> Get()
         {
-            return _context.Stocks.AsEnumerable();
+            return DataContext.Stocks.AsEnumerable();
         }
 
         public IEnumerable<Stock> GetWithQuotes()
         {
-            return _context.Stocks.Include("StockQuotes").AsEnumerable();
+            return DataContext.Stocks.Include("StockQuotes").AsEnumerable();
         }
 
         public IEnumerable<Stock> GetStocksForRefresh(DateTime staleDate)
         {
-            return _context.Stocks.Include("StockQuotes")
+            return DataContext.Stocks
                 .Where(s =>
                         !s.LastRefreshDateTime.HasValue ||
                         s.LastRefreshDateTime <= staleDate)
@@ -36,7 +29,7 @@ namespace Fat.Services
 
         public Stock Get(string stockCode)
         {
-            var stock = _context.Stocks.Find(stockCode);
+            var stock = DataContext.Stocks.Find(stockCode);
 
             return stock;
         }
@@ -78,8 +71,6 @@ namespace Fat.Services
             stock.LastRefreshDateTime = DateTime.UtcNow;
         }
 
-     
-
         public void AddQuotes(IEnumerable<StockQuote> quotes)
         {
             using (var context = new FatDataContext())
@@ -99,20 +90,20 @@ namespace Fat.Services
 
             stock.LastRefreshDateTime = DateTime.UtcNow;
 
-            _context.SaveChanges();
+            DataContext.SaveChanges();
         }
 
 
         public StockQuote GetLatestQuote(string stockCode)
         {
-            return _context.StockQuotes
+            return DataContext.StockQuotes
                            .OrderByDescending(q => q.ClosingDate)
                            .FirstOrDefault(q => q.StockCode == stockCode);
         }
 
         public IEnumerable<Quote> GetQuotes(string stockCode, DateTime startDate, DateTime endDate)
         {
-            return _context.StockQuotes
+            return DataContext.StockQuotes
                            .OrderBy(q => q.ClosingDate)
                            .Where(q =>
                                q.StockCode == stockCode
@@ -124,7 +115,5 @@ namespace Fat.Services
                                        Price = q.Price
                                    });
         }
-
-       
     }
 }

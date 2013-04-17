@@ -25,6 +25,7 @@ namespace Fat.Umbraco.API
         /// </summary>
         /// <returns></returns>
         [ApiCache(600)]
+        [AllowCrossOrigin]
         public IEnumerable<Stock> Get()
         {
             return _stockService.Get();
@@ -37,6 +38,7 @@ namespace Fat.Umbraco.API
         /// <param name="id"></param>
         /// <returns></returns>
         [ApiCache(600)]
+        [AllowCrossOrigin]
         public Stock Get(string id)
         {
             var stock = _stockService.Get(id);
@@ -51,12 +53,19 @@ namespace Fat.Umbraco.API
 
         [AcceptVerbs("GET")]
         [ApiCache(600)]
+        [AllowCrossOrigin]
         public IEnumerable<Quote> Quotes(string id)
         {
             var endDate = DateTime.Now;
             var startDate = endDate.AddDays(-90);
 
             return _stockService.GetQuotes(id, startDate, endDate);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _stockService.Dispose();
+            base.Dispose(disposing);
         }
     }
 }

@@ -6,31 +6,32 @@
 </div>
 
 <script type="text/javascript">
-    google.load('visualization', '1.0', { 'packages': ['linechart'] });
-    google.setOnLoadCallback(drawVisualization);
+    google.load("visualization", "1", { packages: ["corechart"] });
+    google.setOnLoadCallback(drawIndexChart);
 
-    function drawVisualization() {
+    function drawIndexChart() {
         $.ajax({
             url: '/api/indexquote/'
         }).done(function (data) {
             
             // reproject to google format (array of array)
-            data = $.map(data, function (value, key) { return [[value.Price, value.Date]]; });
+            data = $.map(data, function (value, key) { return [[value.FormattedDate, value.Price]]; });
 
-            // Create and populate the data table.
             var chartData = google.visualization.arrayToDataTable(data);
-
+            var chart = new google.visualization.LineChart(document.getElementById('marketIndexChart'));
+            
             chartData.addColumn('number', 'Price');
+            
+            var chartOptions = {
+                curveType: 'function',
+                width: 360, 
+                height: 180,
+                legend: 'none',
+                pointSize: 1,
+                colors: ['#17A9DA']
+            };
 
-            // Create and draw the visualization.
-            new google.visualization.LineChart(document.getElementById('marketIndexChart')).
-                draw(chartData, {
-                    curveType: 'function',
-                    width: 360, height: 180,
-                    legend: 'none',
-                    pointSize: 1,
-                    colors: ['#17A9DA']
-                });
+            chart.draw(chartData, chartOptions);
         });
     };
 </script>

@@ -17,6 +17,7 @@ namespace Fat.Umbraco.API
         }
 
         [ApiCache(600)]
+        [AllowCrossOrigin]
         public IEnumerable<Quote> Get()
         {
             return _indexQuoteService.Get(30).Select(q =>
@@ -27,5 +28,10 @@ namespace Fat.Umbraco.API
                     });
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            _indexQuoteService.Dispose();
+            base.Dispose(disposing);
+        }
     }
 }

@@ -5,16 +5,10 @@ using System.Linq;
 
 namespace Fat.Services
 {
-    public class SearchService
+    public class SearchService : Service
     {
-        private readonly FatDataContext _context;
-        private volatile IEnumerable<Stock> _stockCache;
+        private static volatile IEnumerable<Stock> _stockCache;
         private static readonly object CacheLock = new object();
-
-        public SearchService()
-        {
-            _context = new FatDataContext();
-        }
 
         public IEnumerable<Stock> Search(string keyword)
         {
@@ -38,7 +32,7 @@ namespace Fat.Services
                 lock (CacheLock)
                 {
                     if (_stockCache == null)
-                        _stockCache = _context.Stocks.ToList();
+                        _stockCache = DataContext.Stocks.ToList();
                 }
             }
         }

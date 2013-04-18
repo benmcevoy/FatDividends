@@ -25,13 +25,13 @@
             .Add("~/css/stockDetail.css")
             .Add("~/css/tabs.css")
             .Add("~/css/textStyles.css")
-            .Render("~/css/combined_#.css") %>
+            .Render("~/generated/combined_#.css") %>
 
     <%= Bundle.JavaScript()
         .Add("~/scripts/modernizr-2.5.3.js")
         .Add("~/scripts/jquery-1.7.1.min.js")
         .Add("~/scripts/jQuery.tmpl.min.js")
-        .Render("~/scripts/jquery_#.js") %>
+        .Render("~/generated/jquery_#.js") %>
 
     <asp:ContentPlaceHolder ID="head" runat="server" />
 

@@ -6,8 +6,8 @@ namespace Fat.Import
     {
         static void Main(string[] args)
         {
-            IndexImporter.Import();
-            QuoteImporter.Import(new DateTime(2013, 4, 16));
+            //IndexImporter.Import();
+            QuoteImporter.Import(DateTime.Now.AddDays(-1));
             //DividendCalendarImporter.Import();
             //EarningsCalendarImporter.Import();
         }

@@ -34,5 +34,14 @@ namespace Fat.Services.Models
                 return "";
             }
         }
+
+        // TODO: also the import
+        // ClosingPrice?? not sure for what date? set on import
+
+        //public decimal GrossedAmount { get; private set; }
+        // Amount * (1 - Franked) + (Amount * Franked) / 0.7
+
+        //public decimal GrossedYieldPercentage { get; set; }
+        // is GrossedAmount / ClosingPrice on the date payable?
     }
 }

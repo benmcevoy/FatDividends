@@ -235,6 +235,7 @@
     <Compile Include="DocumentTypes\Page.cs" />
     <Compile Include="DocumentTypes\SearchPage.cs" />
     <Compile Include="DocumentTypes\StockDetail.cs" />
+    <Compile Include="DocumentTypes\StockSummaryItem.cs" />
     <Compile Include="FatConfigSection.cs" />
     <Compile Include="FatExpressionBuilder.cs" />
     <Compile Include="Filters\AllowCrossOriginAttribute.cs" />

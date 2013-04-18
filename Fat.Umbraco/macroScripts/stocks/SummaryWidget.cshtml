@@ -1,8 +1,14 @@
-﻿<div id="stockSummary" class="widget">
+﻿@using Fat.Umbraco.DocumentTypes
+@using Vega.USiteBuilder
+@using umbraco.MacroEngines
+
+@inherits DynamicNodeContext
+<div id="stockSummary" class="widget">
     <section>
         <h3>Summary</h3>
         <div class="summary">
-            stock summary TODO:
+            @Html.Raw(Fat.Umbraco.Data.StockRepository.GetSummary(this))
         </div>
     </section>
 </div>
+

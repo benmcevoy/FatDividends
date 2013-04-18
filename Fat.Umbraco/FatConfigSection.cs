@@ -18,6 +18,13 @@ namespace Fat.Umbraco
             set { this["homeNodeId"] = value; }
         }
 
+        [ConfigurationProperty("defaultStockSummaryNodeId", IsRequired = true)]
+        public int DefaultStockSummaryNodeId
+        {
+            get { return (int)this["defaultStockSummaryNodeId"]; }
+            set { this["defaultStockSummaryNodeId"] = value; }
+        }
+
         public string Get(string key)
         {
             return this[key].ToString();

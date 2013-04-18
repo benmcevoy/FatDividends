@@ -36,3 +36,586 @@
 2013-04-18 00:01:51,498 [29] INFO  Umbraco.Core.PluginManager - [Thread 27] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 2 (took 4ms)
 2013-04-18 00:01:53,930 [29] INFO  Umbraco.Core.PluginManager - [Thread 27] Completed resolution of types of umbraco.interfaces.IDataType, found 35 (took 4ms)
 2013-04-18 00:01:53,945 [29] INFO  Umbraco.Core.PluginManager - [Thread 27] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 3ms)
+2013-04-18 09:41:33,153 [29] INFO  umbraco.BusinessLogic.Log - [Thread 22] Log scrubbed.  Removed all items older than 2013-02-17 09:41:33
+2013-04-18 09:41:33,155 [29] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 22] Application shutdown. Reason: HostingEnvironment
+2013-04-18 20:14:41,872 [13] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application starting
+2013-04-18 20:14:41,907 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2013-04-18 20:14:41,916 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 8ms)
+2013-04-18 20:14:42,059 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 19 (took 131ms)
+2013-04-18 20:14:42,086 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 4ms)
+2013-04-18 20:14:42,090 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+2013-04-18 20:14:42,094 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 1 (took 3ms)
+2013-04-18 20:14:42,106 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 3ms)
+2013-04-18 20:14:42,109 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 3ms)
+2013-04-18 20:14:42,230 [13] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 349ms)
+2013-04-18 20:14:42,632 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 7ms)
+2013-04-18 20:14:42,736 [13] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 4ms)
+2013-04-18 20:14:42,796 [13] INFO  umbraco.BusinessLogic.Log - [Thread 5] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Custom | User: 0 | NodeId: -1 | Comment: [UmbracoExamine] Adding examine event handlers for index providers: 3
+2013-04-18 20:14:47,654 [13] INFO  umbraco.BasePages.BasePage - [Thread 9] User admin (Id: 0) logged in
+2013-04-18 20:14:47,727 [13] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 6ms)
+2013-04-18 20:14:47,834 [13] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 4ms)
+2013-04-18 20:15:08,922 [13] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of umbraco.interfaces.IDataType, found 35 (took 4ms)
+2013-04-18 20:15:09,034 [13] INFO  umbraco.content - [Thread 8] Loading content from disk cache...
+2013-04-18 20:15:17,011 [13] INFO  umbraco.cms.businesslogic.web.Document - [Thread 17] New document 1143
+2013-04-18 20:15:24,126 [13] INFO  umbraco.cms.businesslogic.web.Document - [Thread 12] New document 1144
+2013-04-18 20:18:49,853 [13] INFO  umbraco.cms.businesslogic.web.Document - [Thread 11] New document 1146
+2013-04-18 20:19:11,446 [13] INFO  umbraco.BusinessLogic.Log - [Thread 44] Log scrubbed.  Removed all items older than 2013-02-17 20:19:11
+2013-04-18 20:19:11,448 [13] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 44] Application shutdown. Reason: BinDirChangeOrDirectoryRename
+2013-04-18 20:19:19,637 [47] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application starting
+2013-04-18 20:19:19,668 [47] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2013-04-18 20:19:19,677 [47] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 7ms)
+2013-04-18 20:19:19,804 [47] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 19 (took 116ms)
+2013-04-18 20:19:19,830 [47] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 4ms)
+2013-04-18 20:19:19,834 [47] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+2013-04-18 20:19:19,838 [47] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 1 (took 3ms)
+2013-04-18 20:19:19,846 [47] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 3ms)
+2013-04-18 20:19:19,850 [47] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 3ms)
+2013-04-18 20:19:19,955 [47] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 308ms)
+2013-04-18 20:19:20,132 [47] INFO  umbraco.BusinessLogic.Log - [Thread 45] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Custom | User: 0 | NodeId: -1 | Comment: [UmbracoExamine] Adding examine event handlers for index providers: 3
+2013-04-18 20:19:20,155 [47] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 7ms)
+2013-04-18 20:19:20,202 [47] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 4ms)
+2013-04-18 20:19:22,117 [47] INFO  Umbraco.Core.PluginManager - [Thread 39] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 4ms)
+2013-04-18 20:19:22,252 [47] INFO  Umbraco.Core.PluginManager - [Thread 39] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 3ms)
+2013-04-18 20:19:51,500 [47] INFO  Umbraco.Core.PluginManager - [Thread 35] Completed resolution of types of umbraco.interfaces.IDataType, found 35 (took 4ms)
+2013-04-18 20:21:44,252 [47] INFO  umbraco.BusinessLogic.Log - [Thread 16] Log scrubbed.  Removed all items older than 2013-02-17 20:21:44
+2013-04-18 20:21:44,255 [47] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 16] Application shutdown. Reason: BinDirChangeOrDirectoryRename
+2013-04-18 20:21:52,161 [60] INFO  Umbraco.Core.CoreBootManager - [Thread 58] Umbraco application starting
+2013-04-18 20:21:52,192 [60] INFO  Umbraco.Core.PluginManager - [Thread 58] Determining hash of code files on disk
+2013-04-18 20:21:52,201 [60] INFO  Umbraco.Core.PluginManager - [Thread 58] Hash determined (took 8ms)
+2013-04-18 20:21:52,330 [60] INFO  Umbraco.Core.PluginManager - [Thread 58] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 19 (took 117ms)
+2013-04-18 20:21:52,355 [60] INFO  Umbraco.Core.PluginManager - [Thread 58] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 4ms)
+2013-04-18 20:21:52,359 [60] INFO  Umbraco.Core.PluginManager - [Thread 58] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+2013-04-18 20:21:52,363 [60] INFO  Umbraco.Core.PluginManager - [Thread 58] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 1 (took 3ms)
+2013-04-18 20:21:52,371 [60] INFO  Umbraco.Core.PluginManager - [Thread 58] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 3ms)
+2013-04-18 20:21:52,375 [60] INFO  Umbraco.Core.PluginManager - [Thread 58] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 3ms)
+2013-04-18 20:21:52,481 [60] INFO  Umbraco.Core.CoreBootManager - [Thread 58] Umbraco application startup complete (took 310ms)
+2013-04-18 20:21:52,674 [60] INFO  umbraco.BusinessLogic.Log - [Thread 35] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Custom | User: 0 | NodeId: -1 | Comment: [UmbracoExamine] Adding examine event handlers for index providers: 3
+2013-04-18 20:21:52,678 [60] INFO  Umbraco.Core.PluginManager - [Thread 58] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 7ms)
+2013-04-18 20:21:52,724 [60] INFO  Umbraco.Core.PluginManager - [Thread 58] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 4ms)
+2013-04-18 20:21:52,890 [60] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 3ms)
+2013-04-18 20:21:52,962 [60] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 4ms)
+2013-04-18 20:22:13,001 [60] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of umbraco.interfaces.IDataType, found 35 (took 4ms)
+2013-04-18 20:23:59,891 [60] INFO  Umbraco.Core.Services.ContentService - [Thread 53] Content 'Stock Summaries' with Id '1143' could not be published because of invalid properties.
+2013-04-18 20:24:09,955 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 32] Content 'Stock Summaries' with Id '1143' has been published.
+2013-04-18 20:24:10,066 [60] INFO  umbraco.content - [Thread 32] Loading content from disk cache...
+2013-04-18 20:24:10,156 [60] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 32] Error adding node 1048 to SiteMapProvider in loadNodes()
+System.InvalidOperationException: Multiple nodes with the same URL '/' were found. XmlSiteMapProvider requires that sitemap nodes have unique URLs.
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.loadNodes(String parentId, SiteMapNode parentNode)
+2013-04-18 20:24:14,855 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 53] Content 'A' with Id '1144' has been published.
+2013-04-18 20:24:20,478 [60] INFO  umbraco.cms.businesslogic.web.Document - [Thread 32] New document 1147
+2013-04-18 20:24:22,924 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 32] Content 'B' with Id '1147' has been published.
+2013-04-18 20:24:31,103 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 46] Content 'A' with Id '1144' has been published.
+2013-04-18 20:24:31,263 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 46] Content 'B' with Id '1147' has been published.
+2013-04-18 20:24:35,987 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 53] Content 'default' with Id '1146' has been published.
+2013-04-18 20:24:36,046 [60] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 53] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
+2013-04-18 20:24:36,046 [60] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 53] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
+2013-04-18 20:24:36,046 [60] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 53] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
+2013-04-18 20:24:41,741 [60] INFO  umbraco.cms.businesslogic.web.Document - [Thread 39] New document 1148
+2013-04-18 20:24:50,731 [60] INFO  umbraco.cms.businesslogic.web.Document - [Thread 39] New document 1149
+2013-04-18 20:24:55,429 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 47] Content 'C' with Id '1148' has been published.
+2013-04-18 20:25:00,856 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 42] Content 'T' with Id '1149' has been published.
+2013-04-18 20:25:45,808 [60] INFO  umbraco.cms.businesslogic.web.Document - [Thread 54] New document 1150
+2013-04-18 20:26:21,317 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 51] Content 'BHP' with Id '1150' has been published.
+2013-04-18 20:26:31,332 [60] INFO  umbraco.cms.businesslogic.web.Document - [Thread 44] New document 1151
+2013-04-18 20:28:20,457 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 17] Content 'TLS' with Id '1151' has been published.
+2013-04-18 20:28:31,622 [60] INFO  umbraco.cms.businesslogic.web.Document - [Thread 15] New document 1152
+2013-04-18 20:28:32,015 [60] INFO  umbraco.cms.businesslogic.web.Document - [Thread 43] New document 1153
+2013-04-18 20:28:46,380 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 53] Content 'D' with Id '1152' has been published.
+2013-04-18 20:28:46,424 [60] INFO  umbraco.BusinessLogic.Log - [Thread 36] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Custom | User: 0 | NodeId: -1 | Comment: [UmbracoExamine] (InternalIndexer)Index is being optimized
+2013-04-18 20:28:53,131 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 33] Content 'D (1)' with Id '1153' has been unpublished.
+2013-04-18 20:28:56,600 [60] INFO  umbraco.cms.businesslogic.web.Document - [Thread 15] New document 1154
+2013-04-18 20:29:05,138 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 8] Content 'default' with Id '1146' has been published.
+2013-04-18 20:29:05,315 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 8] Content 'A' with Id '1144' has been published.
+2013-04-18 20:29:05,462 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 8] Content 'B' with Id '1147' has been published.
+2013-04-18 20:29:05,625 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 8] Content 'C' with Id '1148' has been published.
+2013-04-18 20:29:05,768 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 8] Content 'D' with Id '1152' has been published.
+2013-04-18 20:29:05,955 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 8] Content 'T' with Id '1149' has been published.
+2013-04-18 20:29:14,440 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 8] Content 'Stock Summaries' with Id '1143' has been published.
+2013-04-18 20:29:14,515 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 8] Content 'default' with Id '1146' has been published.
+2013-04-18 20:29:14,593 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 8] Content 'A' with Id '1144' has been published.
+2013-04-18 20:29:14,651 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 8] Content 'B' with Id '1147' has been published.
+2013-04-18 20:29:14,696 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 8] Content 'BHP' with Id '1150' has been published.
+2013-04-18 20:29:14,777 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 8] Content 'C' with Id '1148' has been published.
+2013-04-18 20:29:14,833 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 8] Content 'D' with Id '1152' has been published.
+2013-04-18 20:29:14,891 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 8] Content 'T' with Id '1149' has been published.
+2013-04-18 20:29:14,944 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 8] Content 'TLS' with Id '1151' has been published.
+2013-04-18 20:29:22,784 [60] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 46] Content 'E' with Id '1154' has been published.
+2013-04-18 20:45:25,653 [60] INFO  umbraco.BusinessLogic.Log - [Thread 5] Log scrubbed.  Removed all items older than 2013-02-17 20:45:25
+2013-04-18 20:45:25,655 [60] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 5] Application shutdown. Reason: BinDirChangeOrDirectoryRename
+2013-04-18 20:45:37,426 [66] INFO  Umbraco.Core.CoreBootManager - [Thread 40] Umbraco application starting
+2013-04-18 20:45:37,456 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Determining hash of code files on disk
+2013-04-18 20:45:37,465 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Hash determined (took 7ms)
+2013-04-18 20:45:37,593 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 19 (took 117ms)
+2013-04-18 20:45:37,618 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 4ms)
+2013-04-18 20:45:37,622 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+2013-04-18 20:45:37,626 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 1 (took 3ms)
+2013-04-18 20:45:37,635 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 3ms)
+2013-04-18 20:45:37,638 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 3ms)
+2013-04-18 20:45:37,746 [66] INFO  Umbraco.Core.CoreBootManager - [Thread 40] Umbraco application startup complete (took 312ms)
+2013-04-18 20:45:37,925 [66] INFO  umbraco.BusinessLogic.Log - [Thread 19] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Custom | User: 0 | NodeId: -1 | Comment: [UmbracoExamine] Adding examine event handlers for index providers: 3
+2013-04-18 20:45:37,935 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 7ms)
+2013-04-18 20:45:37,981 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 4ms)
+2013-04-18 20:45:47,094 [66] INFO  umbraco.BusinessLogic.Log - [Thread 21] Log scrubbed.  Removed all items older than 2013-02-17 20:45:47
+2013-04-18 20:45:47,096 [66] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 21] Application shutdown. Reason: BinDirChangeOrDirectoryRename
+2013-04-18 20:45:57,736 [61] INFO  Umbraco.Core.CoreBootManager - [Thread 40] Umbraco application starting
+2013-04-18 20:45:57,766 [61] INFO  Umbraco.Core.PluginManager - [Thread 40] Determining hash of code files on disk
+2013-04-18 20:45:57,775 [61] INFO  Umbraco.Core.PluginManager - [Thread 40] Hash determined (took 7ms)
+2013-04-18 20:45:57,904 [61] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 19 (took 118ms)
+2013-04-18 20:45:57,929 [61] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 4ms)
+2013-04-18 20:45:57,933 [61] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+2013-04-18 20:45:57,938 [61] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 1 (took 3ms)
+2013-04-18 20:45:57,947 [61] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 3ms)
+2013-04-18 20:45:57,950 [61] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 3ms)
+2013-04-18 20:45:58,058 [61] INFO  Umbraco.Core.CoreBootManager - [Thread 40] Umbraco application startup complete (took 313ms)
+2013-04-18 20:45:58,255 [61] INFO  umbraco.BusinessLogic.Log - [Thread 5] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Custom | User: 0 | NodeId: -1 | Comment: [UmbracoExamine] Adding examine event handlers for index providers: 3
+2013-04-18 20:45:58,259 [61] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 8ms)
+2013-04-18 20:45:58,307 [61] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 4ms)
+2013-04-18 20:47:06,673 [61] INFO  umbraco.BusinessLogic.Log - [Thread 48] Log scrubbed.  Removed all items older than 2013-02-17 20:47:06
+2013-04-18 20:47:06,675 [61] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 48] Application shutdown. Reason: ConfigurationChange
+2013-04-18 20:47:14,256 [73] INFO  Umbraco.Core.CoreBootManager - [Thread 40] Umbraco application starting
+2013-04-18 20:47:14,275 [73] INFO  Umbraco.Core.PluginManager - [Thread 40] Determining hash of code files on disk
+2013-04-18 20:47:14,284 [73] INFO  Umbraco.Core.PluginManager - [Thread 40] Hash determined (took 8ms)
+2013-04-18 20:47:14,407 [73] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 19 (took 113ms)
+2013-04-18 20:47:14,430 [73] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 5ms)
+2013-04-18 20:47:14,434 [73] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+2013-04-18 20:47:14,438 [73] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 1 (took 3ms)
+2013-04-18 20:47:14,443 [73] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 4ms)
+2013-04-18 20:47:14,448 [73] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 4ms)
+2013-04-18 20:47:14,533 [73] INFO  Umbraco.Core.CoreBootManager - [Thread 40] Umbraco application startup complete (took 276ms)
+2013-04-18 20:47:14,652 [73] INFO  umbraco.BusinessLogic.Log - [Thread 55] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Custom | User: 0 | NodeId: -1 | Comment: [UmbracoExamine] Adding examine event handlers for index providers: 3
+2013-04-18 20:47:14,660 [73] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 5ms)
+2013-04-18 20:47:14,697 [73] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 5ms)
+2013-04-18 20:47:21,806 [73] INFO  umbraco.content - [Thread 45] Loading content from disk cache...
+2013-04-18 20:47:23,281 [73] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 2 (took 4ms)
+2013-04-18 20:47:26,443 [73] WARN  umbraco.macro - [Thread 45] Error loading MacroEngine script (file: ~/macroscripts/stocks/summarywidget.cshtml, Type: ''. Exception: System.Xml.XPath.XPathException: '//Config/Stock Summaries/descendant::StockSummaryItem' has an invalid token.
+   at MS.Internal.Xml.XPath.QueryBuilder.Build(String query, Boolean allowVar, Boolean allowKey)
+   at System.Xml.XPath.XPathExpression.Compile(String xpath, IXmlNamespaceResolver nsResolver)
+   at System.Xml.XPath.XPathNavigator.Select(String xpath)
+   at System.Xml.XmlNode.SelectNodes(String xpath)
+   at umbraco.MacroEngines.DynamicNode.XPath(String xPath)
+   at Fat.Umbraco.Data.StockRepository.GetSummary(DynamicNodeContext nodeContext)
+   at ASP._Page_macroscripts_stocks_summarywidget_cshtml.Execute() in d:\Dev\git\FatDividends\Umbraco\macroScripts\stocks\SummaryWidget.cshtml:line 7
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at umbraco.MacroEngines.RazorMacroEngine.ExecuteRazor(MacroModel macro, INode currentPage)
+   at umbraco.MacroEngines.RazorMacroEngine.Execute(MacroModel macro, INode currentPage)
+   at umbraco.macro.loadMacroScript(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-04-18 20:48:15,257 [73] INFO  umbraco.BusinessLogic.Log - [Thread 45] Log scrubbed.  Removed all items older than 2013-02-17 20:48:15
+2013-04-18 20:48:15,257 [73] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 45] Application shutdown. Reason: ConfigurationChange
+2013-04-18 20:48:25,432 [72] INFO  Umbraco.Core.CoreBootManager - [Thread 47] Umbraco application starting
+2013-04-18 20:48:25,448 [72] INFO  Umbraco.Core.PluginManager - [Thread 47] Determining hash of code files on disk
+2013-04-18 20:48:25,459 [72] INFO  Umbraco.Core.PluginManager - [Thread 47] Hash determined (took 9ms)
+2013-04-18 20:48:25,594 [72] INFO  Umbraco.Core.PluginManager - [Thread 47] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 19 (took 125ms)
+2013-04-18 20:48:25,607 [72] INFO  Umbraco.Core.PluginManager - [Thread 47] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 3ms)
+2013-04-18 20:48:25,611 [72] INFO  Umbraco.Core.PluginManager - [Thread 47] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+2013-04-18 20:48:25,616 [72] INFO  Umbraco.Core.PluginManager - [Thread 47] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 1 (took 4ms)
+2013-04-18 20:48:25,623 [72] INFO  Umbraco.Core.PluginManager - [Thread 47] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 4ms)
+2013-04-18 20:48:25,628 [72] INFO  Umbraco.Core.PluginManager - [Thread 47] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 3ms)
+2013-04-18 20:48:25,803 [72] INFO  Umbraco.Core.CoreBootManager - [Thread 47] Umbraco application startup complete (took 369ms)
+2013-04-18 20:48:25,938 [72] INFO  umbraco.BusinessLogic.Log - [Thread 38] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Custom | User: 0 | NodeId: -1 | Comment: [UmbracoExamine] Adding examine event handlers for index providers: 3
+2013-04-18 20:48:25,944 [72] INFO  Umbraco.Core.PluginManager - [Thread 47] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 7ms)
+2013-04-18 20:48:25,979 [72] INFO  Umbraco.Core.PluginManager - [Thread 47] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 6ms)
+2013-04-18 20:48:26,075 [72] INFO  umbraco.content - [Thread 55] Loading content from disk cache...
+2013-04-18 20:48:26,430 [72] INFO  Umbraco.Core.PluginManager - [Thread 55] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 2 (took 4ms)
+2013-04-18 20:50:34,451 [72] WARN  umbraco.macro - [Thread 55] Error loading MacroEngine script (file: ~/macroscripts/stocks/summarywidget.cshtml, Type: ''. Exception: System.Xml.XPath.XPathException: '//Config/Stock Summaries/descendant::StockSummaryItem' has an invalid token.
+   at MS.Internal.Xml.XPath.QueryBuilder.Build(String query, Boolean allowVar, Boolean allowKey)
+   at System.Xml.XPath.XPathExpression.Compile(String xpath, IXmlNamespaceResolver nsResolver)
+   at System.Xml.XPath.XPathNavigator.Select(String xpath)
+   at System.Xml.XmlNode.SelectNodes(String xpath)
+   at umbraco.MacroEngines.DynamicNode.XPath(String xPath)
+   at Fat.Umbraco.Data.StockRepository.GetSummary(DynamicNodeContext nodeContext)
+   at ASP._Page_macroscripts_stocks_summarywidget_cshtml.Execute() in d:\Dev\git\FatDividends\Umbraco\macroScripts\stocks\SummaryWidget.cshtml:line 10
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at umbraco.MacroEngines.RazorMacroEngine.ExecuteRazor(MacroModel macro, INode currentPage)
+   at umbraco.MacroEngines.RazorMacroEngine.Execute(MacroModel macro, INode currentPage)
+   at umbraco.macro.loadMacroScript(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-04-18 20:55:51,443 [72] INFO  umbraco.BusinessLogic.Log - [Thread 20] Log scrubbed.  Removed all items older than 2013-02-17 20:55:51
+2013-04-18 20:55:51,444 [72] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 20] Application shutdown. Reason: BinDirChangeOrDirectoryRename
+2013-04-18 20:55:57,726 [102] INFO  Umbraco.Core.CoreBootManager - [Thread 100] Umbraco application starting
+2013-04-18 20:55:57,756 [102] INFO  Umbraco.Core.PluginManager - [Thread 100] Determining hash of code files on disk
+2013-04-18 20:55:57,768 [102] INFO  Umbraco.Core.PluginManager - [Thread 100] Hash determined (took 10ms)
+2013-04-18 20:55:57,896 [102] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 19 (took 116ms)
+2013-04-18 20:55:57,921 [102] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 4ms)
+2013-04-18 20:55:57,925 [102] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+2013-04-18 20:55:57,929 [102] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 1 (took 3ms)
+2013-04-18 20:55:57,937 [102] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 3ms)
+2013-04-18 20:55:57,941 [102] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 3ms)
+2013-04-18 20:55:58,046 [102] INFO  Umbraco.Core.CoreBootManager - [Thread 100] Umbraco application startup complete (took 312ms)
+2013-04-18 20:55:58,223 [102] INFO  umbraco.BusinessLogic.Log - [Thread 98] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Custom | User: 0 | NodeId: -1 | Comment: [UmbracoExamine] Adding examine event handlers for index providers: 3
+2013-04-18 20:55:58,228 [102] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 8ms)
+2013-04-18 20:55:58,274 [102] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 4ms)
+2013-04-18 20:55:58,485 [102] INFO  umbraco.content - [Thread 96] Loading content from disk cache...
+2013-04-18 20:55:59,975 [102] INFO  Umbraco.Core.PluginManager - [Thread 96] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 2 (took 4ms)
+2013-04-18 20:56:27,129 [102] INFO  umbraco.BusinessLogic.Log - [Thread 20] Log scrubbed.  Removed all items older than 2013-02-17 20:56:27
+2013-04-18 20:56:27,132 [102] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 20] Application shutdown. Reason: ConfigurationChange
+2013-04-18 20:56:28,168 [73] INFO  Umbraco.Core.CoreBootManager - [Thread 100] Umbraco application starting
+2013-04-18 20:56:28,198 [73] INFO  Umbraco.Core.PluginManager - [Thread 100] Determining hash of code files on disk
+2013-04-18 20:56:28,207 [73] INFO  Umbraco.Core.PluginManager - [Thread 100] Hash determined (took 7ms)
+2013-04-18 20:56:28,334 [73] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 19 (took 116ms)
+2013-04-18 20:56:28,359 [73] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 4ms)
+2013-04-18 20:56:28,363 [73] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+2013-04-18 20:56:28,367 [73] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 1 (took 3ms)
+2013-04-18 20:56:28,374 [73] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 3ms)
+2013-04-18 20:56:28,378 [73] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 3ms)
+2013-04-18 20:56:28,484 [73] INFO  Umbraco.Core.CoreBootManager - [Thread 100] Umbraco application startup complete (took 307ms)
+2013-04-18 20:56:28,669 [73] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 7ms)
+2013-04-18 20:56:28,716 [73] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 5ms)
+2013-04-18 20:56:28,761 [73] INFO  umbraco.BusinessLogic.Log - [Thread 98] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Custom | User: 0 | NodeId: -1 | Comment: [UmbracoExamine] Adding examine event handlers for index providers: 3
+2013-04-18 20:56:28,895 [73] INFO  umbraco.content - [Thread 75] Loading content from disk cache...
+2013-04-18 20:56:29,179 [73] INFO  Umbraco.Core.PluginManager - [Thread 75] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 2 (took 4ms)
+2013-04-18 20:56:54,505 [73] INFO  Umbraco.Core.PluginManager - [Thread 96] Completed resolution of types of umbraco.interfaces.IDataType, found 35 (took 4ms)
+2013-04-18 20:56:54,519 [73] INFO  Umbraco.Core.PluginManager - [Thread 96] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 3ms)
+2013-04-18 20:57:17,615 [73] INFO  Umbraco.Core.PluginManager - [Thread 80] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 4ms)
+2013-04-18 20:57:17,910 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 80] Content 'BHP' with Id '1150' has been published.
+2013-04-18 20:57:18,002 [73] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 80] Error adding node 1048 to SiteMapProvider in loadNodes()
+System.InvalidOperationException: Multiple nodes with the same URL '/' were found. XmlSiteMapProvider requires that sitemap nodes have unique URLs.
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.loadNodes(String parentId, SiteMapNode parentNode)
+2013-04-18 20:59:41,342 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 80] Content 'Dividend Investing' with Id '1052' has been published.
+2013-04-18 21:03:37,616 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 16] Content 'Sample Site Root' with Id '1127' has been published.
+2013-04-18 21:03:37,816 [73] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 16] Error adding node with url 'Sample Site Root' and Id 1127 to SiteMapProvider
+System.Web.HttpException (0x80004005): 'http://blog.fat.local/' is not a valid virtual path.
+   at System.Web.Util.UrlPath.CheckValidVirtualPath(String path)
+   at System.Web.Util.UrlPath.Combine(String appPath, String basepath, String relative)
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.UpdateNode(Node node)
+2013-04-18 21:04:05,319 [73] WARN  umbraco.macro - [Thread 64] Error loading Partial View (file: ~/Views/MacroPartials/uBlogsy/uBlogsyMacroShowSomeLove.cshtml). Exception: System.ArgumentException: Current node is null. This might be due to previewing an unpublished node. As the NodeFactory works with published data, macros using the node factory won't work in preview mode.
+Parameter name: Current node is 1128
+   at umbraco.NodeFactory.Node.getCurrentNodeId()
+   at umbraco.macro.LoadPartialViewMacro(MacroModel macro)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-04-18 21:04:10,619 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 32] Content 'Sample Site Root' with Id '1127' has been published.
+2013-04-18 21:04:10,815 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 32] Content 'Blog' with Id '1128' has been published.
+2013-04-18 21:04:11,319 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 32] Content 'Tags' with Id '1129' has been published.
+2013-04-18 21:04:11,419 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 32] Content 'Tag 1' with Id '1130' has been published.
+2013-04-18 21:04:11,485 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 32] Content 'Comment Configuration' with Id '1131' has been published.
+2013-04-18 21:04:11,680 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 32] Content 'Admin Contact Email' with Id '1132' has been published.
+2013-04-18 21:04:11,787 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 32] Content 'Admin Notification Email' with Id '1133' has been published.
+2013-04-18 21:04:11,896 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 32] Content 'Subscriber Notification Email' with Id '1134' has been published.
+2013-04-18 21:04:12,005 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 32] Content 'RSS' with Id '1135' has been published.
+2013-04-18 21:04:12,149 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 32] Content 'Labels (optional)' with Id '1136' has been published.
+2013-04-18 21:04:12,303 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 32] Content 'Category 1' with Id '1137' has been published.
+2013-04-18 21:04:12,421 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 32] Content 'Authors' with Id '1138' has been published.
+2013-04-18 21:04:12,565 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 32] Content 'Author 1' with Id '1139' has been published.
+2013-04-18 21:04:12,692 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 32] Content 'About' with Id '1140' has been published.
+2013-04-18 21:04:12,882 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 32] Content 'Contact' with Id '1141' has been published.
+2013-04-18 21:04:13,068 [73] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 32] Error adding node with url 'Blog' and Id 1128 to SiteMapProvider
+System.Web.HttpException (0x80004005): 'http://blog.fat.local/blog/' is not a valid virtual path.
+   at System.Web.Util.UrlPath.CheckValidVirtualPath(String path)
+   at System.Web.Util.UrlPath.Combine(String appPath, String basepath, String relative)
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.UpdateNode(Node node)
+2013-04-18 21:04:13,073 [73] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 32] Error adding node with url 'Tags' and Id 1129 to SiteMapProvider
+System.Web.HttpException (0x80004005): 'http://blog.fat.local/blog/tags/' is not a valid virtual path.
+   at System.Web.Util.UrlPath.CheckValidVirtualPath(String path)
+   at System.Web.Util.UrlPath.Combine(String appPath, String basepath, String relative)
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.UpdateNode(Node node)
+2013-04-18 21:04:13,078 [73] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 32] Error adding node with url 'Tag 1' and Id 1130 to SiteMapProvider
+System.Web.HttpException (0x80004005): 'http://blog.fat.local/blog/tags/tag-1/' is not a valid virtual path.
+   at System.Web.Util.UrlPath.CheckValidVirtualPath(String path)
+   at System.Web.Util.UrlPath.Combine(String appPath, String basepath, String relative)
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.UpdateNode(Node node)
+2013-04-18 21:04:13,083 [73] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 32] Error adding node with url 'Comment Configuration' and Id 1131 to SiteMapProvider
+System.Web.HttpException (0x80004005): 'http://blog.fat.local/blog/comment-configuration/' is not a valid virtual path.
+   at System.Web.Util.UrlPath.CheckValidVirtualPath(String path)
+   at System.Web.Util.UrlPath.Combine(String appPath, String basepath, String relative)
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.UpdateNode(Node node)
+2013-04-18 21:04:13,087 [73] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 32] Error adding node with url 'Admin Contact Email' and Id 1132 to SiteMapProvider
+System.Web.HttpException (0x80004005): 'http://blog.fat.local/blog/comment-configuration/admin-contact-email/' is not a valid virtual path.
+   at System.Web.Util.UrlPath.CheckValidVirtualPath(String path)
+   at System.Web.Util.UrlPath.Combine(String appPath, String basepath, String relative)
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.UpdateNode(Node node)
+2013-04-18 21:04:13,091 [73] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 32] Error adding node with url 'Admin Notification Email' and Id 1133 to SiteMapProvider
+System.Web.HttpException (0x80004005): 'http://blog.fat.local/blog/comment-configuration/admin-notification-email/' is not a valid virtual path.
+   at System.Web.Util.UrlPath.CheckValidVirtualPath(String path)
+   at System.Web.Util.UrlPath.Combine(String appPath, String basepath, String relative)
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.UpdateNode(Node node)
+2013-04-18 21:04:13,096 [73] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 32] Error adding node with url 'Subscriber Notification Email' and Id 1134 to SiteMapProvider
+System.Web.HttpException (0x80004005): 'http://blog.fat.local/blog/comment-configuration/subscriber-notification-email/' is not a valid virtual path.
+   at System.Web.Util.UrlPath.CheckValidVirtualPath(String path)
+   at System.Web.Util.UrlPath.Combine(String appPath, String basepath, String relative)
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.UpdateNode(Node node)
+2013-04-18 21:04:13,101 [73] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 32] Error adding node with url 'RSS' and Id 1135 to SiteMapProvider
+System.Web.HttpException (0x80004005): 'http://blog.fat.local/blog/rss/' is not a valid virtual path.
+   at System.Web.Util.UrlPath.CheckValidVirtualPath(String path)
+   at System.Web.Util.UrlPath.Combine(String appPath, String basepath, String relative)
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.UpdateNode(Node node)
+2013-04-18 21:04:13,106 [73] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 32] Error adding node with url 'Labels (optional)' and Id 1136 to SiteMapProvider
+System.Web.HttpException (0x80004005): 'http://blog.fat.local/blog/labels-(optional)/' is not a valid virtual path.
+   at System.Web.Util.UrlPath.CheckValidVirtualPath(String path)
+   at System.Web.Util.UrlPath.Combine(String appPath, String basepath, String relative)
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.UpdateNode(Node node)
+2013-04-18 21:04:13,110 [73] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 32] Error adding node with url 'Category 1' and Id 1137 to SiteMapProvider
+System.Web.HttpException (0x80004005): 'http://blog.fat.local/blog/labels-(optional)/category-1/' is not a valid virtual path.
+   at System.Web.Util.UrlPath.CheckValidVirtualPath(String path)
+   at System.Web.Util.UrlPath.Combine(String appPath, String basepath, String relative)
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.UpdateNode(Node node)
+2013-04-18 21:04:13,114 [73] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 32] Error adding node with url 'Authors' and Id 1138 to SiteMapProvider
+System.Web.HttpException (0x80004005): 'http://blog.fat.local/blog/authors/' is not a valid virtual path.
+   at System.Web.Util.UrlPath.CheckValidVirtualPath(String path)
+   at System.Web.Util.UrlPath.Combine(String appPath, String basepath, String relative)
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.UpdateNode(Node node)
+2013-04-18 21:04:13,118 [73] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 32] Error adding node with url 'Author 1' and Id 1139 to SiteMapProvider
+System.Web.HttpException (0x80004005): 'http://blog.fat.local/blog/authors/author-1/' is not a valid virtual path.
+   at System.Web.Util.UrlPath.CheckValidVirtualPath(String path)
+   at System.Web.Util.UrlPath.Combine(String appPath, String basepath, String relative)
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.UpdateNode(Node node)
+2013-04-18 21:04:13,122 [73] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 32] Error adding node with url 'About' and Id 1140 to SiteMapProvider
+System.Web.HttpException (0x80004005): 'http://blog.fat.local/about/' is not a valid virtual path.
+   at System.Web.Util.UrlPath.CheckValidVirtualPath(String path)
+   at System.Web.Util.UrlPath.Combine(String appPath, String basepath, String relative)
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.UpdateNode(Node node)
+2013-04-18 21:04:13,126 [73] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 32] Error adding node with url 'Contact' and Id 1141 to SiteMapProvider
+System.Web.HttpException (0x80004005): 'http://blog.fat.local/contact/' is not a valid virtual path.
+   at System.Web.Util.UrlPath.CheckValidVirtualPath(String path)
+   at System.Web.Util.UrlPath.Combine(String appPath, String basepath, String relative)
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.UpdateNode(Node node)
+2013-04-18 21:05:39,770 [73] INFO  umbraco.cms.businesslogic.web.Document - [Thread 80] New document 1155
+2013-04-18 21:05:54,444 [73] ERROR System.Exception - [Thread 67] During indexing luceneFieldName:uBlogsySearchableLabels, propertyAlias:uBlogsyPostLabels.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:05:54,444 [73] ERROR System.Exception - [Thread 67] During indexing luceneFieldName:uBlogsySearchableLabels, propertyAlias:uBlogsyPostLabels, aliasInNode:uBlogsyLabelName.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIndexByPropertyInSelectedNodes(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias, String aliasInNode) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 31
+2013-04-18 21:05:54,445 [73] ERROR System.Exception - [Thread 67] During indexing luceneFieldName:uBlogsySearchableLabelIds, propertyAlias:uBlogsyPostLabels.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:05:54,445 [73] ERROR System.Exception - [Thread 67] During indexing luceneFieldName:uBlogsySearchableLabelIds, propertyAlias:uBlogsyPostLabels.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIdsFromCsvProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 66
+2013-04-18 21:05:54,445 [73] ERROR System.Exception - [Thread 67] During indexing luceneFieldName:uBlogsySearchableAuthor, propertyAlias:uBlogsyPostAuthor.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:05:54,445 [73] ERROR System.Exception - [Thread 67] During indexing luceneFieldName:uBlogsySearchableAuthor, propertyAlias:uBlogsyPostAuthor, aliasInNode:uBlogsyAuthorName.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIndexByPropertyInSelectedNodes(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias, String aliasInNode) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 31
+2013-04-18 21:05:54,445 [73] ERROR System.Exception - [Thread 67] During indexing luceneFieldName:uBlogsySearchableAuthorIds, propertyAlias:uBlogsyPostAuthor.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:05:54,445 [73] ERROR System.Exception - [Thread 67] During indexing luceneFieldName:uBlogsySearchableAuthorIds, propertyAlias:uBlogsyPostAuthor.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIdsFromCsvProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 66
+2013-04-18 21:05:54,445 [73] ERROR System.Exception - [Thread 67] During indexing luceneFieldName:uBlogsySearchableTags, propertyAlias:uBlogsyPostTags.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:05:54,445 [73] ERROR System.Exception - [Thread 67] During indexing luceneFieldName:uBlogsySearchableTags, propertyAlias:uBlogsyPostTags, aliasInNode:uTagsyTagName.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIndexByPropertyInSelectedNodes(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias, String aliasInNode) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 31
+2013-04-18 21:05:54,445 [73] ERROR System.Exception - [Thread 67] During indexing luceneFieldName:uBlogsySearchableTagIds, propertyAlias:uBlogsyPostTags.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:05:54,445 [73] ERROR System.Exception - [Thread 67] During indexing luceneFieldName:uBlogsySearchableTagIds, propertyAlias:uBlogsyPostTags.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIdsFromCsvProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 66
+2013-04-18 21:05:54,566 [73] ERROR System.Exception - [Thread 80] During indexing luceneFieldName:uBlogsySearchableLabels, propertyAlias:uBlogsyPostLabels.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:05:54,566 [73] ERROR System.Exception - [Thread 80] During indexing luceneFieldName:uBlogsySearchableLabels, propertyAlias:uBlogsyPostLabels, aliasInNode:uBlogsyLabelName.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIndexByPropertyInSelectedNodes(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias, String aliasInNode) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 31
+2013-04-18 21:05:54,566 [73] ERROR System.Exception - [Thread 80] During indexing luceneFieldName:uBlogsySearchableLabelIds, propertyAlias:uBlogsyPostLabels.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:05:54,566 [73] ERROR System.Exception - [Thread 80] During indexing luceneFieldName:uBlogsySearchableLabelIds, propertyAlias:uBlogsyPostLabels.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIdsFromCsvProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 66
+2013-04-18 21:05:54,566 [73] ERROR System.Exception - [Thread 80] During indexing luceneFieldName:uBlogsySearchableAuthor, propertyAlias:uBlogsyPostAuthor.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:05:54,566 [73] ERROR System.Exception - [Thread 80] During indexing luceneFieldName:uBlogsySearchableAuthor, propertyAlias:uBlogsyPostAuthor, aliasInNode:uBlogsyAuthorName.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIndexByPropertyInSelectedNodes(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias, String aliasInNode) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 31
+2013-04-18 21:05:54,566 [73] ERROR System.Exception - [Thread 80] During indexing luceneFieldName:uBlogsySearchableAuthorIds, propertyAlias:uBlogsyPostAuthor.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:05:54,566 [73] ERROR System.Exception - [Thread 80] During indexing luceneFieldName:uBlogsySearchableAuthorIds, propertyAlias:uBlogsyPostAuthor.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIdsFromCsvProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 66
+2013-04-18 21:05:54,566 [73] ERROR System.Exception - [Thread 80] During indexing luceneFieldName:uBlogsySearchableTags, propertyAlias:uBlogsyPostTags.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:05:54,566 [73] ERROR System.Exception - [Thread 80] During indexing luceneFieldName:uBlogsySearchableTags, propertyAlias:uBlogsyPostTags, aliasInNode:uTagsyTagName.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIndexByPropertyInSelectedNodes(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias, String aliasInNode) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 31
+2013-04-18 21:05:54,567 [73] ERROR System.Exception - [Thread 80] During indexing luceneFieldName:uBlogsySearchableTagIds, propertyAlias:uBlogsyPostTags.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:05:54,567 [73] ERROR System.Exception - [Thread 80] During indexing luceneFieldName:uBlogsySearchableTagIds, propertyAlias:uBlogsyPostTags.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIdsFromCsvProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 66
+2013-04-18 21:05:54,631 [73] INFO  umbraco.cms.businesslogic.web.Document - [Thread 82] New document 1156
+2013-04-18 21:06:00,959 [73] ERROR System.Exception - [Thread 61] During indexing luceneFieldName:uBlogsySearchableLabels, propertyAlias:uBlogsyPostLabels.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:06:00,959 [73] ERROR System.Exception - [Thread 61] During indexing luceneFieldName:uBlogsySearchableLabels, propertyAlias:uBlogsyPostLabels, aliasInNode:uBlogsyLabelName.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIndexByPropertyInSelectedNodes(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias, String aliasInNode) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 31
+2013-04-18 21:06:00,959 [73] ERROR System.Exception - [Thread 61] During indexing luceneFieldName:uBlogsySearchableLabelIds, propertyAlias:uBlogsyPostLabels.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:06:00,959 [73] ERROR System.Exception - [Thread 61] During indexing luceneFieldName:uBlogsySearchableLabelIds, propertyAlias:uBlogsyPostLabels.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIdsFromCsvProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 66
+2013-04-18 21:06:00,959 [73] ERROR System.Exception - [Thread 61] During indexing luceneFieldName:uBlogsySearchableAuthor, propertyAlias:uBlogsyPostAuthor.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:06:00,959 [73] ERROR System.Exception - [Thread 61] During indexing luceneFieldName:uBlogsySearchableAuthor, propertyAlias:uBlogsyPostAuthor, aliasInNode:uBlogsyAuthorName.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIndexByPropertyInSelectedNodes(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias, String aliasInNode) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 31
+2013-04-18 21:06:00,960 [73] ERROR System.Exception - [Thread 61] During indexing luceneFieldName:uBlogsySearchableAuthorIds, propertyAlias:uBlogsyPostAuthor.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:06:00,960 [73] ERROR System.Exception - [Thread 61] During indexing luceneFieldName:uBlogsySearchableAuthorIds, propertyAlias:uBlogsyPostAuthor.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIdsFromCsvProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 66
+2013-04-18 21:06:01,045 [73] ERROR System.Exception - [Thread 52] During indexing luceneFieldName:uBlogsySearchableLabels, propertyAlias:uBlogsyPostLabels.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:06:01,045 [73] ERROR System.Exception - [Thread 52] During indexing luceneFieldName:uBlogsySearchableLabels, propertyAlias:uBlogsyPostLabels, aliasInNode:uBlogsyLabelName.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIndexByPropertyInSelectedNodes(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias, String aliasInNode) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 31
+2013-04-18 21:06:01,045 [73] ERROR System.Exception - [Thread 52] During indexing luceneFieldName:uBlogsySearchableLabelIds, propertyAlias:uBlogsyPostLabels.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:06:01,045 [73] ERROR System.Exception - [Thread 52] During indexing luceneFieldName:uBlogsySearchableLabelIds, propertyAlias:uBlogsyPostLabels.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIdsFromCsvProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 66
+2013-04-18 21:06:01,045 [73] ERROR System.Exception - [Thread 52] During indexing luceneFieldName:uBlogsySearchableAuthor, propertyAlias:uBlogsyPostAuthor.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:06:01,045 [73] ERROR System.Exception - [Thread 52] During indexing luceneFieldName:uBlogsySearchableAuthor, propertyAlias:uBlogsyPostAuthor, aliasInNode:uBlogsyAuthorName.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIndexByPropertyInSelectedNodes(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias, String aliasInNode) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 31
+2013-04-18 21:06:01,046 [73] ERROR System.Exception - [Thread 52] During indexing luceneFieldName:uBlogsySearchableAuthorIds, propertyAlias:uBlogsyPostAuthor.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:06:01,046 [73] ERROR System.Exception - [Thread 52] During indexing luceneFieldName:uBlogsySearchableAuthorIds, propertyAlias:uBlogsyPostAuthor.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIdsFromCsvProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 66
+2013-04-18 21:06:08,170 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 45] Content 'Blog' with Id '1128' has been published.
+2013-04-18 21:06:08,460 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 45] Content 'Tags' with Id '1129' has been published.
+2013-04-18 21:06:08,499 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 45] Content 'Tag 1' with Id '1130' has been published.
+2013-04-18 21:06:08,544 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 45] Content 'Comment Configuration' with Id '1131' has been published.
+2013-04-18 21:06:08,672 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 45] Content 'Admin Contact Email' with Id '1132' has been published.
+2013-04-18 21:06:08,772 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 45] Content 'Admin Notification Email' with Id '1133' has been published.
+2013-04-18 21:06:08,878 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 45] Content 'Subscriber Notification Email' with Id '1134' has been published.
+2013-04-18 21:06:08,971 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 45] Content 'RSS' with Id '1135' has been published.
+2013-04-18 21:06:09,105 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 45] Content 'Labels (optional)' with Id '1136' has been published.
+2013-04-18 21:06:09,204 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 45] Content 'Category 1' with Id '1137' has been published.
+2013-04-18 21:06:09,310 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 45] Content 'Authors' with Id '1138' has been published.
+2013-04-18 21:06:09,409 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 45] Content 'Author 1' with Id '1139' has been published.
+2013-04-18 21:06:09,525 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 45] Content '2013' with Id '1155' has been published.
+2013-04-18 21:06:09,559 [73] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 45] Content 'Frist Post!' with Id '1156' has been published.
+2013-04-18 21:06:09,810 [73] ERROR System.Exception - [Thread 79] During indexing luceneFieldName:uBlogsySearchableLabels, propertyAlias:uBlogsyPostLabels.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:06:09,810 [73] ERROR System.Exception - [Thread 79] During indexing luceneFieldName:uBlogsySearchableLabels, propertyAlias:uBlogsyPostLabels, aliasInNode:uBlogsyLabelName.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIndexByPropertyInSelectedNodes(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias, String aliasInNode) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 31
+2013-04-18 21:06:09,810 [73] ERROR System.Exception - [Thread 79] During indexing luceneFieldName:uBlogsySearchableLabelIds, propertyAlias:uBlogsyPostLabels.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:06:09,810 [73] ERROR System.Exception - [Thread 79] During indexing luceneFieldName:uBlogsySearchableLabelIds, propertyAlias:uBlogsyPostLabels.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIdsFromCsvProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 66
+2013-04-18 21:06:09,810 [73] ERROR System.Exception - [Thread 79] During indexing luceneFieldName:uBlogsySearchableAuthor, propertyAlias:uBlogsyPostAuthor.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:06:09,810 [73] ERROR System.Exception - [Thread 79] During indexing luceneFieldName:uBlogsySearchableAuthor, propertyAlias:uBlogsyPostAuthor, aliasInNode:uBlogsyAuthorName.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIndexByPropertyInSelectedNodes(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias, String aliasInNode) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 31
+2013-04-18 21:06:09,810 [73] ERROR System.Exception - [Thread 79] During indexing luceneFieldName:uBlogsySearchableAuthorIds, propertyAlias:uBlogsyPostAuthor.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.GetValueFromFieldOrProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 98
+2013-04-18 21:06:09,810 [73] ERROR System.Exception - [Thread 79] During indexing luceneFieldName:uBlogsySearchableAuthorIds, propertyAlias:uBlogsyPostAuthor.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uHelpsy.Helpers.ExamineIndexHelper.AddIdsFromCsvProperty(IndexingNodeDataEventArgs e, String luceneFieldName, String propertyAlias) in D:\_PROJECTS\Personal\uHelpsy - Library\uHelpsy\Source\uHelpsy.Web\Helpers\ExamineIndexHelper.cs:line 66
+2013-04-18 21:06:09,892 [73] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 45] Error adding node with url '2013' and Id 1155 to SiteMapProvider
+System.Web.HttpException (0x80004005): 'http://blog.fat.local/blog/2013/' is not a valid virtual path.
+   at System.Web.Util.UrlPath.CheckValidVirtualPath(String path)
+   at System.Web.Util.UrlPath.Combine(String appPath, String basepath, String relative)
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.UpdateNode(Node node)
+2013-04-18 21:06:09,897 [73] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 45] Error adding node with url 'Frist Post!' and Id 1156 to SiteMapProvider
+System.Web.HttpException (0x80004005): 'http://blog.fat.local/blog/2013/frist-post!/' is not a valid virtual path.
+   at System.Web.Util.UrlPath.CheckValidVirtualPath(String path)
+   at System.Web.Util.UrlPath.Combine(String appPath, String basepath, String relative)
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.UpdateNode(Node node)
+2013-04-18 21:06:43,664 [73] INFO  umbraco.BusinessLogic.Log - [Thread 76] Log scrubbed.  Removed all items older than 2013-02-17 21:06:43
+2013-04-18 21:06:43,667 [73] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 76] Application shutdown. Reason: ConfigurationChange
+2013-04-18 21:06:44,396 [19] INFO  Umbraco.Core.CoreBootManager - [Thread 100] Umbraco application starting
+2013-04-18 21:06:44,426 [19] INFO  Umbraco.Core.PluginManager - [Thread 100] Determining hash of code files on disk
+2013-04-18 21:06:44,435 [19] INFO  Umbraco.Core.PluginManager - [Thread 100] Hash determined (took 7ms)
+2013-04-18 21:06:44,562 [19] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 19 (took 116ms)
+2013-04-18 21:06:44,585 [19] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 4ms)
+2013-04-18 21:06:44,590 [19] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+2013-04-18 21:06:44,594 [19] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 1 (took 3ms)
+2013-04-18 21:06:44,601 [19] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 3ms)
+2013-04-18 21:06:44,605 [19] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 3ms)
+2013-04-18 21:06:44,710 [19] INFO  Umbraco.Core.CoreBootManager - [Thread 100] Umbraco application startup complete (took 305ms)
+2013-04-18 21:06:44,886 [19] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 7ms)
+2013-04-18 21:06:44,933 [19] INFO  Umbraco.Core.PluginManager - [Thread 100] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 5ms)
+2013-04-18 21:06:44,989 [19] INFO  umbraco.BusinessLogic.Log - [Thread 45] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Custom | User: 0 | NodeId: -1 | Comment: [UmbracoExamine] Adding examine event handlers for index providers: 3
+2013-04-18 21:07:45,250 [19] INFO  umbraco.content - [Thread 13] Loading content from disk cache...
+2013-04-18 21:07:45,755 [19] INFO  Umbraco.Core.PluginManager - [Thread 13] Completed resolution of types of umbraco.interfaces.IDataType, found 35 (took 4ms)
+2013-04-18 21:07:45,770 [19] INFO  Umbraco.Core.PluginManager - [Thread 13] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 3ms)
+2013-04-18 21:07:47,553 [19] INFO  Umbraco.Core.PluginManager - [Thread 13] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 2 (took 4ms)
+2013-04-18 21:07:57,526 [19] INFO  Umbraco.Core.PluginManager - [Thread 45] Completed resolution of types of umbraco.MacroEngines.IRazorDataTypeModel, found 2 (took 4ms)
+2013-04-18 21:18:56,354 [19] INFO  umbraco.BusinessLogic.Log - [Thread 92] Log scrubbed.  Removed all items older than 2013-02-17 21:18:56
+2013-04-18 21:18:56,356 [19] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 92] Application shutdown. Reason: ConfigurationChange
+2013-04-18 21:19:02,019 [66] INFO  Umbraco.Core.CoreBootManager - [Thread 40] Umbraco application starting
+2013-04-18 21:19:02,041 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Determining hash of code files on disk
+2013-04-18 21:19:02,051 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Hash determined (took 8ms)
+2013-04-18 21:19:02,190 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 19 (took 127ms)
+2013-04-18 21:19:02,207 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 4ms)
+2013-04-18 21:19:02,211 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+2013-04-18 21:19:02,216 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 1 (took 4ms)
+2013-04-18 21:19:02,220 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 3ms)
+2013-04-18 21:19:02,225 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 4ms)
+2013-04-18 21:19:02,310 [66] INFO  Umbraco.Core.CoreBootManager - [Thread 40] Umbraco application startup complete (took 291ms)
+2013-04-18 21:19:02,433 [66] INFO  umbraco.BusinessLogic.Log - [Thread 59] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Custom | User: 0 | NodeId: -1 | Comment: [UmbracoExamine] Adding examine event handlers for index providers: 3
+2013-04-18 21:19:02,440 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 7ms)
+2013-04-18 21:19:02,475 [66] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 5ms)
+2013-04-18 21:19:02,569 [66] INFO  umbraco.content - [Thread 87] Loading content from disk cache...
+2013-04-18 21:19:03,661 [66] INFO  Umbraco.Core.PluginManager - [Thread 87] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 2 (took 4ms)
+2013-04-18 21:19:04,854 [66] INFO  Umbraco.Core.PluginManager - [Thread 87] Completed resolution of types of umbraco.interfaces.IDataType, found 35 (took 4ms)
+2013-04-18 21:19:04,858 [66] INFO  Umbraco.Core.PluginManager - [Thread 87] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 3ms)
+2013-04-18 21:19:57,528 [66] INFO  umbraco.BusinessLogic.Log - [Thread 97] Log scrubbed.  Removed all items older than 2013-02-17 21:19:57
+2013-04-18 21:19:57,530 [66] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 97] Application shutdown. Reason: ConfigurationChange
+2013-04-18 21:20:03,491 [22] INFO  Umbraco.Core.CoreBootManager - [Thread 40] Umbraco application starting
+2013-04-18 21:20:03,522 [22] INFO  Umbraco.Core.PluginManager - [Thread 40] Determining hash of code files on disk
+2013-04-18 21:20:03,534 [22] INFO  Umbraco.Core.PluginManager - [Thread 40] Hash determined (took 10ms)
+2013-04-18 21:20:03,668 [22] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 19 (took 122ms)
+2013-04-18 21:20:03,694 [22] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 4ms)
+2013-04-18 21:20:03,698 [22] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+2013-04-18 21:20:03,703 [22] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 1 (took 3ms)
+2013-04-18 21:20:03,712 [22] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 4ms)
+2013-04-18 21:20:03,716 [22] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 4ms)
+2013-04-18 21:20:03,823 [22] INFO  Umbraco.Core.CoreBootManager - [Thread 40] Umbraco application startup complete (took 323ms)
+2013-04-18 21:20:04,005 [22] INFO  umbraco.BusinessLogic.Log - [Thread 78] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Custom | User: 0 | NodeId: -1 | Comment: [UmbracoExamine] Adding examine event handlers for index providers: 3
+2013-04-18 21:20:04,025 [22] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 7ms)
+2013-04-18 21:20:04,072 [22] INFO  Umbraco.Core.PluginManager - [Thread 40] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 4ms)
+2013-04-18 21:20:04,212 [22] INFO  umbraco.content - [Thread 87] Loading content from disk cache...
+2013-04-18 21:20:05,649 [22] INFO  Umbraco.Core.PluginManager - [Thread 87] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 2 (took 4ms)
+2013-04-18 21:20:09,261 [22] INFO  Umbraco.Core.PluginManager - [Thread 87] Completed resolution of types of umbraco.interfaces.IDataType, found 35 (took 4ms)
+2013-04-18 21:20:09,279 [22] INFO  Umbraco.Core.PluginManager - [Thread 87] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 5ms)

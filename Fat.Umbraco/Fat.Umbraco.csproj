@@ -181,6 +181,7 @@
     <Content Include="css\Images\home.png" />
     <Content Include="css\Images\logo.png" />
     <Content Include="css\indexWidget.css" />
+    <Content Include="css\investmentNews.css" />
     <Content Include="css\layout.css" />
     <Content Include="css\mainNav.css" />
     <Content Include="css\search.css" />
@@ -207,6 +208,8 @@
     <Content Include="macroScripts\EarningsCalendarWidget.cshtml" />
     <Content Include="macroScripts\TabWidget.cshtml" />
     <Content Include="macroScripts\CalendarWidget.cshtml" />
+    <Content Include="macroScripts\InvestmentNews.cshtml" />
+    <Content Include="masterpages\InvestmentNews.master" />
     <None Include="scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="scripts\jquery-1.7.1.min.js" />
     <Content Include="scripts\jQuery.tmpl.min.js" />
@@ -230,6 +233,7 @@
     <Compile Include="DocumentTypes\ContentPage.cs" />
     <Compile Include="DocumentTypes\Folder.cs" />
     <Compile Include="DocumentTypes\HomePage.cs" />
+    <Compile Include="DocumentTypes\InvestmentNewsPage.cs" />
     <Compile Include="DocumentTypes\Item.cs" />
     <Compile Include="DocumentTypes\LinkItem.cs" />
     <Compile Include="DocumentTypes\Page.cs" />
@@ -254,6 +258,13 @@
     </Compile>
     <Compile Include="masterpages\Home.master.designer.cs">
       <DependentUpon>Home.master</DependentUpon>
+    </Compile>
+    <Compile Include="masterpages\InvestmentNews.master.cs">
+      <DependentUpon>InvestmentNews.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="masterpages\InvestmentNews.master.designer.cs">
+      <DependentUpon>InvestmentNews.master</DependentUpon>
     </Compile>
     <Compile Include="masterpages\Search.master.cs">
       <DependentUpon>Search.master</DependentUpon>

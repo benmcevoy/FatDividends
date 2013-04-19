@@ -1,0 +1,27 @@
+﻿#investmentNews {
+    width: 975px;
+}
+
+    #investmentNews ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+        #investmentNews ul li {
+            padding: 5px 0;
+        }
+
+            #investmentNews ul li a {
+                color: #17A9DA;
+                font-size: 0.85em;
+                text-decoration: none;
+            }
+
+            #investmentNews div.title {
+                font-size: 1.2em;
+            }
+
+            #investmentNews div.snippet {
+                color: #555;
+            }  

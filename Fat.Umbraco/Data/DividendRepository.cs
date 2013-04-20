@@ -21,7 +21,14 @@ namespace Fat.Umbraco.Data
         {
             using (var service = new DividendService())
             {
-                return service.Get(HttpContext.Current.Request.QueryString["code"], count).ToList();
+                var stockCode = HttpContext.Current.Request.QueryString["code"];
+
+                if (string.IsNullOrEmpty(stockCode))
+                {
+                    return service.Get(count).ToList();
+                }
+
+                return service.Get(stockCode, count).ToList();
             }
         }
     }

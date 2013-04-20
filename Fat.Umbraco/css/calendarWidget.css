@@ -1,0 +1,12 @@
+﻿#dividendCalendarEntries {
+}
+
+    #dividendCalendarEntries .calendarEntry {
+    }
+
+        #dividendCalendarEntries .calendarEntry td.name {
+        }
+
+        #dividendCalendarEntries .calendarEntry td.date {
+            width: 65px;
+        }

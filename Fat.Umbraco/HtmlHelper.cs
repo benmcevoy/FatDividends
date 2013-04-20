@@ -62,6 +62,7 @@ namespace Fat.Umbraco
             else if (!string.IsNullOrWhiteSpace(internalLink))
             {
                 var internalItem = item.NodeById(internalLink);
+                
                 url = internalItem.NiceUrl;
             }
 

@@ -55,37 +55,7 @@ namespace Fat.Services
 
             if (earning == null)
             {
-                // insert
-                earning = new StockEarning
-                {
-                    ReportedDate = stockEarning.ReportedDate,
-                    Year = stockEarning.Year,
-                    CreatedUtcDate = DateTime.UtcNow,
-                    StockCode = stockEarning.StockCode,
-                    Period = stockEarning.Period,
-                    NPAT = stockEarning.NPAT,
-                    Margin = stockEarning.Margin,
-                    CashFlow = stockEarning.CashFlow,
-                    EPS = stockEarning.EPS,
-                    DPS = stockEarning.DPS,
-                    ROE = stockEarning.ROE,
-                };
-
-                context.StockEarnings.Add(earning);
-            }
-            else
-            {
-                // update
-                earning.ReportedDate = stockEarning.ReportedDate;
-                earning.ModifiedUtcDate = DateTime.UtcNow;
-                earning.Year = stockEarning.Year;
-                earning.Period = stockEarning.Period;
-                earning.NPAT = stockEarning.NPAT;
-                earning.Margin = stockEarning.Margin;
-                earning.CashFlow = stockEarning.CashFlow;
-                earning.EPS = stockEarning.EPS;
-                earning.DPS = stockEarning.DPS;
-                earning.ROE = stockEarning.ROE;
+                context.StockEarnings.Add(stockEarning);
             }
         }
     }

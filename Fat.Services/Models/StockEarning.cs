@@ -4,6 +4,11 @@ namespace Fat.Services.Models
 {
     public class StockEarning
     {
+        public StockEarning()
+        {
+            CreatedUtcDate = DateTime.UtcNow;
+        }
+
         public string StockCode { get; set; }
 
         public DateTime ReportedDate { get; set; }
@@ -34,12 +39,7 @@ namespace Fat.Services.Models
         {
             get
             {
-                if (Stock != null)
-                {
-                    return Stock.Name;
-                }
-
-                return "";
+                return Stock != null ? Stock.Name : "";
             }
         }
     }

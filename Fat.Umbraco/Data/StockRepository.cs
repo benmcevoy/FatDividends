@@ -5,7 +5,6 @@ using System.Linq;
 using Fat.Services;
 using Fat.Services.Models;
 using System.Web;
-using umbraco;
 using umbraco.MacroEngines;
 using Fat.Umbraco.DocumentTypes;
 
@@ -20,7 +19,7 @@ namespace Fat.Umbraco.Data
         {
             using (var service = new StockService())
             {
-                return service.Get(HttpContext.Current.Request.QueryString["code"]);
+                return service.Get(GetStockCode());
             }
         }
 
@@ -28,7 +27,7 @@ namespace Fat.Umbraco.Data
         {
             using (var service = new StockService())
             {
-                return service.GetLatestQuote(HttpContext.Current.Request.QueryString["code"]);
+                return service.GetLatestQuote(GetStockCode());
             }
         }
 
@@ -36,20 +35,21 @@ namespace Fat.Umbraco.Data
         {
             using (var service = new StockService())
             {
-                return service.GetQuotes(HttpContext.Current.Request.QueryString["code"],
+                return service.GetQuotes(GetStockCode(),
                                               new DateTime(DateTime.Now.Year, 1, 1), DateTime.Now);
             }
         }
 
         public static string GetSummary(DynamicNodeContext nodeContext)
         {
-            var stockCode = HttpContext.Current.Request.QueryString["code"];
+            var stockCode = GetStockCode();
 
             if (string.IsNullOrEmpty(stockCode))
                 return GetDefaultStockSummary(nodeContext);
 
             var stockSummaryDynamicItem = nodeContext.Current.XPath("//Folder[@nodeName='Config']/Folder[@nodeName='Stock Summaries']/descendant::StockSummaryItem")
-                .Items.FirstOrDefault(item => item.GetPropertyValue("StockCode", String.Empty).Equals(stockCode, StringComparison.CurrentCultureIgnoreCase));
+                .Items.FirstOrDefault(item => item.GetPropertyValue("StockCode", String.Empty)
+                                                    .Equals(stockCode, StringComparison.CurrentCultureIgnoreCase));
 
             return stockSummaryDynamicItem != null ? 
                 stockSummaryDynamicItem.GetPropertyValue("Summary", String.Empty) : 
@@ -58,21 +58,29 @@ namespace Fat.Umbraco.Data
 
         public static string GetDefaultStockSummary(DynamicNodeContext nodeContext)
         {
-            if (_defaultStockSummary == null)
-            {
-                lock (DefaultStockSummaryLock)
-                {
-                    if (_defaultStockSummary == null)
-                    {
-                        var config = (FatConfigSection)ConfigurationManager.GetSection("fatConfig");
-
-                        _defaultStockSummary = Vega.USiteBuilder.ContentHelper
-                            .GetByNodeId<StockSummaryItem>(config.DefaultStockSummaryNodeId).Summary;
-                    }
-                }
-            }
+            EnsureDefaultStockSummary();
 
             return _defaultStockSummary;
+        }
+
+        private static void EnsureDefaultStockSummary()
+        {
+            if (_defaultStockSummary != null) return;
+
+            lock (DefaultStockSummaryLock)
+            {
+                if (_defaultStockSummary != null) return;
+
+                var config = (FatConfigSection) ConfigurationManager.GetSection("fatConfig");
+
+                _defaultStockSummary = Vega.USiteBuilder.ContentHelper
+                                           .GetByNodeId<StockSummaryItem>(config.DefaultStockSummaryNodeId).Summary;
+            }
+        }
+
+        private static string GetStockCode()
+        {
+            return HttpContext.Current.Request.QueryString["code"];
         }
     }
 }

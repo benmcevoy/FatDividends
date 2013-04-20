@@ -4,7 +4,10 @@ namespace Fat.Services.Models
 {
     public class IndexQuote
     {
-        public IndexQuote() { }
+        public IndexQuote()
+        {
+            CreatedUtcDate = DateTime.UtcNow;
+        }
 
         public IndexQuote(string code, decimal price, DateTime closingDate)
         {

@@ -6,9 +6,7 @@ namespace Fat.Services.Models.Mappings
     {
         public StockDividendMap()
         {
-            HasKey(x => new { x.StockCode, x.RecordDate });
-
-            Property(x => x.CreatedUtcDate).HasColumnName("CreateUtcDate");
+            HasKey(x => new { x.StockCode, x.ExDate });
 
             ToTable("StockDividend");
         }

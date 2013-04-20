@@ -36,30 +36,7 @@ namespace Fat.Services
 
             if (indexQuote == null)
             {
-                // insert
-                indexQuote = new IndexQuote
-                {
-                    ClosingDate = quote.ClosingDate,
-                    Price = quote.Price,
-                    CreatedUtcDate = DateTime.UtcNow,
-                    StockCode = quote.StockCode,
-                    Close = quote.Close,
-                    High = quote.High,
-                    Low = quote.Low,
-                    Volume = quote.Volume
-                };
-
-                context.IndexQuotes.Add(indexQuote);
-            }
-            else
-            {
-                // update
-                indexQuote.Price = quote.Price;
-                indexQuote.ModifiedUtcDate = DateTime.UtcNow;
-                indexQuote.Close = quote.Close;
-                indexQuote.High = quote.High;
-                indexQuote.Low = quote.Low;
-                indexQuote.Volume = quote.Volume;
+                context.IndexQuotes.Add(quote);
             }
         }
     }

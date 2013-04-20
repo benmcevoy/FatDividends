@@ -18,6 +18,11 @@ namespace Fat.Services
             return DataContext.Stocks.Include("StockQuotes").AsEnumerable();
         }
 
+        public IEnumerable<Stock> GetWithQuotes(string stockCode)
+        {
+            return DataContext.Stocks.Include("StockQuotes").Where(s => s.Code == stockCode).AsEnumerable();
+        }
+
         public IEnumerable<Stock> GetStocksForRefresh(DateTime staleDate)
         {
             return DataContext.Stocks
@@ -43,30 +48,7 @@ namespace Fat.Services
 
             if (stockQuote == null)
             {
-                // insert
-                stockQuote = new StockQuote
-                    {
-                        ClosingDate = quote.ClosingDate,
-                        Price = quote.Price,
-                        CreatedUtcDate = DateTime.UtcNow,
-                        StockCode = quote.StockCode,
-                        Close = quote.Close,
-                        High = quote.High,
-                        Low = quote.Low,
-                        Volume = quote.Volume
-                    };
-
-                context.StockQuotes.Add(stockQuote);
-            }
-            else
-            {
-                // update
-                stockQuote.Price = quote.Price;
-                stockQuote.Close = quote.Close;
-                stockQuote.High = quote.High;
-                stockQuote.Low = quote.Low;
-                stockQuote.Volume = quote.Volume;
-                stockQuote.ModifiedUtcDate = DateTime.UtcNow;
+                context.StockQuotes.Add(quote);
             }
 
             stock.LastRefreshDateTime = DateTime.UtcNow;

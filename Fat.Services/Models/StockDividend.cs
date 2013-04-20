@@ -4,15 +4,22 @@ namespace Fat.Services.Models
 {
     public class StockDividend
     {
+        public StockDividend()
+        {
+            CreatedUtcDate = DateTime.UtcNow;
+        }
+
         public string StockCode { get; set; }
 
-        public DateTime RecordDate { get; set; }
+        public DateTime? RecordDate { get; set; }
 
         public DateTime ExDate { get; set; }
 
         public decimal Amount { get; set; }
 
         public decimal Franked { get; set; }
+
+        public decimal FrankingCredit { get; set; }
 
         public DateTime PayableDate { get; set; }
 
@@ -26,22 +33,31 @@ namespace Fat.Services.Models
         {
             get
             {
-                if (Stock != null)
-                {
-                    return Stock.Name;
-                }
-
-                return "";
+                return Stock != null ? Stock.Name : "";
             }
         }
 
-        // TODO: also the import
-        // ClosingPrice?? not sure for what date? set on import
+        public string FormattedRecordDate
+        {
+            get
+            {
+                return (RecordDate.HasValue ? RecordDate.Value.ToString("dd MMM yy") : "");
+            }
+        }
 
-        //public decimal GrossedAmount { get; private set; }
-        // Amount * (1 - Franked) + (Amount * Franked) / 0.7
+        /// <summary>
+        /// Closing Price of day before ExDate
+        /// </summary>
+        public decimal ClosingPrice { get; set; }
 
-        //public decimal GrossedYieldPercentage { get; set; }
-        // is GrossedAmount / ClosingPrice on the date payable?
+        public decimal GrossedAmount
+        {
+            get { return Amount * (1 - Franked) + (Amount * Franked) / 0.7m; }
+        }
+
+        public decimal GrossedYieldPercentage
+        {
+            get { return ClosingPrice == 0m ? 0m : GrossedAmount / ClosingPrice; }
+        }
     }
 }

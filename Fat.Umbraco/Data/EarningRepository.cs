@@ -21,7 +21,8 @@ namespace Fat.Umbraco.Data
         {
             using (var service = new EarningService())
             {
-                return service.Get(HttpContext.Current.Request.QueryString["code"], count).ToList(); 
+                var stockCode = HttpContext.Current.Request.QueryString["code"];
+                return service.Get(stockCode, count).ToList(); 
             }
         }
     }

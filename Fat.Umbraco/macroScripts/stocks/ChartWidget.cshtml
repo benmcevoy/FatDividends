@@ -6,10 +6,11 @@
 </div>
 
 <script type="text/javascript">
-    google.load("visualization", "1", { packages: ["corechart"] });
-    google.setOnLoadCallback(drawStockChart);
+    var fat = fat || {};
 
-    function drawStockChart() {
+    fat.charts = function () { return {}; };
+
+    fat.charts.drawStockChart = function() {
         $.ajax({
             url: '/api/stock/quotes/@HttpContext.Current.Request.QueryString["code"]'
         }).done(function (data) {
@@ -23,15 +24,20 @@
             chartData.addColumn('number', 'Price');
 
             var chartOptions = {
-                    curveType: 'function',
-                    width: 600,
-                    height: 200,
-                    legend: 'none',
-                    pointSize: 3,
-                    colors: ['#17A9DA']
+                curveType: 'function',
+                width: 600,
+                height: 200,
+                legend: 'none',
+                pointSize: 3,
+                colors: ['#17A9DA']
             };
             
             chart.draw(chartData, chartOptions);
         });
     };
+    
+    google.load("visualization", "1", { packages: ["corechart"] });
+    google.setOnLoadCallback(fat.charts.drawStockChart);
+
+
 </script>

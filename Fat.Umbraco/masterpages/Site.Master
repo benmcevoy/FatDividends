@@ -20,8 +20,9 @@
             .Add("~/css/search.css")
             .Add("~/css/searchWidget.css")
             .Add("~/css/indexWidget.css")
-            .Add("~/css/earningCalendarWidget.css")
-            .Add("~/css/dividendCalendarWidget.css")
+            .Add("~/css/calendarWidget.css")
+            //.Add("~/css/earningCalendarWidget.css")
+            //.Add("~/css/dividendCalendarWidget.css")
             .Add("~/css/stockDetail.css")
             .Add("~/css/investmentNews.css")
             .Add("~/css/tabs.css")
@@ -33,10 +34,10 @@
         .Add("~/scripts/jquery-1.7.1.min.js")
         .Add("~/scripts/jQuery.tmpl.min.js")
         .Render("~/generated/jquery_#.js") %>
+    
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server" />
-
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
     <!--[if IE 7]>
     <link href="../css/ie7.css" type="text/css" rel="stylesheet" />
@@ -132,6 +133,7 @@
             </div>
         </div>
     </div>
+    
     <script type="text/javascript">
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {

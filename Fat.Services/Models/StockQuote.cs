@@ -4,7 +4,10 @@ namespace Fat.Services.Models
 {
     public class StockQuote
     {
-        public StockQuote() { }
+        public StockQuote()
+        {
+            CreatedUtcDate = DateTime.UtcNow;
+        }
 
         public StockQuote(string code, decimal price, DateTime closingDate)
         {

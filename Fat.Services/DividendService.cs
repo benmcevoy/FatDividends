@@ -51,33 +51,11 @@ namespace Fat.Services
         private void AddUncomitted(FatDataContext context, StockDividend stockDividend)
         {
             // exists
-            var dividend = context.StockDividends.Find(stockDividend.StockCode, stockDividend.RecordDate);
+            var dividend = context.StockDividends.Find(stockDividend.StockCode, stockDividend.ExDate);
 
             if (dividend == null)
             {
-                // insert
-                dividend = new StockDividend
-                {
-                    RecordDate = stockDividend.RecordDate,
-                    ExDate = stockDividend.ExDate,
-                    CreatedUtcDate = DateTime.UtcNow,
-                    StockCode = stockDividend.StockCode,
-                    Amount = stockDividend.Amount,
-                    Franked = stockDividend.Franked,
-                    PayableDate = stockDividend.PayableDate
-                };
-
-                context.StockDividends.Add(dividend);
-            }
-            else
-            {
-                // update
-                dividend.RecordDate = stockDividend.RecordDate;
-                dividend.ModifiedUtcDate = DateTime.UtcNow;
-                dividend.ExDate = stockDividend.ExDate;
-                dividend.Amount = stockDividend.Amount;
-                dividend.Franked = stockDividend.Franked;
-                dividend.PayableDate = stockDividend.PayableDate;
+                context.StockDividends.Add(stockDividend);
             }
         }
     }

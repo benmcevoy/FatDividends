@@ -42,5 +42,13 @@ namespace Fat.Services.Models
                 return Stock != null ? Stock.Name : "";
             }
         }
+
+        public string FormattedReportedDate
+        {
+            get
+            {
+                return ReportedDate.ToString("dd MMM yy");
+            }
+        }
     }
 }

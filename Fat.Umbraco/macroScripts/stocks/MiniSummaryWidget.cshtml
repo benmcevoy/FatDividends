@@ -1,0 +1,105 @@
+﻿@using Fat.Umbraco.DocumentTypes
+@using Vega.USiteBuilder
+@using umbraco.MacroEngines
+
+<div id="miniSummaryWidget" class="widget">
+
+    @inherits DynamicNodeContext
+@{
+    var stock = Fat.Umbraco.Data.StockRepository.GetStock(this);
+
+    if (stock != null)
+    {
+    <section>
+        <header>
+            <div class="title">
+                <a href="/stock-information/@stock.Code">
+                    <span class="code">@stock.Code</span>
+                    <span class="name">@stock.Name</span>
+                </a>
+            </div>
+            <div class="industry">@stock.Industry</div>
+        </header>
+
+        <div id="stockChart">
+            <section>
+                <h3>Closing Price Last 90 Days</h3>
+                <div id="smallchart"></div>
+            </section>
+        </div>
+
+        @{
+        var quote = Fat.Umbraco.Data.StockRepository.GetLatestQuote(this);
+
+        if (quote != null)
+        {
+            <div id="stockPrice">
+                <section>
+                    <h3>Latest Price</h3>
+                    <div class="subheading">
+                        <span class="currency">AUD</span>
+                        <span class="date">@quote.ClosingDate.ToString("dd MMM yyyy")</span>
+                    </div>
+                    <div class="price">
+                        @quote.Price
+                    </div>
+                </section>
+            </div>
+        }
+        }
+
+
+    </section>
+    }
+    else
+    {
+    <section>
+        <header>
+            <div class="title">
+                <span class="name">Sorry, we can't find any details for that ASX code.</span>
+            </div>
+            <div>
+                Try <a href="/search" class="link">searching by code or company name</a>.
+            </div>
+        </header>
+    </section>
+    }
+}
+</div>
+
+<script type="text/javascript">
+    var fat = fat || {};
+
+    fat.charts = function () { return {}; };
+
+    fat.charts.drawSmallStockChart = function () {
+        $.ajax({
+            url: '/api/stock/quotes/@HttpContext.Current.Request.QueryString["code"]'
+        }).done(function (data) {
+
+            // reproject to google format (array of array)
+            data = $.map(data, function (value, key) { return [[value.FormattedDate, value.Price]]; });
+
+            var chartData = google.visualization.arrayToDataTable(data);
+            var chart = new google.visualization.LineChart(document.getElementById('smallchart'));
+
+            chartData.addColumn('number', 'Price');
+
+            var chartOptions = {
+                curveType: 'function',
+                width: 200,
+                height: 100,
+                legend: 'none',
+                chartArea: { left: 0, top: 0, width: '100%', height: '100%' },
+                vAxis: { textPosition: 'none', baselineColor: '#fff', gridlines: { count: 2, color: '#fff' } },
+                hAxis: { textPosition: 'none' },
+                colors: ['#17A9DA']
+            };
+
+            chart.draw(chartData, chartOptions);
+        });
+    };
+
+    google.load("visualization", "1", { packages: ["corechart"] });
+    google.setOnLoadCallback(fat.charts.drawSmallStockChart);
+</script>

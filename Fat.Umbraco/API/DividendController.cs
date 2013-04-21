@@ -16,7 +16,7 @@ namespace Fat.Umbraco.API
 
         public IEnumerable<StockDividend> Get()
         {
-            return _dividendService.Get(5);
+            return _dividendService.GetLatest(5);
         }
 
         public StockDividend Get(string id)

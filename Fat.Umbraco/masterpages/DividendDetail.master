@@ -1,0 +1,13 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Site.Master" AutoEventWireup="true" CodeBehind="DividendDetail.master.cs" Inherits="Fat.Umbraco.masterpages.DividendDetail" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+       <div>
+        <%= CurrentContent.Content %>
+    </div>
+    
+    <umbraco:Macro ID="Macro1" FileLocation="~/macroScripts/stocks/MiniSummaryWidget.cshtml" runat="server" />
+    <umbraco:Macro ID="Macro5" FileLocation="~/macroScripts/dividend/DividendDetail.cshtml" runat="server" />
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="Widgets" runat="server">
+</asp:Content>

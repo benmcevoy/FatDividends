@@ -31,18 +31,22 @@ namespace Fat.Services.Models
 
         public string StockName
         {
-            get
-            {
-                return Stock != null ? Stock.Name : "";
-            }
+            get { return Stock != null ? Stock.Name : ""; }
         }
 
         public string FormattedRecordDate
         {
-            get
-            {
-                return (RecordDate.HasValue ? RecordDate.Value.ToString("dd MMM yy") : "");
-            }
+            get { return (RecordDate.HasValue ? RecordDate.Value.ToString("dd MMM yy") : ""); }
+        }
+
+        public string FormattedExDate
+        {
+            get { return ExDate.ToString("dd MMM yy"); }
+        }
+
+        public string FormattedPayableDate
+        {
+            get { return PayableDate.ToString("dd MMM yy"); }
         }
 
         /// <summary>

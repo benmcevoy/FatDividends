@@ -13,14 +13,14 @@ body {
 }
 
 a {
-    color: #333;
+    color: #17A9DA;
     outline: none;
     text-decoration: none;
 }
 
     a:link, a:visited,
     a:active, a:hover {
-        color: #333;
+        color: #17A9DA;
     }
 
     a:hover {

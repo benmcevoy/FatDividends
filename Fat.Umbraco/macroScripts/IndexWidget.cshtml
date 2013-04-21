@@ -8,34 +8,38 @@
 <script type="text/javascript">
     var fat = fat || {};
 
-    fat.charts = function () { return {}; };
+    fat.charts = (function ($) {
+        var drawIndexChart = function () {
+            $.ajax({
+                url: '/api/indexquote/'
+            }).done(function (data) {
+
+                // reproject to google format (array of array)
+                data = $.map(data, function (value, key) { return [[value.FormattedDate, value.Price]]; });
+
+                var chartData = google.visualization.arrayToDataTable(data);
+                var chart = new google.visualization.LineChart(document.getElementById('marketIndexChart'));
+
+                chartData.addColumn('number', 'Price');
+
+                var chartOptions = {
+                    curveType: 'function',
+                    width: 360,
+                    height: 180,
+                    legend: 'none',
+                    pointSize: 1,
+                    colors: ['#17A9DA']
+                };
+
+                chart.draw(chartData, chartOptions);
+            });
+        };
+
+        return {
+            drawIndexChart: drawIndexChart
+        };
+    }(jQuery));
     
-    fat.charts.drawIndexChart = function() {
-        $.ajax({
-            url: '/api/indexquote/'
-        }).done(function (data) {
-
-            // reproject to google format (array of array)
-            data = $.map(data, function (value, key) { return [[value.FormattedDate, value.Price]]; });
-
-            var chartData = google.visualization.arrayToDataTable(data);
-            var chart = new google.visualization.LineChart(document.getElementById('marketIndexChart'));
-
-            chartData.addColumn('number', 'Price');
-
-            var chartOptions = {
-                curveType: 'function',
-                width: 360,
-                height: 180,
-                legend: 'none',
-                pointSize: 1,
-                colors: ['#17A9DA']
-            };
-
-            chart.draw(chartData, chartOptions);
-        });
-    };
-
     google.load("visualization", "1", { packages: ["corechart"] });
     google.setOnLoadCallback(fat.charts.drawIndexChart);
 

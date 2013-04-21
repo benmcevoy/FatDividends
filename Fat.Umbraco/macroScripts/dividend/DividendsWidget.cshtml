@@ -1,0 +1,33 @@
+﻿@using Vega.USiteBuilder
+@using umbraco.MacroEngines
+
+@inherits DynamicNodeContext
+@{
+    var dividends = Fat.Umbraco.Data.DividendRepository.Get(this, 5).Reverse().ToList();
+
+    <div id="stockDividends" class="widget">
+        <section>
+            <h3>Dividends</h3>
+            <div class="dividends">
+                @if (dividends.Any())
+                {
+                    <table id="calendarEntries">
+                        @foreach (var dividend in dividends)
+                        {
+                            <tr class="calendarEntry">
+                                <td class="name">
+                                    <a href="/dividend-details/@dividend.StockCode/@dividend.FormattedExDate">@dividend.StockName</a>
+                                </td>
+                                <td class="date">@dividend.FormattedExDate</td>
+                            </tr>
+                        }
+                    </table>
+                }
+                else
+                {
+                    <span>No dividend records available.</span>
+                }
+            </div>
+        </section>
+    </div>
+}

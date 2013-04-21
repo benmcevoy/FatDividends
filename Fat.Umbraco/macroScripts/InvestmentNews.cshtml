@@ -16,13 +16,13 @@
 <script type="text/javascript">
     var fat = fat || {};
 
-    fat.feeds = function () {
+    fat.feeds = (function($) {
         var loadAbc = function() {
             var feed = new google.feeds.Feed("http://www.abc.net.au/news/feed/51892/rss.xml");
             feed.load(onLoaded);
         };
-        
-        var onLoaded = function (result) {
+
+        var onLoaded = function(result) {
             if (!result.error) {
                 $('#newsItemTemplate').tmpl(result.feed.entries).appendTo('#newsEntries');
             }
@@ -35,14 +35,12 @@
 
         return {
             loadAbc: loadAbc,
-            formatDate : formatDate
+            formatDate: formatDate
         };
-    };
-    
+    })(jQuery);
+
     google.load("feeds", "1");
     google.setOnLoadCallback(fat.feeds.loadAbc);
-
-
 </script>
 
 <script id="newsItemTemplate" type="text/x-jQuery-tmpl">

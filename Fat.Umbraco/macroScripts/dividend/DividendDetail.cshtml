@@ -1,0 +1,40 @@
+﻿<div id="dividendDetail">
+    <section>
+        <h3>Dividend Detail</h3>
+        @{
+            var dividend = Fat.Umbraco.Data.DividendRepository.Get(this);
+
+            if (dividend != null)
+            {
+            <dl>
+                <dt>Ex Date</dt>
+                <dd>@dividend.FormattedExDate</dd>
+
+                <dt>Amount</dt>
+                <dd>@dividend.Amount</dd>
+
+                <dt>Franked</dt>
+                <dd>@dividend.Franked</dd>
+
+                <dt>FrankingCredit</dt>
+                <dd>@dividend.FrankingCredit</dd>
+
+                <dt>ClosingPrice</dt>
+                <dd>@dividend.ClosingPrice</dd>
+
+                <dt>GrossedAmount</dt>
+                <dd>@dividend.GrossedAmount</dd>
+
+                <dt>GrossedYieldPercentage</dt>
+                <dd>@dividend.GrossedYieldPercentage</dd>
+
+                <dt>PayableDate</dt>
+                <dd>@dividend.FormattedPayableDate</dd>
+
+                <dt>RecordDate</dt>
+                <dd>@dividend.FormattedRecordDate</dd>
+            </dl>
+            }
+        }
+    </section>
+</div>

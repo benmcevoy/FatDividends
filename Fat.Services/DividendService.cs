@@ -7,11 +7,26 @@ namespace Fat.Services
 {
     public class DividendService : Service
     {
-        public IEnumerable<StockDividend> Get(int count)
+        public IEnumerable<StockDividend> Get(Func<StockDividend, bool> predicate)
+        {
+            return DataContext.StockDividends.Where(predicate);
+        }
+
+        public IEnumerable<StockDividend> GetLatest(int count)
         {
             return DataContext.StockDividends
                 .Include("Stock")
-                .OrderBy(d => d.RecordDate)
+                .OrderBy(d => d.ExDate)
+                .Skip(Math.Max(0, DataContext.StockDividends.Count() - count))
+                .Take(count);
+        }
+
+        public IEnumerable<StockDividend> GetLatest(int count, DateTime startDate)
+        {
+            return DataContext.StockDividends
+                .Include("Stock")
+                .Where(d => d.ExDate >= startDate)
+                .OrderBy(d => d.ExDate)
                 .Skip(Math.Max(0, DataContext.StockDividends.Count() - count))
                 .Take(count);
         }
@@ -20,17 +35,27 @@ namespace Fat.Services
         {
             return DataContext.StockDividends
                               .Include("Stock")
-                              .OrderBy(d => d.RecordDate)
+                              .OrderBy(d => d.ExDate)
                               .FirstOrDefault(d => d.StockCode == stockCode);
         }
+
+        public StockDividend Get(string stockCode, DateTime exDate)
+        {
+            return DataContext.StockDividends
+                              .Include("Stock")
+                              .OrderBy(d => d.ExDate)
+                              .FirstOrDefault(d => d.StockCode == stockCode
+                                  && d.ExDate == exDate);
+        }
+
 
         public IEnumerable<StockDividend> Get(string stockCode, int count)
         {
             return DataContext.StockDividends
                 .Include("Stock")
                 .Where(d => d.StockCode == stockCode)
-                .OrderBy(d => d.RecordDate)
-                .Skip(Math.Max(0, DataContext.StockDividends.Count() - count))
+                .OrderBy(d => d.ExDate)
+                .Skip(Math.Max(0, DataContext.StockDividends.Count(d => d.StockCode == stockCode) - count))
                 .Take(count);
         }
 

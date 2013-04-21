@@ -36,6 +36,8 @@ namespace Fat.Import
             }
         }
 
+        // TODO: i think i need something like this for historical data, as we scrape in old price data
+        // we can then fix up the closing price for the dividend
         private static void UpdateClosingPrice(IEnumerable<StockDividend> stockDividends)
         {
             using (var service = new QuoteService())

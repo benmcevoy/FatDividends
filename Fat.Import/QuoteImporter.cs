@@ -34,5 +34,33 @@ namespace Fat.Import
                 }
             }
         }
+
+        public static void Import(DateTime startDate, DateTime endDate)
+        {
+            var quoteProvider = new Quotes.Google.ScrapeProvider();
+            using (var service = new Services.StockService())
+            {
+                var stocks = service.Get().ToList();
+                var i = 0;
+
+                foreach (var stock in stocks)
+                {
+                    i++;
+
+                    Console.WriteLine("{0}/{1} - {2}", i, stocks.Count, stock.Code);
+
+                    var quotes = quoteProvider.Get(stock.Code, startDate, endDate);
+
+                    if (quotes == null)
+                    {
+                        continue;
+                    }
+
+                    service.AddQuotes(quotes);
+
+                    Thread.Sleep(1000);
+                }
+            }
+        }
     }
 }

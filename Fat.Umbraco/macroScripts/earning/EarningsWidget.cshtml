@@ -1,0 +1,35 @@
+﻿@using Vega.USiteBuilder
+@using umbraco.MacroEngines
+
+@inherits DynamicNodeContext
+@{
+    var earnings = Fat.Umbraco.Data.EarningRepository.Get(this, 5).Reverse().ToList();
+
+
+    <div id="stockEarnings" class="widget">
+        <section>
+            <h3>Earnings</h3>
+            <div class="earnings">
+                @if (earnings.Any())
+                {
+                    <table id="calendarEntries">
+                        @foreach (var earning in earnings)
+                        {
+                            <tr class="calendarEntry">
+                                <td class="name">
+                                    <a href="/earnings-details/@earning.StockCode/@earning.FormattedReportedDate">@earning.StockName</a>
+                                </td>
+                                <td class="date">@earning.FormattedReportedDate</td>
+                            </tr>
+                        }
+                    </table>
+                }
+                else
+                {
+                    <span>No earnings records available.</span>
+                }
+            </div>
+        </section>
+    </div>
+  
+}

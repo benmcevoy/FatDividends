@@ -1,12 +1,13 @@
-﻿#dividendCalendarEntries {
+﻿#calendarEntries {
 }
 
-    #dividendCalendarEntries .calendarEntry {
+    #calendarEntries .calendarEntry {
     }
 
-        #dividendCalendarEntries .calendarEntry td.name {
+        #calendarEntries .calendarEntry td.name {
+            min-width: 200px;
         }
 
-        #dividendCalendarEntries .calendarEntry td.date {
+        #calendarEntries .calendarEntry td.date {
             width: 65px;
         }

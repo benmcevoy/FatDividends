@@ -21,8 +21,6 @@
             .Add("~/css/searchWidget.css")
             .Add("~/css/indexWidget.css")
             .Add("~/css/calendarWidget.css")
-            //.Add("~/css/earningCalendarWidget.css")
-            //.Add("~/css/dividendCalendarWidget.css")
             .Add("~/css/stockDetail.css")
             .Add("~/css/investmentNews.css")
             .Add("~/css/tabs.css")
@@ -118,7 +116,7 @@
                     <div id="copyright">
                         &copy;Fat Dividends | <a href="/contact/">Contact</a>
                     </div>
-                    <div class="advert">
+                    <%--<div class="advert">
                         <script type="text/javascript"><!--
     google_ad_client = "ca-pub-5756725000793640";
     /* Main Banner */
@@ -128,7 +126,7 @@
     //-->
                         </script>
                         <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-                    </div>
+                    </div>--%>
                 </footer>
             </div>
         </div>

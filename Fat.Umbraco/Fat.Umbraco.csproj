@@ -176,8 +176,6 @@
     </None>
     <Content Include="App_Data\fattyd.database.sdf" />
     <Content Include="css\calendarWidget.css" />
-    <Content Include="css\dividendCalendarWidget.css" />
-    <Content Include="css\earningCalendarWidget.css" />
     <Content Include="css\ie7.css" />
     <Content Include="css\Images\home.png" />
     <Content Include="css\Images\logo.png" />
@@ -193,7 +191,6 @@
     <Content Include="css\textStyles.css" />
     <Content Include="favicon.ico" />
     <Content Include="macroScripts\SearchWidget.cshtml" />
-    <Content Include="macroScripts\StockDetail.cshtml" />
     <Content Include="robots.txt" />
     <Content Include="Config\UrlRewriting.config" />
     <Content Include="masterpages\StockDetail.master" />
@@ -202,15 +199,17 @@
     <Content Include="macroScripts\stocks\ChartWidget.cshtml" />
     <Content Include="macroScripts\stocks\SummaryWidget.cshtml" />
     <Content Include="macroScripts\stocks\TitleWidget.cshtml" />
-    <Content Include="macroScripts\stocks\EarningsWidget.cshtml" />
-    <Content Include="macroScripts\stocks\DividendsWidget.cshtml" />
+    <Content Include="macroScripts\earning\EarningsWidget.cshtml" />
+    <Content Include="macroScripts\dividend\DividendsWidget.cshtml" />
     <Content Include="macroScripts\IndexWidget.cshtml" />
-    <Content Include="macroScripts\DividendCalendarWidget.cshtml" />
-    <Content Include="macroScripts\EarningsCalendarWidget.cshtml" />
-    <Content Include="macroScripts\TabWidget.cshtml" />
     <Content Include="macroScripts\CalendarWidget.cshtml" />
     <Content Include="macroScripts\InvestmentNews.cshtml" />
     <Content Include="masterpages\InvestmentNews.master" />
+    <Content Include="masterpages\EarningsDetail.master" />
+    <Content Include="masterpages\DividendDetail.master" />
+    <Content Include="macroScripts\stocks\MiniSummaryWidget.cshtml" />
+    <Content Include="macroScripts\earning\EarningsDetail.cshtml" />
+    <Content Include="macroScripts\dividend\DividendDetail.cshtml" />
     <None Include="scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="scripts\jquery-1.7.1.min.js" />
     <Content Include="scripts\jQuery.tmpl.min.js" />
@@ -232,6 +231,8 @@
     <Compile Include="Data\SearchRepository.cs" />
     <Compile Include="Data\StockRepository.cs" />
     <Compile Include="DocumentTypes\ContentPage.cs" />
+    <Compile Include="DocumentTypes\DividendDetail.cs" />
+    <Compile Include="DocumentTypes\EarningsDetail.cs" />
     <Compile Include="DocumentTypes\Folder.cs" />
     <Compile Include="DocumentTypes\HomePage.cs" />
     <Compile Include="DocumentTypes\InvestmentNewsPage.cs" />
@@ -252,6 +253,20 @@
     </Compile>
     <Compile Include="masterpages\Content.master.designer.cs">
       <DependentUpon>Content.master</DependentUpon>
+    </Compile>
+    <Compile Include="masterpages\DividendDetail.master.cs">
+      <DependentUpon>DividendDetail.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="masterpages\DividendDetail.master.designer.cs">
+      <DependentUpon>DividendDetail.master</DependentUpon>
+    </Compile>
+    <Compile Include="masterpages\EarningsDetail.master.cs">
+      <DependentUpon>EarningsDetail.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="masterpages\EarningsDetail.master.designer.cs">
+      <DependentUpon>EarningsDetail.master</DependentUpon>
     </Compile>
     <Compile Include="masterpages\Home.master.cs">
       <DependentUpon>Home.master</DependentUpon>

@@ -43,7 +43,7 @@
 
             .tabs ul li .title {
                 margin: 0;
-                padding: 0;
+                padding: 0 5px;
                 color: #aaa;
             }
             .tabs ul li.active .title {

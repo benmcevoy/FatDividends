@@ -1,21 +1,34 @@
 ﻿@using Fat.Umbraco.DocumentTypes
 @using Vega.USiteBuilder
 @using umbraco.MacroEngines
-
 @inherits DynamicNodeContext
+
+<div id="stockTitle" class="widget">
+    <section>
 @{
     var stock = Fat.Umbraco.Data.StockRepository.GetStock(this);
 
     if (stock != null)
     {
-        <div id="stockTitle" class="widget">
-            <header>
-                <div class="title">
-                    <span class="code">@stock.Code</span>
-                    <span class="name">@stock.Name</span>
-                </div>
-                <div class="industry">@stock.Industry</div>
-            </header>
+    <header>
+        <div class="title">
+            <span class="code">@stock.Code</span>
+            <span class="name">@stock.Name</span>
         </div>
+        <div class="industry">@stock.Industry</div>
+    </header>
+    }
+    else
+    {
+    <header>
+        <div class="title">
+            <span class="name">Sorry, we can't find any details for that ASX code.</span>
+        </div>
+        <div>
+            Try <a href="/search?keywords=@Html.Encode(HttpContext.Current.Request.QueryString["code"])">searching by code or company name</a>.
+        </div>
+    </header>
     }
 }
+    </section>
+</div>

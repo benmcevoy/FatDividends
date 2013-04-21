@@ -3,7 +3,7 @@ using Vega.USiteBuilder;
 
 namespace Fat.Umbraco.masterpages
 {
-    public partial class StockDetail : TemplateBase<DocumentTypes.StockDetail>
+    public partial class DividendDetail : TemplateBase<DocumentTypes.DividendDetail>
     {
         protected void Page_Load(object sender, EventArgs e)
         {

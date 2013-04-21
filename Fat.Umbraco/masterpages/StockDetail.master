@@ -11,8 +11,8 @@
     </div>
     <div class="clear">
         <umbraco:Macro ID="Macro4" FileLocation="~/macroScripts/stocks/PriceWidget.cshtml" runat="server" />
-        <umbraco:Macro ID="Macro5" FileLocation="~/macroScripts/stocks/DividendsWidget.cshtml" runat="server" />
-        <umbraco:Macro ID="Macro6" FileLocation="~/macroScripts/stocks/EarningsWidget.cshtml" runat="server" />
+        <umbraco:Macro ID="Macro5" FileLocation="~/macroScripts/dividend/DividendsWidget.cshtml" runat="server" />
+        <umbraco:Macro ID="Macro6" FileLocation="~/macroScripts/earning/EarningsWidget.cshtml" runat="server" />
     </div>
 
 </asp:Content>

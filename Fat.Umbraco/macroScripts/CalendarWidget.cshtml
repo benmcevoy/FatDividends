@@ -7,28 +7,35 @@
         </li>
         <li data-tabindex="2">
             <a href="#">
-                <h3 class="title">Dividends Paid</h3>
+                <h3 class="title">Upcoming Dividends</h3>
             </a>
         </li>
     </ul>
 
-    <div data-tabindex="1" class="active content">what are reporting dates?</div>
+    <div data-tabindex="1" class="active content">No reporting dates available.</div>
 
     <div data-tabindex="2" class="content">
         @{
-            var dividends = Fat.Umbraco.Data.DividendRepository.GetLatest(this, 5).Reverse();
+            var dividends = Fat.Umbraco.Data.DividendRepository.GetUpcoming(this, 5).Reverse();
 
-            <table id="dividendCalendarEntries">
-                @foreach (var dividend in dividends)
-                {
-                    <tr class="calendarEntry">
-                        <td class="name">
-                            <a href="/stock-information/@dividend.StockCode">@dividend.StockName</a>
-                        </td>
-                        <td class="date">@dividend.FormattedRecordDate</td>
-                    </tr>
-                }
-            </table>
+            if (dividends.Any())
+            {
+                <table id="dividendCalendarEntries">
+                    @foreach (var dividend in dividends)
+                    {
+                        <tr class="calendarEntry">
+                            <td class="name">
+                                <a href="/stock-information/@dividend.StockCode">@dividend.StockName</a>
+                            </td>
+                            <td class="date">@dividend.FormattedExDate</td>
+                        </tr>
+                    }
+                </table>
+            }
+            else
+            {
+                <span>No upcoming dividends available.</span>
+            }
         }
     </div>
 </div>

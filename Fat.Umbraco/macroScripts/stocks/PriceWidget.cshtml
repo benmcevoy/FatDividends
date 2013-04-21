@@ -6,11 +6,12 @@
 @{
     var quote = Fat.Umbraco.Data.StockRepository.GetLatestQuote(this);
 
-    if (quote != null)
-    {
-        <div id="stockPrice" class="widget">
-            <section>
-                <h3>Latest Price</h3>
+    <div id="stockPrice" class="widget">
+        <section>
+            <h3>Latest Price</h3>
+            @if (quote != null)
+            {
+
                 <div class="subheading">
                     <span class="currency">AUD</span>
                     <span class="date">@quote.ClosingDate.ToString("dd MMM yyyy")</span>
@@ -18,7 +19,11 @@
                 <div class="price">
                     @quote.Price
                 </div>
-            </section>
-        </div>
-    }
+            }
+            else
+            {
+                <span>No price information available.</span>
+            }
+        </section>
+    </div>
 }

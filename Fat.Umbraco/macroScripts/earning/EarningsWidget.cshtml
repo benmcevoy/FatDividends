@@ -17,7 +17,7 @@
                         {
                             <tr class="calendarEntry">
                                 <td class="name">
-                                    <a href="/earnings-details/@earning.StockCode/@earning.FormattedReportedDate">@earning.StockName</a>
+                                    <a href="/earnings-details/@earning.StockCode/@Html.Encode(earning.FormattedReportedDate)">@earning.StockName</a>
                                 </td>
                                 <td class="date">@earning.FormattedReportedDate</td>
                             </tr>

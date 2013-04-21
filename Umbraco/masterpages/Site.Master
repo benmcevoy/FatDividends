@@ -4,12 +4,12 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <title>
         <umbraco:Item ID="Item1" Field="title" runat="server" />
         - Fat Dividends</title>
-
+    <meta charset="UTF-8" />
     <meta name="description" content="<%= CurrentContent.Description %>" />
     <meta name="keywords" content="<%= CurrentContent.Keywords %>" />
 
@@ -116,7 +116,7 @@
                     <div id="copyright">
                         &copy;Fat Dividends | <a href="/contact/">Contact</a>
                     </div>
-                    <div class="advert">
+                    <%--<div class="advert">
                         <script type="text/javascript"><!--
     google_ad_client = "ca-pub-5756725000793640";
     /* Main Banner */
@@ -126,7 +126,7 @@
     //-->
                         </script>
                         <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-                    </div>
+                    </div>--%>
                 </footer>
             </div>
         </div>

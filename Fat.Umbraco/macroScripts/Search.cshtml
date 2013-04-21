@@ -1,5 +1,4 @@
 ﻿@using umbraco.MacroEngines
-
 @inherits DynamicNodeContext
 <div id="search">
     <form id="searchForm" method="GET">
@@ -7,8 +6,6 @@
         <input type="button" id="searchButton" value="GO" />
     </form>
 </div>
-
-
 @{
     var searchResults = Fat.Umbraco.Data.SearchRepository.SearchStock(this);
 

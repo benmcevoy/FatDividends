@@ -4,7 +4,8 @@ using Vega.USiteBuilder;
 namespace Fat.Umbraco.DocumentTypes
 {
     [DocumentType(AllowedChildNodeTypes = new[] { typeof(ContentPage), typeof(SearchPage), 
-            typeof(StockDetail), typeof(InvestmentNewsPage), typeof(DividendDetail), typeof(EarningsDetail) }, 
+            typeof(StockDetail), typeof(InvestmentNewsPage), typeof(DividendDetail), 
+            typeof(EarningsDetail), typeof(ContactFormPage)}, 
         DefaultTemplate = typeof(masterpages.Home), IconUrl = "settingDomain.gif")]
     public class HomePage : Page
     {

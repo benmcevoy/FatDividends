@@ -4,12 +4,12 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <title>
         <umbraco:Item ID="Item1" Field="title" runat="server" />
         - Fat Dividends</title>
-
+    <meta charset="UTF-8" />
     <meta name="description" content="<%= CurrentContent.Description %>" />
     <meta name="keywords" content="<%= CurrentContent.Keywords %>" />
 

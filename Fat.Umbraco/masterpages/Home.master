@@ -7,7 +7,7 @@
     <% if (CurrentContent.HasHero)
        { %>
     <div id="hero">
-        <img src="/imagegen.ashx?image=<%= CurrentContent.HeroImageUrl %>" />
+        <img alt="<%= CurrentContent.HeroCaption %>" src="/imagegen.ashx?image=<%= CurrentContent.HeroImageUrl %>" />
         <sub><%= CurrentContent.HeroCaption %></sub>
     </div>
     <% } %>

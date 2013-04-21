@@ -16,7 +16,7 @@
                         {
                             <tr class="calendarEntry">
                                 <td class="name">
-                                    <a href="/dividend-details/@dividend.StockCode/@dividend.FormattedExDate">@dividend.StockName</a>
+                                    <a href="/dividend-details/@dividend.StockCode/@Html.Encode(dividend.FormattedExDate)">@dividend.StockName</a>
                                 </td>
                                 <td class="date">@dividend.FormattedExDate</td>
                             </tr>

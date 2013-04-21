@@ -210,6 +210,10 @@
     <Content Include="macroScripts\stocks\MiniSummaryWidget.cshtml" />
     <Content Include="macroScripts\earning\EarningsDetail.cshtml" />
     <Content Include="macroScripts\dividend\DividendDetail.cshtml" />
+    <Content Include="macroScripts\OpenGraph.cshtml" />
+    <Content Include="macroScripts\ContactForm.cshtml" />
+    <Content Include="Config\tinyMceConfig.config" />
+    <Content Include="masterpages\ContactUsForm.master" />
     <None Include="scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="scripts\jquery-1.7.1.min.js" />
     <Content Include="scripts\jQuery.tmpl.min.js" />
@@ -230,6 +234,7 @@
     <Compile Include="Data\EarningRepository.cs" />
     <Compile Include="Data\SearchRepository.cs" />
     <Compile Include="Data\StockRepository.cs" />
+    <Compile Include="DocumentTypes\ContactFormPage.cs" />
     <Compile Include="DocumentTypes\ContentPage.cs" />
     <Compile Include="DocumentTypes\DividendDetail.cs" />
     <Compile Include="DocumentTypes\EarningsDetail.cs" />
@@ -247,6 +252,13 @@
     <Compile Include="Filters\AllowCrossOriginAttribute.cs" />
     <Compile Include="Filters\ApiCacheAttribute.cs" />
     <Compile Include="HtmlHelper.cs" />
+    <Compile Include="masterpages\ContactUsForm.master.cs">
+      <DependentUpon>ContactUsForm.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="masterpages\ContactUsForm.master.designer.cs">
+      <DependentUpon>ContactUsForm.master</DependentUpon>
+    </Compile>
     <Compile Include="masterpages\Content.master.cs">
       <DependentUpon>Content.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

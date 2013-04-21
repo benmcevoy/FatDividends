@@ -568,4 +568,14 @@
       <file name="/umbraco_client/CodeArea/UmbracoEditor.js" />
     </files>
   </item>
+  <item key="L3VtYnJhY29fY2xpZW50L3Njcm9sbGluZ21lbnUvc3R5bGUuY3NzOy91bWJyYWNvX2NsaWVudC9wcm9wZXJ0eXBhbmUvc3R5bGUuY3NzOy91bWJyYWNvX2NsaWVudC9wYW5lbC9zdHlsZS5jc3M7L3VtYnJhY29fY2xpZW50L3VpL2RlZmF1bHQuY3NzOy91bWJyYWNvX2NsaWVudC9tb2RhbC9zdHlsZS5jc3M7L3VtYnJhY29fY2xpZW50L21lbnVpY29uL3N0eWxlLmNzczs" file="D:\Dev\git\FatDividends\Umbraco\App_Data\TEMP\ClientDependency\2_bc85ece6787e42f682a095cbec9bd721.cdC" compression="gzip" version="2">
+    <files>
+      <file name="/umbraco_client/scrollingmenu/style.css" />
+      <file name="/umbraco_client/propertypane/style.css" />
+      <file name="/umbraco_client/panel/style.css" />
+      <file name="/umbraco_client/ui/default.css" />
+      <file name="/umbraco_client/modal/style.css" />
+      <file name="/umbraco_client/menuicon/style.css" />
+    </files>
+  </item>
 </map>

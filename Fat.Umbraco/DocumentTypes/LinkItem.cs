@@ -29,7 +29,12 @@ namespace Fat.Umbraco.DocumentTypes
 
         public string EffectiveUrl
         {
-            get { return LocalHref <= 0 ? ExternalHref : umbraco.library.NiceUrl(LocalHref); }
+            get { return IsExternalLink ? ExternalHref : umbraco.library.NiceUrl(LocalHref); }
+        }
+
+        public bool IsExternalLink
+        {
+            get { return LocalHref <= 0; }
         }
     }
 }

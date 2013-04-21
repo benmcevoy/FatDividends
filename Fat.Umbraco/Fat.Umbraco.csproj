@@ -316,6 +316,9 @@
       <DependentUpon>StockDetail.master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sitemap.ashx.cs">
+      <DependentUpon>Sitemap.ashx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -326,6 +329,7 @@
     <Content Include="Config\fat.config" />
     <Content Include="masterpages\Search.master" />
     <Content Include="macroScripts\Search.cshtml" />
+    <Content Include="Sitemap.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

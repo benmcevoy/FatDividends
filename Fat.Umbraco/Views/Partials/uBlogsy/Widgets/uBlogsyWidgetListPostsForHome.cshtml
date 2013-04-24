@@ -1,0 +1,118 @@
+﻿@*
+* This widget is meant to be used in a node which is an ancestor of the uBlogsyLanding node. 
+* For example, in the following example tree, this widget would be placed in the "My Site Root" node.
+* Content
+*   - My Site Root
+*     - uBlogsy Landing
+*
+*
+* In the folowing example, this widget will work in either "My Site Root" or "Some Landing Page"
+* Content   
+*   - My Site Root
+*     - Some Landing Page
+*       - uBlogsy Landing
+*
+* This widget is virually identical to uBlogsyWidgetListPosts.cshtml, but has been separated to give you more options with styling.
+*@
+@using System.Linq
+@using uBlogsy.BusinessLogic
+@using uBlogsy.Common.Extensions
+@using uHelpsy.Extensions
+@using uHelpsy.Extensions
+@using uHelpsy.Helpers
+@using uHelpsy.Singletons
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+    const int ITEMS_PER_PAGE = 20; // for testing
+    
+    // image settings
+    const string defaultImage = null; // change this if want a default image. eg "http://placekitten.com/25/25/", else make it null (no "")
+    const int imageHieght = -1; // -1 if no height specified
+    const int imageWidth = 25;
+    
+    // get item count
+    var itemLimit = (int)PageData["ItemLimit"];
+
+    // get uBlogsy landing node - it will be a descendent of this current node
+    var landing = GetLanding();
+    
+    // get posts under the landing node
+    var nodes = PostService.Instance.GetPosts(landing).Take(itemLimit).ToIPublishedContent(true);
+
+    @RenderForWidget(nodes, imageHieght, imageWidth, defaultImage)
+}
+
+
+
+
+@helper RenderForWidget(IEnumerable<IPublishedContent> nodes, int imageHieght, int imageWidth, string defaultImage)
+    {
+    <div id="uBlogsy_widget_home" class="uBlogsy_posts_container well">
+        <h2 class="uBlogsy_head_style20">@uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uBlogsyDicPostsLatest")</h2>
+        <ul>
+            @foreach (var n in nodes)
+            {
+                <li>
+                    <a href="@n.Url()" title="@n.GetPropertyValue("uBlogsyContentTitle")">@RenderPostImage(n, imageHieght, imageWidth, defaultImage) 
+                        <span>@n.GetPropertyValue("uBlogsyContentTitle")</span>
+                    </a> - <span class="uBlogsy_font_style30">@(n.GetPropertyValue<DateTime>("uBlogsyPostDate").ToString("d MMMM yyyy"))</span>
+                </li>
+            }
+        </ul>
+    </div>
+}
+
+
+@functions {
+
+    /// <summary>
+    /// Gets landing node. 
+    /// First try to get it from siblings of this node. Then checks descendents of parent.
+    /// </summary>
+    /// <returns></returns>
+    IPublishedContent GetLanding()
+    {
+        var landing = IPublishedContentHelper.GetNode((int)Model.Id).Sibling("uBlogsyLanding");
+        
+        if (landing == null)
+        {
+            var startNode = IPublishedContentHelper.GetNode((int)Model.Id).Parent ?? IPublishedContentHelper.GetNode((int)Model.Id);
+            landing = startNode.DescendentsOrSelf("uBlogsyLanding", new[] { "uBlogsyLanding", "uBlogsyPage", "uTagsyTagContainer", "uCommentsyConfiguration", "uCommentsyContainerComment", "uCommentsyComment" }).First();
+        }
+
+        return landing;
+    }
+}
+
+
+
+
+
+
+@helper RenderPostImage(IPublishedContent node, int imageHieght, int imageWidth, string defaultImage)
+{
+    var imageId = node.GetPropertyValue<string>("uBlogsyPostImage");
+
+    if (string.IsNullOrWhiteSpace(imageId) && string.IsNullOrWhiteSpace(defaultImage))
+    {
+        // no property or default so do nothing
+        return;
+    }
+    
+    var viewData = new Dictionary<object, dynamic>()
+             {
+                 {"Node", node},
+                 {"Alias", "uBlogsyPostImage"},
+                 {"Suffix", ""},
+                 {"Height", imageHieght},
+                 {"Width", imageWidth},
+                 {"CssClass", "uBlogsy_post_image"},
+                 {"Title", "Main Image"},
+                 {"Map", string.Empty },
+                 {"DefaultImage", defaultImage}
+             };
+
+    <figure class="uBlogsy_post_list_image">
+        @RenderPage("~/Views/Partials/uBlogsy/Shared/uBlogsyShowImage.cshtml", viewData)     
+    </figure>
+}

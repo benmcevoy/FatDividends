@@ -1,0 +1,72 @@
+﻿@using System.Linq
+@using uBlogsy.BusinessLogic
+@using uHelpsy.Extensions
+@using uHelpsy.Helpers
+@using uHelpsy.Singletons
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+    const int ITEMS_PER_PAGE = 20; // for testing
+
+    // image settings
+    const string defaultImage = null; // change this if want a default image. eg "http://placekitten.com/25/25/", else make it null (no "")
+    const int imageHieght = -1; // -1 if no height specified
+    const int imageWidth = 300;
+
+    // get item count
+    var itemLimit = (int)PageData["ItemLimit"];
+
+    var nodes = PostService.Instance.GetPosts(IPublishedContentHelper.GetNode((int)Model.Id)).Take(itemLimit).ToIPublishedContent(true);
+
+    @RenderForWidget(nodes, imageHieght, imageWidth, defaultImage)
+}
+
+
+
+
+@helper RenderForWidget(IEnumerable<IPublishedContent> nodes, int imageHieght, int imageWidth, string defaultImage)
+{
+    <div class="uBlogsy_posts_container uBlogsy_bottom_border well">
+        <h2 class="uBlogsy_head_style20">@uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uBlogsyDicPostsLatest")</h2>
+        <ul>
+            @foreach (var n in nodes)
+            {
+                <li><a href="@n.Url()" title="@n.GetPropertyValue("uBlogsyNavigationTitle")">@RenderPostImage(n, imageHieght, imageWidth, defaultImage)
+                        <span>@n.GetPropertyValue("uBlogsyNavigationTitle")</span>
+                    </a> - <span>@(n.GetPropertyValue<DateTime>("uBlogsyPostDate").ToString("d MMMM yyyy"))</span>
+                </li>
+            }
+        </ul>
+    </div>
+}
+
+
+
+
+
+@helper RenderPostImage(IPublishedContent node, int imageHieght, int imageWidth, string defaultImage)
+{
+    var imageId = node.GetPropertyValue<string>("uBlogsyPostImage");
+
+    if (string.IsNullOrWhiteSpace(imageId) && string.IsNullOrWhiteSpace(defaultImage))
+    {
+        // no property or default so do nothing
+        return;
+    }
+
+    var pageData = new Dictionary<object, dynamic>(PageData)
+             {
+                 {"Node", node},
+                 {"Alias", "uBlogsyPostImage"},
+                 {"Suffix", ""},
+                 {"Height", imageHieght},
+                 {"Width", imageWidth},
+                 {"CssClass", "uBlogsy_post_image"},
+                 {"Title", "Main Image"},
+                 {"Map", string.Empty },
+                 {"DefaultImage", defaultImage}
+             };
+
+    <figure class="uBlogsy_post_list_image">
+        @RenderPage("~/Views/Partials/uBlogsy/Shared/uBlogsyShowImage.cshtml", pageData)     
+    </figure>
+}

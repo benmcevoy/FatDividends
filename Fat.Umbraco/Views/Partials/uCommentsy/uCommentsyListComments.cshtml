@@ -1,0 +1,108 @@
+﻿@{
+    /* LISTS ALL RECENT COMMENTS */
+}
+@using System.Linq
+@using Umbraco.Core.Models
+@using Umbraco.Web
+@using uCommentsy.BusinessLogic
+@using uCommentsy.BusinessLogic.Helpers
+@using uHelpsy.Extensions
+@using uHelpsy.Helpers
+@using uHelpsy.Singletons
+
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+    // get item count
+    var count = (int)PageData["ItemLimit"];
+    if (count == -1) { count = int.MaxValue; }
+
+    // get comments for THIS post
+    var comments = CommentService.Instance.GetComments(IPublishedContentHelper.GetNode((int)Model.Id), false).Take(count).ToIPublishedContent(true);
+
+    var landing = DataService.Instance.GetRootNode(IPublishedContentHelper.GetNode((int)Model.Id));
+
+    @RenderForMain(landing, comments)
+}
+
+
+
+
+@helper RenderForMain(IPublishedContent landing, IEnumerable<IPublishedContent> comments)
+{
+    var distinctCommenters = new Dictionary<string, string>();
+    int commenterDistinctCount = 0;
+    <section id="uCommentsy_container">
+        <h4>
+            @comments.Count() @uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uCommentsyDicComments") :</h4>
+    
+        @*list comments on post*@
+        <div class="uCommentsy_comments">
+            @foreach (var c in comments)
+            {
+                if (!distinctCommenters.ContainsKey(c.GetProperty("uCommentsyCommentEmail").Value.ToString()))
+                {
+                    distinctCommenters.Add(c.GetProperty("uCommentsyCommentEmail").Value.ToString(), "uCommentsy_commenter" + commenterDistinctCount++);
+                }
+
+                var url = CommentService.Instance.GetCommentUrl(c, true);
+                var hash = url.Substring(url.LastIndexOf("#") + 1);
+                var commentClass = GetCommentClass(c, comments);
+                var authorText = string.Empty;
+                var authorClass = string.Empty;
+                if (c.GetPropertyValue("uCommentsyCommentIsAuthor") == "1")
+                {
+                    authorText = " (author)";
+                    authorClass = "author";
+                }
+                
+                <div class="@commentClass @distinctCommenters[c.GetPropertyValue<string>("uCommentsyCommentEmail")] @authorClass">
+                    @*gravatar*@
+                    <img src="@GravatarHelper.GetUrl(c.GetPropertyValue<string>("uCommentsyCommentEmail"), 50)" class="uCommentsy_gravatar"/>
+                    
+                    <div class="uCommentsy_comment_right">
+                        @*render name*@
+                        <div class="uCommentsy_comment_name">
+                            <a href="@url" name="@hash" title="Comment by @c.GetPropertyValue("uCommentsyCommentName") - @c.Parent.Parent.Name">@c.GetPropertyValue("uCommentsyCommentName")</a>
+                            @authorText 
+                        </div>
+                    
+                        @*render message*@
+                        <div class="uCommentsy_comment_message">
+                            @c.GetPropertyValue("uCommentsyCommentMessage")</div>
+                        <div class="uCommentsy_comment_date">@c.CreateDate.ToString("MMMM d, yyyy hh:mm")</div>                    
+                    </div>
+                    
+                    @*render footer of comment*@
+                    <footer class="uCommentsy_comment_footer">
+                        @if (@c.GetPropertyValue<string>("uCommentsyCommentWebsite").Trim() != string.Empty)
+                        {
+                            var website = c.GetPropertyValue<string>("uCommentsyCommentWebsite");
+                            website = website.StartsWith("http") ? website : "http://" + website; // ensure http/https
+                            <div class="uCommentsy_comment_website">
+                                <span>Website</span> : <a href="@(c.GetPropertyValue("uCommentsyCommentWebsite"))">@website</a>
+                            </div>
+                        }
+                        
+                        @*link to list of articles which this commenter has commented on - not implemented yet*@
+                        <div class="uCommentsy_view_commenter_posts">
+                            <span>@uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uCommentsyDicCommentsViewAllBy")</span> <a href="@landing.Url()?commenter=@c.Name" title="@uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uCommentsyDicCommentsViewAllBy") @c.GetPropertyValue("uCommentsyCommentName")">@c.GetPropertyValue("uCommentsyCommentName")</a>
+                        </div>
+                        
+                    </footer>
+                </div>
+            }
+        </div>
+    </section>
+}
+
+
+
+
+
+@functions {
+    static string GetCommentClass(IPublishedContent current, IEnumerable<IPublishedContent> nodes)
+    {
+        var commentClass = current == nodes.Last() ? "uCommentsy_comment uCommentsy_last" : "uCommentsy_comment uCommentsy_bottom_border";
+        return commentClass;
+    }
+}

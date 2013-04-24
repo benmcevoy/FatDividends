@@ -1,0 +1,36 @@
+@using System.Linq
+@using uBlogsy.Common.Helpers
+@using uBlogsy.BusinessLogic;
+@using uHelpsy.Helpers
+@using uHelpsy.Singletons
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+    // get distinct authors
+    var authors = PostService.Instance.GetAuthors(IPublishedContentHelper.GetNode((int)Model.Id), true);
+    //var authors = NoLuceneFallbackService.Instance.GetAuthors(IPublishedContentHelper.GetNode(Model.Id).Id, true);
+
+    if (!authors.Any()) { return; }
+
+    var landing = DataService.Instance.GetLanding(IPublishedContentHelper.GetNode((int)Model.Id));
+    @RenderForWidget(landing, authors)
+}
+
+
+@helper RenderForWidget(IPublishedContent landing, IEnumerable<IPublishedContent> authors)
+{
+    <section class="uBlogsy_authors_container uBlogsy_bottom_border well">
+        <h2 class="uBlogsy_head_style20">
+            @uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uBlogsyDicAuthors")</h2>
+        <ul class="uBlogsy_authors">
+            @* display authors *@
+            @foreach (var a in authors)
+            {
+                var name = a.GetPropertyValue<string>("uBlogsyAuthorName").Trim();
+                if (!string.IsNullOrEmpty(name))
+                {
+                <li> <a href="@landing.Url()?author=@Server.UrlEncode(name)" title="@name"><img src="@GravatarHelper.GetUrl(a.GetPropertyValue<string>("uBlogsyAuthorGravatarEmail"), (int)PageData["GravatarSize"])" class="uBlogsy_gravatar_small"/><span>@name</span></a></li>
+                }
+            }
+        </ul>
+    </section>
+}

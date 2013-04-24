@@ -1,0 +1,76 @@
+<%@ Master Language="C#" MasterPageFile="~/umbraco/masterpages/default.master" AutoEventWireup="true" %>
+
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderDefault" runat="server"><umbraco:Macro runat="server" language="razor">
+@using System.Text
+@using uBlogsy.BusinessLogic
+@using uBlogsy.Common.Extensions
+@using uHelpsy.Extensions
+@using uHelpsy.Helpers
+@using Umbraco
+@using Umbraco.Web
+@{
+    Layout = null;
+    // get tag, label, or author from query string
+    var tag = Request.QueryString["tag"];
+    var label = Request.QueryString["label"];
+    var author = Request.QueryString["author"];
+    var searchTerm = Request.QueryString["search"];
+    var commenter = Request.QueryString["commenter"];
+    int page = int.TryParse(Request.QueryString["page"], out page) ? page : 1;
+    var year = Request.QueryString["year"];
+    var month = Request.QueryString["month"];
+    var day = Request.QueryString["day"];
+    int postCount;
+		
+    var currentPage = IPublishedContentHelper.GetNode((int)Model.Id); 
+    var posts = PostService.Instance.GetPosts(currentPage, tag, label, author, searchTerm, commenter, year, month, day, out postCount);
+		
+    var lastPubDate = !posts.Any() ? DateTime.Now : DateTime.Parse(posts.First().GetValue("uBlogsyPostDate"));
+		
+    var qs = Request.QueryString.ToString().Replace("+", "%20");
+		
+    // get blog url
+    string blogUrl = Request.Url.AbsoluteUri
+						    .Replace(Model.Url(), string.Empty)
+						    .TrimEnd("/".ToCharArray());
+		
+    if (!string.IsNullOrWhiteSpace(qs))
+    {
+	    blogUrl = blogUrl.Replace(qs, string.Empty).Replace("?", string.Empty);
+    }
+    Response.Clear();
+    Response.ContentType = "text/xml";
+    Response.ContentEncoding = Encoding.UTF8;<?xml version="1.0" encoding="UTF-8" ?>
+    <rss version="2.0">
+	    <channel>
+		    <title>@(currentPage.GetPropertyValue("uBlogsyRssTitle"))</title>
+		    <description>@(currentPage.GetPropertyValue("uBlogsyRssDescription"))</description>
+		    <copyright>@(currentPage.GetPropertyValue("uBlogsyRssCopyright"))</copyright>
+		    @*<image>@currentPage.uBlogsyRssImage</image>*@
+		    @Html.Raw(string.Format("<link>{0}</link>", blogUrl))
+		    <lastBuildDate>@(lastPubDate.ToString("ddd, dd MMMM yyyy HH:mm:ss"))</lastBuildDate>
+		    <pubDate>@(lastPubDate.ToString("ddd, dd MMMM yyyy HH:mm:ss"))</pubDate>
+		    @ListPosts(blogUrl, posts)
+        </channel>
+    </rss>
+}
+	
+	
+@helper ListPosts(string blogUrl, IEnumerable<SearchResult> posts)
+{
+    foreach (var p in posts)
+    {
+        <item>
+            <title>@p.GetValue("uBlogsyContentTitle")</title>
+            <author>@p.GetValue("uBlogsyPostAuthor")</author>
+            <comments>@(blogUrl + p.Url())</comments>
+            <description>@(uBlogsy.Common.Extensions.StringExtensions.StripHtml(p.GetValue("uBlogsyContentBody")).Trim())</description>
+            @Html.Raw(string.Format("<link>{0}{1}</link>", blogUrl, p.Url()))
+            <guid>@(blogUrl + p.Url())</guid>
+            <pubDate>@(p.GetValue("uBlogsyPostDate").ToString().FormatDateTime("ddd, dd MMMM yyyy HH:mm:ss")) </pubDate>
+        </item>
+    }
+}
+</umbraco:Macro>
+		
+</asp:Content>

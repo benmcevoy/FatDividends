@@ -1,0 +1,35 @@
+﻿@*
+    Does redirect to child if exists.
+    Or, redirects up the tree too a root node (defined in /config/uDatefoldersy.config).
+
+    To use this in a masterpage, add this:
+    
+    <umbraco:Macro runat="server" FileLocation="~/Views/uDateFoldersy/uDateFoldersyFolderRedirect.cshtml" />
+*@
+
+
+@using uDateFoldersy
+@using uHelpsy.Helpers
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+    var current = IPublishedContentHelper.GetNode(HttpContext.Current.Items["pageID"]);
+
+    var last = current.Children.LastOrDefault();
+    if (last != null)
+    {
+        // redirect to post
+        Response.Redirect(last.Url());
+    }
+    else
+    {
+        // redirect to landing page
+        var landing = DateFolderService.Instance.GetFirstRoot(current);
+        if (landing == null)
+        {
+            Response.Redirect("/", true);
+            return;
+        }
+
+        Response.Redirect(landing.Url(), true);
+    }
+}

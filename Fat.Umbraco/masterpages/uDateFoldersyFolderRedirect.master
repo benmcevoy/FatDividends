@@ -1,0 +1,5 @@
+<%@ Master Language="C#" MasterPageFile="~/umbraco/masterpages/default.master" AutoEventWireup="true" %>
+
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderDefault" runat="server">
+ <umbraco:Macro runat="server" FileLocation="~/Views/Partials/uDateFoldersy/uDateFoldersyFolderRedirect.cshtml"/>
+</asp:Content>

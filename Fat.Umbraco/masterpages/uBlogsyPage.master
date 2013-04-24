@@ -1,0 +1,23 @@
+<%@ Master Language="C#" MasterPageFile="~/masterpages/_uBlogsyBaseSite.master" AutoEventWireup="true" %>
+
+	
+<asp:Content ContentPlaceHolderID="uBlogsyHead" runat="server">
+	<link type="text/css" rel="Stylesheet" media="screen" href="/css/uBlogsy.css" />		
+</asp:Content>
+	
+<asp:Content ContentPlaceHolderID="uBlogsyMain" runat="server">
+	
+    <div id="uBlogsy">
+        <div id="uBlogsy_main" style="width:80%;padding: 0 5%">
+            <umbraco:Macro runat="server" Language="razor">
+                <h3>
+                    <a href="@Model.Url">@Model.uBlogsyContentTitle</a>
+                </h3>
+                <div class="uBlogsy_content_body">
+                    @Html.Raw(library.RenderMacroContent(Model.uBlogsyContentBody.ToString(), Model.Id))
+                </div>
+            </umbraco:Macro>
+        </div>
+    </div>
+	
+</asp:Content>

@@ -1,0 +1,13 @@
+<%@ Master Language="C#" MasterPageFile="~/masterpages/_uBlogsyBaseBlog.master" AutoEventWireup="true" %>
+
+<asp:Content ContentPlaceHolderID="uBlogsyLeftCol" runat="server">
+    <umbraco:Macro ID="Macro2" runat="server" FileLocation="~/Views/Partials/uBlogsy/Global/uBlogsyGlobalHeader.cshtml" />
+
+    <%--@*list posts*@--%>
+    <section class="uBlogsy_posts_container">
+        <umbraco:Macro ID="Macro1" runat="server" Language="razor">@RenderPage("~/Views/Partials/uBlogsy/Landing/uBlogsyLandingListPosts.cshtml", new {ItemsPerPage = 20})
+        </umbraco:Macro>
+
+    </section>
+
+</asp:Content>

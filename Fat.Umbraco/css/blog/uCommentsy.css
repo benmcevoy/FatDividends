@@ -1,0 +1,150 @@
+/* fonts - global */
+
+
+#uCommentsy_container h4 { color: #505050;}
+
+
+/* force browser to evaluate box model */
+#uCommentsy_container { overflow:hidden; }
+
+
+
+
+/* links */
+#uCommentsy_container a { color: #234B7B; text-decoration:none; }
+#uCommentsy_container a:hover { text-decoration:underline; }
+#uCommentsy_container_widget a:hover {color: #234B7B; }
+
+
+
+
+
+
+/**********************************************
+main list
+***********************************************/
+#uCommentsy_container .uCommentsy_gravatar{float: left; margin-right: 5px;}
+#uCommentsy_container .uCommentsy_gravatar40{height: 40px;width: 40px;}
+#uCommentsy_container .uCommentsy_gravatar50{height: 50px;width: 50px;}
+
+#uCommentsy_container .uCommentsy_comment_right{ float: left;width: 80%; }
+
+#uCommentsy_container .uCommentsy_comments { font-size:13px; padding-left:30px; }
+#uCommentsy_container .uCommentsy_comment { padding:20px 0; overflow:hidden;}
+#uCommentsy_container .uCommentsy_comment_name { padding-bottom:10px; }
+#uCommentsy_container .uCommentsy_comment_message { padding-bottom:20px; }
+#uCommentsy_container .uCommentsy_comment_date {float:left;  color:#505050; text-transform:uppercase;}
+#uCommentsy_container .uCommentsy_comment_website{ float:right; margin-left:30px; font-size:11px; }
+#uCommentsy_container .uCommentsy_comment_website span{ color:#505050; }
+
+#uCommentsy_container .uCommentsy_comment_footer{float:right; overflow:hidden;}
+#uCommentsy_container .uCommentsy_view_commenter_posts{ float:right; color:#505050; font-size:12px; clear:right;}
+#uCommentsy_container .uCommentsy_view_commenter_posts a{ font-size:11px;}
+
+
+
+
+/**********************************************
+widget
+***********************************************/
+/* widget - gravatar */
+#uCommentsy_widget .uCommentsy_gravatar_small { float: left; margin-right: 5px;height: 20px;width: 20px;}
+#uCommentsy_widget{ background-color: transparent;}
+
+
+/* widget - headers */
+#uCommentsy_widget h2 { color:#505050;  font-size:14px; font-weight:bold; margin: 20px 0 0 0; text-transform:uppercase;  }
+
+/* widget - list */
+#uCommentsy_widget li{ clear: both; line-height:20px;}
+#uCommentsy_widget ul { font-size:13px; list-style-type:none; margin:5px 0;  padding-left:0px; overflow:hidden; }
+
+
+
+/**********************************************
+ forms
+***********************************************/
+/* forms */
+.uCommentsy_comment_form input[type=submit]{ width: 100px;}
+
+/* forms - contact */
+.uCommentsy_comment_form input[type=text],
+.uCommentsy_comment_form textarea {  border:1px solid #cccccc; width:400px; margin-bottom: 10px;}
+.uCommentsy_comment_form label{ font-size: 12px; width: 150px;}
+
+.uCommentsy_comment_form input[type=text] {  height:20px; }
+.uCommentsy_comment_form textarea {height:150px; }
+.uCommentsy_row{ overflow:hidden; position: relative; }
+
+.uCommentsy_row .field-validation-error{ position: absolute; top: 0px;}
+.uCommentsy_row .field-validation-valid{ display: none;}
+
+
+
+/**********************************************
+ misc
+***********************************************/
+.uCommentsy_bottom_border {  border-bottom-color: #CCC; border-bottom-style: dotted; border-bottom-width: 1px; }
+
+
+
+/**********************************************
+ commenters - add styles here for different commenters 
+***********************************************/
+.uCommentsy_commenter1{}
+.uCommentsy_commenter2{}
+.uCommentsy_commenter3{}
+.uCommentsy_commenter4{}
+.uCommentsy_commenter5{}
+.uCommentsy_commenter6{}
+.uCommentsy_commenter7{}
+.uCommentsy_commenter8{}
+.uCommentsy_commenter9{}
+.uCommentsy_commenter10{}
+.uCommentsy_commenter11{}
+.uCommentsy_commenter12{}
+.uCommentsy_commenter13{}
+.uCommentsy_commenter14{}
+.uCommentsy_commenter15{}
+.uCommentsy_commenter16{}
+.uCommentsy_commenter17{}
+.uCommentsy_commenter18{}
+.uCommentsy_commenter19{}
+.uCommentsy_commenter20{}
+.uCommentsy_commenter21{}
+.uCommentsy_commenter22{}
+.uCommentsy_commenter23{}
+.uCommentsy_commenter24{}
+.uCommentsy_commenter25{}
+.uCommentsy_commenter26{}
+.uCommentsy_commenter27{}
+.uCommentsy_commenter28{}
+.uCommentsy_commenter29{}
+.uCommentsy_commenter30{}
+.uCommentsy_commenter31{}
+.uCommentsy_commenter32{}
+.uCommentsy_commenter33{}
+.uCommentsy_commenter34{}
+.uCommentsy_commenter35{}
+.uCommentsy_commenter36{}
+.uCommentsy_commenter37{}
+.uCommentsy_commenter38{}
+.uCommentsy_commenter39{}
+.uCommentsy_commenter40{}
+.uCommentsy_commenter41{}
+.uCommentsy_commenter42{}
+.uCommentsy_commenter43{}
+.uCommentsy_commenter44{}
+.uCommentsy_commenter45{}
+.uCommentsy_commenter46{}
+.uCommentsy_commenter47{}
+.uCommentsy_commenter48{}
+.uCommentsy_commenter49{}
+.uCommentsy_commenter50{}
+/* if you have more than 50 distinct commenters on your post then you're doing well! Add more .uCommentsy_commenter's if you wish */
+
+
+
+
+
+/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

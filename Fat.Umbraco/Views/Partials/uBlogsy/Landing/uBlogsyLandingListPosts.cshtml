@@ -1,0 +1,107 @@
+﻿@using System.Linq
+@using System.Web.Mvc.Html
+@using uBlogsy.Common.Extensions
+@using uBlogsy.BusinessLogic
+@using uHelpsy.Extensions
+@using uHelpsy.Helpers
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+    const int ITEMS_PER_PAGE = 20; // for testing
+
+    // get item count
+    var itemsPerPage = (int)PageData["ItemsPerPage"];
+
+    // get tag, label, or author from query string
+    var tag = Request.QueryString["tag"];
+    var label = Request.QueryString["label"];
+    var author = Request.QueryString["author"];
+    var searchTerm = Request.QueryString["search"];
+    var commenter = Request.QueryString["commenter"];
+    int page = int.TryParse(Request.QueryString["page"], out page) ? page : 1;
+    var year = Request.QueryString["year"];
+    var month = Request.QueryString["month"];
+    var day = Request.QueryString["day"];
+    int postCount;
+
+    var posts = PostService.Instance.GetPosts(IPublishedContentHelper.GetNode((int)Model.Id), tag, label, author, searchTerm, commenter, year, month, day, out postCount).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).ToIPublishedContent(true);
+        //var posts = NoLuceneFallbackService.Instance.GetPosts(IPublishedContentHelper.GetNode(Model.Id).Id, tag, label, author, searchTerm, commenter, year, month, out postCount).Skip((page - 1) * itemsPerPage).Take(itemsPerPage);
+    
+    // pagination
+    @RenderPagination(page, postCount, itemsPerPage)
+    @RenderForLanding(posts)
+}
+
+
+
+
+@helper RenderForLanding(IEnumerable<IPublishedContent> posts)
+{
+    // render search result count when this script is displaying search results
+    if (Request.QueryString["search"] != null)
+    {
+        <h3>@posts.Count() Results:</h3>
+    }
+
+        
+    // show each post
+    foreach (var n in posts)
+    {
+        @RenderPage("~/Views/Partials/uBlogsy/Landing/uBlogsyLandingShowPost.cshtml", new { Node = n, GravatarSize = 40, ImageWidth = 300, ImageHeight = -1 })
+    }
+}
+
+
+
+
+
+@helper RenderPagination(int page, int postCount, int itemsPerPage)
+    {
+        var pages = (int)Math.Ceiling((double)postCount / itemsPerPage);
+        var url = Request.Url.ToString();
+    
+    <ul id="uBlogsy_pagination" class="uBlogsy_font_style20">
+        @* render prev link *@
+        <li class="uBlogsy_page_prev">
+            @if (page > 1)
+            {
+                url = url.ReplaceQueryStringItem("page", (page - 1).ToString());
+                <a href="@url" >Prev</a>
+            }
+            else
+            {
+                <span>Prev</span>
+            }
+        </li>
+
+        @* render page links *@
+        @for (int i = 1; i < pages + 1; i++)
+        {
+            url = url.ReplaceQueryStringItem("page", i.ToString());
+            var liClass = i == page ? "uBlogsy_current" : string.Empty;
+            
+            <li class="uBlogsy_page_item @liClass">
+                @if (page == i)
+                {
+                    <span>@i</span> 
+                }
+                else
+                {
+                    <a href="@url">@i</a>
+                }
+            </li>
+        }
+
+        @* render next link *@
+        <li class="uBlogsy_page_next">
+            @if (page < Math.Ceiling((double)postCount / itemsPerPage))
+            {
+                url = url.ReplaceQueryStringItem("page", (page + 1).ToString());
+                <a href="@url" >Next</a>
+            }
+            else
+            {
+                <span>Next</span>
+            }
+        </li>
+    </ul>
+}

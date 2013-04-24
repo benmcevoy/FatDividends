@@ -1,0 +1,49 @@
+﻿@{
+    /* LISTS ALL RECENT COMMENTS */
+}
+@using System.Linq
+@using Umbraco.Core.Models
+@using Umbraco.Web
+@using uCommentsy.BusinessLogic
+@using uCommentsy.BusinessLogic.Helpers
+@using uHelpsy.Extensions
+@using uHelpsy.Helpers
+@using uHelpsy.Singletons
+
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+    // get item count
+    var itemLimit = (int)PageData["ItemLimit"];
+    if (itemLimit == -1) { itemLimit = int.MaxValue; }
+
+    // get all comments
+    var comments = CommentService.Instance.GetComments(IPublishedContentHelper.GetNode((int)Model.Id), true).Take(itemLimit).ToIPublishedContent(true); ;
+
+    if (!comments.Any()) { return; }
+
+    @RenderForWidget(comments)
+}
+
+
+
+
+
+@helper RenderForWidget(IEnumerable<IPublishedContent> comments)
+    {
+                // list comments in right panel
+    <section id="uCommentsy_widget" class="uCommentsy_comments_container uCommentsy_bottom_border">
+        <h2>
+            @uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uCommentsyDicCommentsLatest")</h2>
+        <ul>
+            @foreach (var c in comments)
+            {
+                var url = CommentService.Instance.GetCommentUrl(c, true);
+                
+                <li>
+                    <a href="@url" title="Comment by @c.GetPropertyValue("uCommentsyCommentName") on @c.Parent.Parent.Name">
+                    <img src="@GravatarHelper.GetUrl(c.GetPropertyValue<string>("uCommentsyCommentEmail"), 20)" class="uCommentsy_gravatar_small"/> By <span>@c.GetPropertyValue("uCommentsyCommentName")</span> on <span>@c.Parent.Parent.Name</span></a>
+                </li>
+            }
+        </ul>
+    </section>
+}

@@ -1,0 +1,37 @@
+﻿@using System.Linq
+@using uBlogsy.BusinessLogic;
+@using uHelpsy.Helpers
+@using uHelpsy.Singletons
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+    // get all labels
+    var labels = PostService.Instance.GetLabels(IPublishedContentHelper.GetNode((int)Model.Id), true);
+    //var labels = NoLuceneFallbackService.Instance.GetLabels(IPublishedContentHelper.GetNode(Model.Id).Id, true);
+
+    if (!labels.Any()) { return; }
+
+    // get landing page
+    var landing = DataService.Instance.GetLanding(IPublishedContentHelper.GetNode(Model.Id));
+
+    @RenderForWidget(landing, labels)
+}
+
+
+@helper RenderForWidget(IPublishedContent landing, IEnumerable<IPublishedContent> labels)
+{
+    // display labels
+    <section class="uBlogsy_labels_container uBlogsy_bottom_border">
+        <h2 class="uBlogsy_head_style20">@uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uBlogsyDicCategoriesAll")
+        </h2>
+        <ul class="uBlogsy_labels">
+            @foreach (var c in labels)
+            {
+                var label = c.GetPropertyValue<string>("uBlogsyLabelName");
+                if (!string.IsNullOrEmpty(label))
+                {
+                    <li><a href="@landing.Url()?label=@Server.UrlEncode(label)" title="@label">@label</a></li>
+                }
+            }
+        </ul>
+    </section>
+}

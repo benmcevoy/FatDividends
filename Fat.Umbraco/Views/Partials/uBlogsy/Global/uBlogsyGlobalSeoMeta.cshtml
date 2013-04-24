@@ -1,0 +1,26 @@
+﻿@using uBlogsy.BusinessLogic
+@using uBlogsy.Common.Extensions;
+@using uHelpsy.Extensions
+@using uHelpsy.Helpers
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+    // get seo description, use body when no description
+    var desc = IPublishedContentHelper.GetNode((int)Model.Id).GetValueFirstOf(new[] { "uBlogsySeoDescription", "uBlogsyContentBody" });
+
+    // get seo keywords, use title when no keywords
+    var keywords = IPublishedContentHelper.GetNode((int)Model.Id).GetValueFirstOf(new[] { "uBlogsySeoKeywords", "uBlogsyContentTitle" });
+
+    // get title of page
+    var landing = DataService.Instance.GetSiteRoot(IPublishedContentHelper.GetNode((int)Model.Id), "uBlogsySiteRoot") ?? DataService.Instance.GetLanding(IPublishedContentHelper.GetNode((int)Model.Id));
+    var title = landing.GetPropertyValue("uBlogsyContentTitle");
+    if (Model.Id != landing.Id)
+    {
+        title += " : " + Model.uBlogsyContentTitle;
+    }
+    
+    
+    <meta name="keywords" content="@keywords.StripNonAphaNumeric().Trim()" />
+    <meta name="description" content="@uBlogsy.Common.Extensions.StringExtensions.StripHtml(desc).GetSummary(150).Trim()" />
+    <link rel="canonical" href="@(new Uri(Request.Url.AbsoluteUri).GetLeftPart(UriPartial.Path))"/> 
+    <title>@Html.Raw(title)</title>
+}

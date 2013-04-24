@@ -118,6 +118,12 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="uBlogsy.BusinessLogic">
+      <HintPath>..\lib\uBlogsy\uBlogsy.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="uBlogsy.Common">
+      <HintPath>..\lib\uBlogsy\uBlogsy.Common.dll</HintPath>
+    </Reference>
     <Reference Include="uComponents.Controls">
       <HintPath>..\packages\uComponents.5.4.1\lib\net40\uComponents.Controls.dll</HintPath>
     </Reference>
@@ -148,8 +154,14 @@
     <Reference Include="uComponents.XsltExtensions">
       <HintPath>..\packages\uComponents.5.4.1\lib\net40\uComponents.XsltExtensions.dll</HintPath>
     </Reference>
+    <Reference Include="uHelpsy">
+      <HintPath>..\lib\uBlogsy\uHelpsy.dll</HintPath>
+    </Reference>
     <Reference Include="umbraco">
       <HintPath>..\lib\umbraco.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Core">
+      <HintPath>..\lib\Umbraco.Core.dll</HintPath>
     </Reference>
     <Reference Include="umbraco.MacroEngines">
       <HintPath>..\lib\umbraco.MacroEngines.dll</HintPath>
@@ -175,6 +187,11 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="App_Data\fattyd.database.sdf" />
+    <Content Include="css\blog\bootstrap-responsive.css" />
+    <Content Include="css\blog\bootstrap-responsive.min.css" />
+    <Content Include="css\blog\bootstrap-swatch.css" />
+    <Content Include="css\blog\bootstrap.css" />
+    <Content Include="css\blog\bootstrap.min.css" />
     <Content Include="css\calendarWidget.css" />
     <Content Include="css\ie7.css" />
     <Content Include="css\Images\home.png" />
@@ -189,6 +206,8 @@
     <Content Include="css\stockDetail.css" />
     <Content Include="css\tabs.css" />
     <Content Include="css\textStyles.css" />
+    <Content Include="css\blog\uBlogsy.css" />
+    <Content Include="css\blog\uCommentsy.css" />
     <Content Include="favicon.ico" />
     <Content Include="macroScripts\SearchWidget.cshtml" />
     <Content Include="robots.txt" />
@@ -214,6 +233,15 @@
     <Content Include="macroScripts\ContactForm.cshtml" />
     <Content Include="Config\tinyMceConfig.config" />
     <Content Include="masterpages\ContactUsForm.master" />
+    <Content Include="masterpages\_uBlogsyBase.master" />
+    <Content Include="masterpages\_uBlogsyBaseBlog.master" />
+    <Content Include="masterpages\_uBlogsyBaseSite.master" />
+    <Content Include="masterpages\uBlogsyLanding.master" />
+    <Content Include="masterpages\uBlogsyPage.master" />
+    <Content Include="masterpages\uBlogsyPost.master" />
+    <Content Include="masterpages\uBlogsyRss.master" />
+    <Content Include="masterpages\uBlogsySiteHome.master" />
+    <Content Include="masterpages\uDateFoldersyFolderRedirect.master" />
     <None Include="scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="scripts\jquery-1.7.1.min.js" />
     <Content Include="scripts\jQuery.tmpl.min.js" />
@@ -330,6 +358,34 @@
     <Content Include="masterpages\Search.master" />
     <Content Include="macroScripts\Search.cshtml" />
     <Content Include="Sitemap.ashx" />
+    <Content Include="Views\MacroPartials\uBlogsy\uBlogsyMacroShowSomeLove.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Global\uBlogsyGlobalBrowserTitle.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Global\uBlogsyGlobalFooter.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Global\uBlogsyGlobalHeader.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Global\uBlogsyGlobalNavigation.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Global\uBlogsyGlobalSeoMeta.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Landing\uBlogsyLandingListPosts.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Landing\uBlogsyLandingShowPost.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Post\uBlogsyPostListAuthors.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Post\uBlogsyPostListLabels.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Post\uBlogsyPostListRelatedPosts.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Post\uBlogsyPostListTags.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Post\uBlogsyPostShowPost.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Shared\uBlogsyShowImage.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Widgets\uBlogsyWidgetListAuthors.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Widgets\uBlogsyWidgetListBlogRoll.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Widgets\uBlogsyWidgetListLabels.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Widgets\uBlogsyWidgetListPostArchive.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Widgets\uBlogsyWidgetListPosts.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Widgets\uBlogsyWidgetListPostsForHome.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Widgets\uBlogsyWidgetListTags.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Widgets\uBlogsyWidgetSearch.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Widgets\uBlogsyWidgetShowRSSLink.cshtml" />
+    <Content Include="Views\Partials\uCommentsy\uCommentsyListComments.cshtml" />
+    <Content Include="Views\Partials\uCommentsy\uCommentsyShowLinkToComments.cshtml" />
+    <Content Include="Views\Partials\uCommentsy\Widgets\uCommentsyWidgetListComments.cshtml" />
+    <Content Include="Views\Partials\uDateFoldersy\uDateFoldersyFolderRedirect.cshtml" />
+    <Content Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

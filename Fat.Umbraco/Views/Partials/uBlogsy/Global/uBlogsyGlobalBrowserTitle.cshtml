@@ -1,0 +1,15 @@
+@using uBlogsy.BusinessLogic
+@using Umbraco.Web
+@using uHelpsy.Helpers
+
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+    // get title of page
+    IPublishedContent landing = DataService.Instance.GetSiteRoot(IPublishedContentHelper.GetNode(Model.Id), "uBlogsySiteRoot") ?? DataService.Instance.GetLanding(IPublishedContentHelper.GetNode(Model.Id));
+    var title = landing.GetPropertyValue("uBlogsyContentTitle");
+    if (Model.Id != landing.Id)
+    {
+        title += " : " + Model.uBlogsyContentTitle;
+    }
+    <title>@title</title>
+}

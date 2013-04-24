@@ -1,0 +1,77 @@
+<%@ Master Language="C#" MasterPageFile="~/masterpages/_uBlogsyBaseBlog.master" AutoEventWireup="true" %>
+
+<%@ Import Namespace="uHelpsy.Singletons" %>
+<%@ Register Src="../usercontrols/uCommentsy/Contact.ascx" TagPrefix="uBlogsy" TagName="Contact" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="uBlogsyHead" runat="server">
+    <link href="~/css/uCommentsy.css" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.validate.unobtrusive.min.js"></script>
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="uBlogsyLeftCol" runat="server">
+
+    <umbraco:Macro runat="server" FileLocation="~/Views/Partials/uBlogsy/Global/uBlogsyGlobalHeader.cshtml" />
+
+    <umbraco:Macro runat="server" Language="razor">@using uBlogsy.BusinessLogic
+        @using System.Linq
+        @using uBlogsy.Common.Extensions
+        @using uHelpsy.Singletons
+        @using uHelpsy.Helpers
+	    @{
+            const int GravatarSize = 50;
+            var tag = Request.QueryString["tag"];
+            var label = Request.QueryString["label"];
+            var author = Request.QueryString["author"];
+            var searchTerm = Request.QueryString["search"];
+            var commenter = Request.QueryString["commenter"];
+            int page = int.TryParse(Request.QueryString["page"], out page) ? page : 1;
+            var year = Request.QueryString["year"];
+            var month = Request.QueryString["month"];
+            var day = Request.QueryString["day"];
+            var prev = PostService.Instance.GetNextPost(IPublishedContentHelper.GetNode((int)Model.Id), tag, label, author, searchTerm, commenter, year, month, day);
+            var next = PostService.Instance.GetPreviousPost(IPublishedContentHelper.GetNode((int)Model.Id), tag, label, author, searchTerm, commenter, year, month, day);
+        }
+
+        <%--@*render the post*@--%>
+        <div class="uBlogsy_post_container">
+            <%--@*pagination*@--%>
+            <div class="uBlogsy_next_prev">
+                @if (prev != null)
+                {
+                    var prevUrl = prev.Url.GetUrlWithQueryString(Request.QueryString, new[] { "action", "success" });
+                    <a href="@prevUrl" class="uBlogsy_prev uBlogsy_font_style20" title="Older Posts">&lt; @uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uBlogsyDicPaginationOlder")</a>
+                }
+            
+                @if (next != null)
+                {
+                    var nextUrl = next.Url.GetUrlWithQueryString(Request.QueryString, new[] { "action", "success" }); 
+                    <a href="@nextUrl" class="uBlogsy_next uBlogsy_font_style20" title="Newer Posts">@uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uBlogsyDicPaginationNewer") &gt;</a>
+                }
+            </div>
+
+            @RenderPage("~/Views/Partials/uBlogsy/Post/uBlogsyPostShowPost.cshtml", new { Node = IPublishedContentHelper.GetNode((int)Model.Id) , UseAddthis = true, GravatarSize = GravatarSize })
+        
+        </div>
+
+
+
+        <%--@*list of related posts*@--%>
+        @RenderPage("~/Views/Partials/uBlogsy/Post/uBlogsyPostListRelatedPosts.cshtml", new { ItemLimit = 5, MatchCount = 1, RelatedAlias = string.Empty })
+        
+
+        <%--@*list comments - install uCommentsy, then uncomment this line*@--%>
+        @RenderPage("~/Views/Partials/uCommentsy/uCommentsyListComments.cshtml", new { ItemLimit = -1})
+    </umbraco:Macro>
+
+    <%--comment form--%>
+    <div id="uCommentsy_form_container ">
+        <h4><%= uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uCommentsyDicContactFormPostComment")%></h4>
+        <div class="uCommentsy_comment_form">
+            <uBlogsy:Contact ID="Contact1" runat="server" />
+        </div>
+    </div>
+
+
+</asp:Content>

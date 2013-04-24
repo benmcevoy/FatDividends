@@ -43,6 +43,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{871B6931-284
 		lib\System.Web.WebPages.Razor.dll = lib\System.Web.WebPages.Razor.dll
 		lib\System.Web.WebPages.Razor.xml = lib\System.Web.WebPages.Razor.xml
 		lib\System.Web.WebPages.xml = lib\System.Web.WebPages.xml
+		lib\Umbraco.Core.dll = lib\Umbraco.Core.dll
+		lib\Umbraco.Core.xml = lib\Umbraco.Core.xml
 		lib\umbraco.dll = lib\umbraco.dll
 		lib\umbraco.MacroEngines.dll = lib\umbraco.MacroEngines.dll
 		lib\umbraco.providers.dll = lib\umbraco.providers.dll
@@ -58,6 +60,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UmbracoPackages", "UmbracoP
 	ProjectSection(SolutionItems) = preProject
 		UmbracoPackages\ImageGen_2.5.7.zip = UmbracoPackages\ImageGen_2.5.7.zip
 		UmbracoPackages\uSiteBuilderAdmin_2.1.1-beta.zip = UmbracoPackages\uSiteBuilderAdmin_2.1.1-beta.zip
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "uBlogsy", "uBlogsy", "{E736FEAF-6631-40BB-9C64-8422C92AA928}"
+	ProjectSection(SolutionItems) = preProject
+		lib\uBlogsy\uBlogsy.BusinessLogic.dll = lib\uBlogsy\uBlogsy.BusinessLogic.dll
+		lib\uBlogsy\uBlogsy.BusinessLogic.pdb = lib\uBlogsy\uBlogsy.BusinessLogic.pdb
+		lib\uBlogsy\uBlogsy.Common.dll = lib\uBlogsy\uBlogsy.Common.dll
+		lib\uBlogsy\uBlogsy.Common.pdb = lib\uBlogsy\uBlogsy.Common.pdb
+		lib\uBlogsy\uBlogsy.Mvc.Parts.dll = lib\uBlogsy\uBlogsy.Mvc.Parts.dll
+		lib\uBlogsy\uBlogsy.Mvc.Parts.pdb = lib\uBlogsy\uBlogsy.Mvc.Parts.pdb
+		lib\uBlogsy\uBlogsy.WebForms.dll = lib\uBlogsy\uBlogsy.WebForms.dll
+		lib\uBlogsy\uBlogsy.WebForms.pdb = lib\uBlogsy\uBlogsy.WebForms.pdb
+		lib\uBlogsy\uCommentsy.BusinessLogic.dll = lib\uBlogsy\uCommentsy.BusinessLogic.dll
+		lib\uBlogsy\uCommentsy.BusinessLogic.pdb = lib\uBlogsy\uCommentsy.BusinessLogic.pdb
+		lib\uBlogsy\uCommentsy.Mvc.Parts.dll = lib\uBlogsy\uCommentsy.Mvc.Parts.dll
+		lib\uBlogsy\uCommentsy.Mvc.Parts.pdb = lib\uBlogsy\uCommentsy.Mvc.Parts.pdb
+		lib\uBlogsy\uCommentsy.Web.dll = lib\uBlogsy\uCommentsy.Web.dll
+		lib\uBlogsy\uCommentsy.Web.pdb = lib\uBlogsy\uCommentsy.Web.pdb
+		lib\uBlogsy\uComponents.Core.dll = lib\uBlogsy\uComponents.Core.dll
+		lib\uBlogsy\uDateFoldersy.dll = lib\uBlogsy\uDateFoldersy.dll
+		lib\uBlogsy\uDateFoldersy.pdb = lib\uBlogsy\uDateFoldersy.pdb
+		lib\uBlogsy\uHelpsy.dll = lib\uBlogsy\uHelpsy.dll
+		lib\uBlogsy\uHelpsy.pdb = lib\uBlogsy\uHelpsy.pdb
+		lib\uBlogsy\uLoremsy.dll = lib\uBlogsy\uLoremsy.dll
+		lib\uBlogsy\uLoremsy.pdb = lib\uBlogsy\uLoremsy.pdb
 	EndProjectSection
 EndProject
 Global
@@ -92,5 +119,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D1166DF3-F64E-465A-8CF3-3000F7DE36CC} = {33DA174D-A48C-4541-8444-490867C3EA10}
+		{E736FEAF-6631-40BB-9C64-8422C92AA928} = {871B6931-2845-47DC-9E3D-8B13F88918CF}
 	EndGlobalSection
 EndGlobal

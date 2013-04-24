@@ -1,0 +1,110 @@
+﻿@using uBlogsy.BusinessLogic
+@using uHelpsy.Helpers
+@using uHelpsy.Singletons
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+    // image settings
+    const string defaultImage = "http://placekitten.com/300/200/"; // change this if want a default image. eg "http://placekitten.com/300/200/", else make it null (no "")
+    const int imageHieght = -1; // -1 if no height specified
+    const int imageWidth = 300;
+
+
+    IPublishedContent node = PageData.ContainsKey("Node") ? (IPublishedContent)PageData["Node"] : IPublishedContentHelper.GetNode((int)Model.Id);
+
+    var url = Request.QueryString.Count == 0 ? node.Url() : string.Format("{0}?{1}", node.Url(), Request.QueryString);
+    
+    @ShowPost(node, url, imageHieght, imageWidth, defaultImage)
+}
+
+
+
+@helper ShowPost(IPublishedContent node,  string url, int imageHieght, int imageWidth, string defaultImage)
+    {
+        <article class="uBlogsy_post uBlogsy_bottom_border">
+        <h2>
+            <a href="@url" title="@node.GetPropertyValue("uBlogsyContentTitle")"><span>@node.GetPropertyValue("uBlogsyContentTitle")</span></a></h2>
+        <h3 class="uBlogsy_post_date uBlogsy_font_style40">@(node.GetPropertyValue<DateTime>("uBlogsyPostDate").ToString("dddd MMMM d, yyyy"))</h3>
+
+        <section class="uBlogsy_post_body">
+            @RenderPostImage(node, imageHieght, imageWidth, defaultImage)
+
+            @RenderPostBody(node)
+        </section>
+
+        <aside class="uBlogsy_post_details">
+            @*list tags*@
+            <div class="uBlogsy_tag_container">
+                @RenderPage("~/Views/Partials/uBlogsy/Post/uBlogsyPostListTags.cshtml", new { Node = node, ShowCount = true })
+            </div>
+
+            @*list labels*@
+            <div class="uBlogsy_label_container">
+                @RenderPage("~/Views/Partials/uBlogsy/Post/uBlogsyPostListLabels.cshtml", new { Node = node })
+            </div>
+            
+            @*list authors*@
+            @RenderPage("~/Views/Partials/uBlogsy/Post/uBlogsyPostListAuthors.cshtml", new { Node = node, GravatarSize = PageData["GravatarSize"] })
+                
+        </aside>
+            
+        @*link to comments on this page - install uCommentsy, then uncomment this line*@
+        @try
+        {
+            @RenderPage("~/Views/Partials/uCommentsy/uCommentsyShowLinkToComments.cshtml")
+        }
+        catch (Exception) { }
+            
+    </article>
+}
+
+
+
+
+
+
+@helper RenderPostBody(IPublishedContent d)
+{
+    var useSummary = DataService.Instance.GetValueFromLanding(IPublishedContentHelper.GetNode((int)Model.Id), "uBlogsyGeneralUseSummary");
+    if (useSummary == "1" && d.GetPropertyValue<string>("uBlogsyContentSummary").Trim() != string.Empty)
+    {
+        @Html.Raw(d.GetPropertyValue("uBlogsyContentSummary"))
+    }
+    else
+    {
+    @Html.Raw(library.RenderMacroContent(d.GetPropertyValue<string>("uBlogsyContentBody"), d.Id))
+    } 
+}
+
+
+
+
+
+@helper RenderPostImage(IPublishedContent node, int imageHieght, int imageWidth, string defaultImage)
+{
+    var imageId = node.GetPropertyValue<string>("uBlogsyPostImage");
+
+    if (string.IsNullOrWhiteSpace(imageId) && string.IsNullOrWhiteSpace(defaultImage))
+    {
+        // no property or default so do nothing
+        return;
+    }
+
+    var pageData = new Dictionary<object, dynamic>()
+             {
+                 {"Node", node},
+                 {"Alias", "uBlogsyPostImage"},
+                 {"Suffix", ""},
+                 {"Height", imageHieght},
+                 {"Width", imageWidth},
+                 {"CssClass", "uBlogsy_post_image"},
+                 {"Title", "Main Image"},
+                 {"Map", string.Empty },
+                 {"DefaultImage", defaultImage}
+             };
+
+    <a href="@node.Url" title="Post image">
+        <figure class="uBlogsy_post_image">
+            @RenderPage("~/Views/Partials/uBlogsy/Shared/uBlogsyShowImage.cshtml", pageData)     
+        </figure>
+    </a>
+ }

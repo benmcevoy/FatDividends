@@ -1,0 +1,20 @@
+<%@ Master Language="C#" MasterPageFile="~/masterpages/_uBlogsyBase.master" AutoEventWireup="true" %>
+
+<asp:Content ContentPlaceHolderID="uBlogsyMain" runat="server">
+    <form runat="server">
+        <!doctype html public "-//w3c//dtd xhtml 1.0 transitional//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd">
+        <html lang="en-GB" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" dir="ltr">
+        <head>
+            <umbraco:Macro ID="Macro5" runat="server" FileLocation="~/Views/Partials/uBlogsy/Global/uBlogsyGlobalBrowserTitle.cshtml" />
+
+            <%--get meta title and description--%>
+            <umbraco:Macro ID="Macro1" runat="server" FileLocation="~/Views/Partials/uBlogsy/Global/uBlogsyGlobalSeoMeta.cshtml" />
+
+            <asp:ContentPlaceHolder ID="uBlogsyHead" runat="server" />
+        </head>
+        <body data-spy="scroll" data-target=".subnav" data-offset="80">
+            <asp:ContentPlaceHolder ID="uBlogsyMain" runat="server" />
+        </body>
+        </html>
+    </form>
+</asp:Content>

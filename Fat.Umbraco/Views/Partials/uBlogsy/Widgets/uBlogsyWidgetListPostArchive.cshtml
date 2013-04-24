@@ -1,0 +1,134 @@
+﻿@{ /* Displays post items in list form: 
+    *   - year
+    *       - month
+    *           - post item
+    *           - post item
+    */}
+@using System.Linq;
+@using uBlogsy.Common.Extensions
+@using uBlogsy.Common.Helpers
+@using uBlogsy.BusinessLogic;
+@using uHelpsy.Extensions
+@using uHelpsy.Helpers
+@using uHelpsy.Singletons
+
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+    int firstYear = -1;
+    var nodes = PostService.Instance.GetPosts(IPublishedContentHelper.GetNode((int)Model.Id)).Where(x => x.Url() != "#").ToList();
+
+    var archiveClass = "uBlogsy_archive uBlogsy_bottom_border";
+    if ((bool)PageData["AltLayout"])
+    {
+        archiveClass += " uBlogsy_post_archive_alt";
+    }
+
+    @RenderScript()
+
+    <section class="@archiveClass well">
+        <h2 class="uBlogsy_head_style20">@uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uBlogsyDicArchive")</h2>
+        <div id="uBlogsy_post_archive">
+            <ul class="uBlogsy_years">
+                @for (index = 0; index < nodes.Count(); )
+                {
+                    var node = nodes[index];
+
+                    var date = DateTime.Parse(node.GetValue("uBlogsyPostDate"));
+                    var currentYear = date.Year;
+
+                    if (firstYear == -1) { firstYear = currentYear; }
+
+                    var yearClass = "uBlogsy_year";
+                    if (currentYear == firstYear) { yearClass += " uBlogsy_year_first"; }
+
+                    // render years-months-items
+                    <li class="@yearClass"><a class="uBlogsy_year_name" href="#"><span>@currentYear</span></a>
+                        @*render year name*@
+                        <ul class="uBlogsy_months">
+                            @for (; index < nodes.Count(); index++)
+                            {
+                                node = nodes[index];
+                                date = DateTime.Parse(node.GetValue("uBlogsyPostDate"));
+                                var currentMonth = date.Month;
+
+                                if (date.Year != currentYear) { break; }
+
+                                // render month
+                                <li class="uBlogsy_month"><a class="uBlogsy_month_name" href="#"><span>@DateHelper.GetMonthName(currentMonth, false)</span>
+                                </a>@*render month name*@
+                                    <ul class="uBlogsy_post_items">
+                                        @RenderPosts(nodes, currentYear, currentMonth)
+                                    </ul>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                }
+            </ul>
+        </div>
+    </section>
+}
+
+
+@helper RenderPosts(List<SearchResult> nodes, int currentYear, int currentMonth)
+    {
+    for (; index < nodes.Count(); index++)
+    {
+        var node = nodes[index];
+        var date = DateTime.Parse(node.GetValue("uBlogsyPostDate"));
+
+        if (date.Month != currentMonth) { index--; break; }
+        if (date.Year != currentYear) { index--; break; }
+        var cssClass = "uBlogsy_post_item" + (IPublishedContentHelper.GetNode(Model.Id).Id == node.Id ? " uBlogsy_current" : string.Empty);                                           
+        
+        <li class="@cssClass"><a href="@node.Url()"><span class="uBlogsy_post_title">@node.GetValue("uBlogsyNavigationTitle")</span>
+            <span class="uBlogsy_post_date uBlogsy_font_style50">- @node.GetValue("uBlogsyPostDate").FormatDateTimeOrdinal("d MMMM yyyy")</span>
+        </a></li>
+    }
+}
+
+
+
+@helper RenderScript()
+    {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#uBlogsy_post_archive .uBlogsy_year_name').click(function () {
+
+                // toggle months
+                $(this).siblings(".uBlogsy_months").toggle();
+                $(this).siblings(".uBlogsy_months").find('.uBlogsy_post_items').trigger('click');
+
+                return false;
+            });
+
+            $('#uBlogsy_post_archive .uBlogsy_month_name').click(function () {
+                // toggle months
+                $(this).siblings(".uBlogsy_post_items").toggle();
+                return false;
+            });
+
+            // expand current post item's month
+            var postItem = $('#uBlogsy_post_archive').find('a[href$="' + window.location.pathname + '"]');
+            if (postItem.length == 1) {
+                $(postItem).parents('#uBlogsy_post_archive .uBlogsy_post_items').show();
+                $(postItem).parents('#uBlogsy_post_archive .uBlogsy_months').show();
+            }
+            else {
+                // expand latest month
+                $(postItem).parents('#uBlogsy_post_archive .uBlogsy_months:eq(0)').show();
+
+                // trigger click to show first month
+                $('.uBlogsy_month_name:eq(0)').trigger('click');
+            }
+        });
+    </script>
+}
+
+
+
+
+@functions
+{
+    private int index = 0;
+}

@@ -1,0 +1,40 @@
+﻿@using System.Linq
+@using uBlogsy.Common.Helpers
+@using uBlogsy.BusinessLogic
+@using uHelpsy.Helpers
+@using umbraco.BusinessLogic
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+    var landing = DataService.Instance.GetLanding(IPublishedContentHelper.GetNode((int)Model.Id));
+    var links = landing.GetPropertyValue<string>("uBlogsyBlogLinks").Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+    var count = (int)PageData["ItemLimit"];
+    RssReader reader;
+    
+    <section class="uBlogsy_blogroll_container well">
+        <ul class="uBlogsy_blogroll">
+            @foreach (var link in links)
+            {
+                if (link.Trim() == string.Empty){ continue; }
+                try
+                {
+                    reader = RssReader.CreateAndCache(link, new TimeSpan(0, 10, 0));
+                }
+                catch(Exception ex)
+                {
+                    Log.Add(LogTypes.Error, IPublishedContentHelper.GetNode(Model.Id).Id, string.Format("Error getting rss feeed {0}, {1}", link, ex));
+                    reader = null;
+                }
+                if (reader == null) { continue; }
+                <li>
+                    <h2 class="uBlogsy_head_style20">@reader.Title</h2>
+                    <ul>
+                        @foreach (RssItem item in reader.Items.OrderByDescending(x => x.Date).Take(count))
+                        {
+                            <li><a href="@item.Link" title="@item.Title">@item.Title</a></li>
+                        }
+                    </ul>
+                </li>
+            }
+        </ul>
+    </section>
+}

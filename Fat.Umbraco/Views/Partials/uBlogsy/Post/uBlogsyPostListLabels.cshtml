@@ -1,0 +1,35 @@
+﻿@using System.Linq
+@using uBlogsy.BusinessLogic;
+@using uHelpsy.Helpers
+@using uHelpsy.Singletons
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+    var labels = PostService.Instance.GetLabels((IPublishedContent)PageData["Node"], false);
+    if (!labels.Any()) { return; }
+
+    // get landing page
+    var landing = DataService.Instance.GetLanding(IPublishedContentHelper.GetNode(Model.Id));
+    
+    @RenderForPost(landing, labels)
+}
+
+
+
+@helper RenderForPost(IPublishedContent landing, IEnumerable<IPublishedContent> labels)
+{
+    <div class="uBlogsy_labels_container">
+        <h5 class="uBlogsy_font_style40">@uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uBlogsyDicCategories")</h5>
+        <ul class="uBlogsy_labels uBlogsy_font_style50">
+            @foreach (var node in labels)
+            {
+                var label = node.GetPropertyValue<string>("uBlogsyLabelName");
+                if (!string.IsNullOrEmpty(label))
+                {
+                    <li><a href="@landing.Url()?label=@Server.UrlEncode(label)" title="@label">@label</a></li>
+                }
+            }
+        </ul>
+    </div>
+}
+
+

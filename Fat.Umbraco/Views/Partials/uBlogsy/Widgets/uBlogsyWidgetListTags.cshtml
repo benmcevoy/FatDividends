@@ -1,0 +1,59 @@
+﻿@using System.Linq
+@using uBlogsy.BusinessLogic
+@using uHelpsy.Helpers
+@using uHelpsy.Singletons
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+    // get all tags
+    var tagCloud = PostService.Instance.GetTags(IPublishedContentHelper.GetNode((int)Model.Id), true);
+    // var tagCloud = NoLuceneFallbackService.Instance.GetTags(IPublishedContentHelper.GetNode(Model.Id).Id, true);
+    
+    if (!tagCloud.Any()){ return; }
+    
+    // get landing page
+    var landing = DataService.Instance.GetLanding(IPublishedContentHelper.GetNode((int)Model.Id));
+    var showCount = (bool)PageData["ShowCount"];
+
+    @RenderForWidget(landing, tagCloud, showCount)
+}
+
+
+
+@helper RenderForWidget(IPublishedContent landing, Dictionary<string, int> tagCloud, bool showCount)
+{
+    // add classes for each tag 
+    var tagCloudClassed = new Dictionary<string, string>();
+    foreach (var t in tagCloud.OrderBy(x => x.Value))
+    {
+        if (!string.IsNullOrEmpty(t.Key.Trim()))
+        {
+            // class each tag so we can size all 
+            int classNumber = t.Value > 100 ? 100 : t.Value;
+
+            var url = landing.Url() + "?tag=" + Server.UrlEncode(t.Key);
+            string s;
+            if (showCount)
+            {
+                s = "<li><a href=\"" + url + "\" class=\"uBlogsy_tag_cloud" + classNumber + "\" title=\"" + t.Key + "\">" + t.Key + "</a><span> (" + t.Value + ")</span></li>";
+            }
+            else
+            {
+                s = "<li><a href=\"" + url + "\" class=\"uBlogsy_tag_cloud" + classNumber + "\" title=\"" + t.Key + "\">" + t.Key + "</a></li>";
+            }
+            tagCloudClassed.Add(t.Key, s);
+        }
+    }
+
+     // alphabetise the tags and render
+    <div class="uBlogsy_tag_container uBlogsy_bottom_border well">
+        <h2 class="uBlogsy_head_style20">
+            @uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uBlogsyDicTags")</h2>
+        <ul class="uBlogsy_tags uBlogsy_tag_cloud">
+            @foreach (var t in tagCloudClassed.OrderBy(x => x.Key))
+            {
+                @Html.Raw(t.Value);
+            }
+        </ul>
+    </div>
+}
+

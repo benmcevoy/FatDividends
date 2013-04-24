@@ -1,0 +1,75 @@
+<%@ Master Language="C#" MasterPageFile="~/masterpages/_uBlogsyBaseSite.master" AutoEventWireup="true" %>
+
+<%@ Import Namespace="SquishIt.Framework" %>
+
+<asp:Content ContentPlaceHolderID="uBlogsyHead" runat="server">
+    <umbraco:Macro ID="Macro5" runat="server" FileLocation="~/Views/Partials/uBlogsy/Global/uBlogsyGlobalBrowserTitle.cshtml" />
+
+    <%--@*get meta title and description*@--%>
+    <umbraco:Macro ID="Macro10" runat="server" FileLocation="~/Views/Partials/uBlogsy/Global/uBlogsyGlobalSeoMeta.cshtml" />
+
+
+    <script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+
+    <%= Bundle.Css()
+            .Add("~/css/blog/bootstrap.min.css")
+            .Add("~/css/blog/bootstrap-responsive.min.css")
+            .Add("~/css/blog/bootstrap-swatch.css")
+            .Add("~/css/blog/uBlogsy.css")
+            .Add("~/css/blog/uCommentsy.css")
+            .Render("~/generated/blog_combined_#.css") %>
+
+    <asp:ContentPlaceHolder ID="uBlogsyHead" runat="server" />
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="uBlogsyMain" runat="server">
+    <div id="uBlogsy">
+        <div id="uBlogsy_main">
+
+            <section id="uBlogsy_left_col">
+                <asp:ContentPlaceHolder ID="uBlogsyLeftCol" runat="server" />
+            </section>
+            <aside id="uBlogsy_right_col">
+                <%-- @*search*@--%>
+                <umbraco:Macro ID="Macro3" runat="server" FileLocation="~/Views/Partials/uBlogsy/Widgets/uBlogsyWidgetSearch.cshtml" />
+
+                <%-- @*rss link*@--%>
+                <umbraco:Macro ID="Macro1" runat="server" FileLocation="~/Views/Partials/uBlogsy/Widgets/uBlogsyWidgetShowRSSLink.cshtml" />
+
+                <%--@*list of authors*@--%>
+                <umbraco:Macro ID="Macro9" runat="server" Language="razor">@RenderPage("~/Views/Partials/uBlogsy/Widgets/uBlogsyWidgetListAuthors.cshtml", new {GravatarSize = 20})
+                </umbraco:Macro>
+
+                <%--@*list of labels*@--%>
+                <umbraco:Macro ID="Macro4" runat="server" FileLocation="~/Views/Partials/uBlogsy/Widgets/uBlogsyWidgetListLabels.cshtml" />
+
+                <%--@*the awesome tag cloud*@--%>
+                <umbraco:Macro ID="Macro6" runat="server" Language="razor">@RenderPage("~/Views/Partials/uBlogsy/Widgets/uBlogsyWidgetListTags.cshtml", new {ShowCount = true})
+                </umbraco:Macro>
+
+                <%--@*list of latest posts*@--%>
+                <umbraco:Macro ID="Macro8" runat="server" Language="razor">@RenderPage("~/Views/Partials/uBlogsy/Widgets/uBlogsyWidgetListPosts.cshtml", new {ItemLimit = 5})
+                </umbraco:Macro>
+
+                <%--@*list of latest comment *@--%>
+                <umbraco:Macro ID="Macro12" runat="server" Language="razor">@RenderPage("~/Views/Partials/uCommentsy/Widgets/uCommentsyWidgetListComments.cshtml", new {ItemLimit = 5})
+                </umbraco:Macro>
+
+
+                <%--@*archive*@--%>
+                <umbraco:Macro ID="Macro2" runat="server" Language="razor">@RenderPage("~/Views/Partials/uBlogsy/Widgets/uBlogsyWidgetListPostArchive.cshtml", new {AltLayout = false})
+                </umbraco:Macro>
+
+
+                <%--@*list blog roll *@--%>
+                <umbraco:Macro ID="Macro7" runat="server" Language="razor">@RenderPage("~/Views/Partials/uBlogsy/Widgets/uBlogsyWidgetListBlogRoll.cshtml", new {ItemLimit = 5})
+                </umbraco:Macro>
+            </aside>
+        </div>
+
+        <umbraco:Macro ID="Macro11" runat="server" Language="razor">@RenderPage("~/Views/Partials/uBlogsy/Global/uBlogsyGlobalFooter.cshtml", new {ItemLimit = 5})
+        </umbraco:Macro>
+    </div>
+
+</asp:Content>

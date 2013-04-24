@@ -25,3 +25,8 @@
             #investmentNews div.snippet {
                 color: #555;
             }  
+
+            #investmentNews div.snippet p {
+                margin: 0;
+                padding: 0;
+            }  

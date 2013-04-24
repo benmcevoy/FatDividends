@@ -1,0 +1,25 @@
+<%@ Master Language="C#" MasterPageFile="~/masterpages/_uBlogsyBaseSite.master" AutoEventWireup="true" %>
+
+<asp:Content ContentPlaceHolderID="uBlogsyHead" runat="server">
+    <link type="text/css" rel="Stylesheet" media="screen" href="/css/uBlogsy.css" />
+</asp:Content>
+	
+<asp:Content ContentPlaceHolderID="uBlogsyMain" runat="server">
+	<div id="uBlogsy"> 
+		<div id="uBlogsy_main" style="width:80%;padding: 0 5%">
+			<h1>
+			    <umbraco:Item runat="server" Field="uBlogsyContentTitle"/>
+			</h1>
+			
+			<section>
+			    <umbraco:Item ID="Item1" runat="server" Field="uBlogsyContentBody"/>
+			</section>
+			
+			<%--@* list posts for home - this only works if the home page is a parent, or sibling of uBlogsyLanding *@--%>
+             <umbraco:Macro ID="Macro9" runat="server" Language="razor">
+                  @RenderPage("~/Views/Partials/uBlogsy/Widgets/uBlogsyWidgetListPostsForHome.cshtml", new {ItemLimit = 5})
+             </umbraco:Macro>	
+		</div>
+	</div>
+
+</asp:Content>

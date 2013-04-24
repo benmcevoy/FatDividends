@@ -10,6 +10,7 @@
         <umbraco:Item ID="Item1" Field="title" runat="server" />
         - Fat Dividends</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
     <meta name="description" content="<%= CurrentContent.Description %>" />
     <meta name="keywords" content="<%= CurrentContent.Keywords %>" />
 

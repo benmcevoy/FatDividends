@@ -1,52 +1,45 @@
-﻿@using umbraco.MacroEngines
-
-@inherits DynamicNodeContext
+﻿@using Umbraco.Web
+@using uBlogsy.BusinessLogic
+@using uBlogsy.Common.Helpers
+@using uHelpsy.Helpers
+@using Fat.Umbraco.DocumentTypes
+@using Vega.USiteBuilder
+@inherits umbraco.MacroEngines.DynamicNodeContext
 @{
-    var content = @Vega.USiteBuilder.ContentHelper.GetCurrentContent() as Fat.Umbraco.DocumentTypes.InvestmentNewsPage;
+    var content = ContentHelper.GetCurrentContent() as InvestmentNewsPage;
+    var landing = DataService.Instance.GetLanding(IPublishedContentHelper.GetNode(1128));
+    var links = landing.GetPropertyValue<string>("uBlogsyBlogLinks").Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+    const int count = 12;
+
+    <div id="investmentNews">
+        <section>
+            <div>@Html.Raw(content.Content)</div>
+            <ul id="newsEntries">
+                @{
+                    var items = new List<RssItem>();
+                    foreach (var link in links.Where(link => link.Trim() != string.Empty))
+                    {
+                        RssReader reader;
+                        try
+                        {
+                            reader = RssReader.CreateAndCache(link, new TimeSpan(0, 30, 0));
+                        }
+                        catch (Exception) { continue; }
+
+                        if (reader == null) { continue; }
+
+                        items.AddRange(reader.Items.OrderByDescending(x => x.Date).Take(4));
+                    }
+                    foreach (var item in items.OrderByDescending(x => x.Date).Take(count))
+                    {
+                    <li class="newsitem"><a href="@item.Link" title="@item.Title">
+                        <div class="title">@item.Title</div>
+                        <div class="snippet">@Html.Raw(item.Description)</div>
+                        <div class="date">@item.Date</div>
+                    </a></li>
+                    }
+                }
+            </ul>
+        </section>
+    </div>
 }
-
-<div id="investmentNews">
-    <section>
-        <div>@Html.Raw(content.Content)</div>
-        <ul id="newsEntries">
-        </ul>
-    </section>
-</div>
-
-<script type="text/javascript">
-    var fat = fat || {};
-
-    fat.feeds = (function($) {
-        var loadAbc = function() {
-            var feed = new google.feeds.Feed("http://www.abc.net.au/news/feed/51892/rss.xml");
-            feed.load(onLoaded);
-        };
-
-        var onLoaded = function(result) {
-            if (!result.error) {
-                $('#newsItemTemplate').tmpl(result.feed.entries).appendTo('#newsEntries');
-            }
-        };
-
-        var formatDate = function(date) {
-            var value = new Date(date);
-            return value.getDate() + '/' + (parseInt(value.getMonth() + 1)) + '/' + value.getFullYear();
-        };
-
-        return {
-            loadAbc: loadAbc,
-            formatDate: formatDate
-        };
-    })(jQuery);
-
-    google.load("feeds", "1");
-    google.setOnLoadCallback(fat.feeds.loadAbc);
-</script>
-
-<script id="newsItemTemplate" type="text/x-jQuery-tmpl">
-    <li class="newsitem"><a href="${link}" target="_blank" title="${title}">
-        <div class="title">${title}</div>
-        <div class="snippet">${contentSnippet}</div>
-        <div class="date">${fat.feeds.formatDate(publishedDate)}</div>
-    </a></li>
-</script>

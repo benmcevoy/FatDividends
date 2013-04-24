@@ -1,0 +1,38 @@
+﻿@using System.Linq
+@using uBlogsy.Common.Helpers
+@using uBlogsy.BusinessLogic
+@using uHelpsy.Helpers
+@using uHelpsy.Singletons
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+    // get tags for this post
+    var tags = PostService.Instance.GetTags((IPublishedContent)PageData["Node"], false).Select(x => x.Key);
+
+    // display tags
+    if (tags.Any())
+    {
+        <h5 class="uBlogsy_font_style40">@uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uBlogsyDicTags")</h5> 
+    }
+    
+    // get landing page
+    var landing = DataService.Instance.GetLanding(IPublishedContentHelper.GetNode(Model.Id));
+    @RenderForPost(landing, tags)
+}
+
+
+
+
+
+@helper RenderForPost(IPublishedContent landing, IEnumerable<string> tags)
+{
+    //list tags
+    <ul class="uBlogsy_tags uBlogsy_font_style50">
+        @foreach (var t in tags)
+        {
+            if (!string.IsNullOrEmpty(t.Trim()))
+            {
+                <li><a href="@landing.Url()?tag=@Server.UrlEncode(t)" title="@t">@t</a></li>
+            }
+        }
+    </ul>
+}

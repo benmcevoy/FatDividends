@@ -1,0 +1,81 @@
+﻿@using uBlogsy.Common.Extensions
+@using uBlogsy.BusinessLogic
+@using uHelpsy.Helpers
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@using File = System.IO.File
+
+@{
+    // get view params
+    var d = (IPublishedContent)PageData[0]["Node"];
+    var alias = (string)PageData[0]["Alias"];
+    var suffix = (string)PageData[0]["Suffix"];
+    var width = (int)PageData[0]["Width"];
+    var height = (int)PageData[0]["Height"];
+    var cssClass = (string)PageData[0]["CssClass"];
+    var title = (string)PageData[0]["Title"];
+    var map = (string)PageData[0]["Map"];
+    var defaultImage = (string)PageData[0]["DefaultImage"];
+}
+
+@{   
+    var imageId = d.GetPropertyValue(alias) != null ? d.GetPropertyValue(alias).ToString() : string.Empty;
+    if (string.IsNullOrWhiteSpace(imageId) && string.IsNullOrWhiteSpace(defaultImage))
+    {
+        // no property or default so do nothing
+        return;
+    }
+
+    // get media
+    var media = uHelpsy.Singletons.uHelpsyUmbracoHelper.Instance.TypedMedia(imageId);
+
+    var url = media != null ? media.Url().GetUrl(suffix, "jpg") : defaultImage.GetUrl(suffix, "jpg");
+
+    // add image gen parameters
+    var imageGenParams = "&constrain=true&compression=100";
+	if (width != -1)
+	{
+		imageGenParams += "&width=" + width;
+	}
+	if (height != -1){
+		imageGenParams += "&height=" + height;
+	}
+	
+    // get host - check for https
+    var src = !File.Exists(Server.MapPath("~/ImageGen.ashx")) ? url : string.Format("/ImageGen.ashx?image={0}{1}", url, imageGenParams);
+        
+    @RenderImage(src, width, height, title, cssClass, map)
+}
+
+
+@helper RenderImage(string url, int width, int height, string title, string cssClass, string useMap)
+    {
+    var style = string.Empty;
+    if (height != -1)
+    {
+        style += string.Format("height:{0}px;", height);
+    }
+    if (width != -1)
+    {
+        style += string.Format("width:{0}px;", width);
+    }
+
+    if (!string.IsNullOrEmpty(useMap))
+    {
+        <img src="@url" alt="@title" class="@cssClass" usemap="@useMap" style="@style"/>
+    }
+    else
+    {
+        <img src="@url" alt="@title" class="@cssClass" style="@style"/>
+    }
+}
+
+
+
+@functions{
+    string GetHost()
+    {
+        string protocol = HttpContext.Current.Request.IsSecureConnection ? "https" : "http";
+        var host = string.Format("{0}://{1}", protocol, HttpContext.Current.Request.ServerVariables["HTTP_HOST"]);
+        return host;
+    }
+}

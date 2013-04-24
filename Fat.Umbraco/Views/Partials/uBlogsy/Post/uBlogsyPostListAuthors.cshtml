@@ -1,0 +1,48 @@
+@using System.Linq
+@using uBlogsy.Common.Helpers
+@using uBlogsy.BusinessLogic;
+@using uHelpsy.Helpers
+@using uHelpsy.Singletons
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+    var node = (IPublishedContent)PageData["Node"] ?? IPublishedContentHelper.GetNode((int)Model.Id);
+    var landing = DataService.Instance.GetLanding(IPublishedContentHelper.GetNode((int)Model.Id));
+    var gravatarSize = (int)PageData["GravatarSize"];
+    var authors = PostService.Instance.GetAuthors(node, false); 
+    @RenderForPost(landing, authors, gravatarSize, node.GetPropertyValue<DateTime>("uBlogsyPostDate"))
+}
+
+
+@helper RenderForPost(IPublishedContent landing,  IEnumerable<IPublishedContent> authors, int gravatarSize, DateTime postDate)
+{
+    <div class="uBlogsy_author uBlogsy_font_style30">
+        @*render gravatar images*@
+        <div>
+            @foreach (var a in authors)
+            {
+                var name = a.GetPropertyValue<string>("uBlogsyAuthorName").Trim();
+                <a href="@landing.Url()?author=@Server.UrlEncode(name)" title="@name" class="uBlogsy_author_thumb">
+                    <img src="@GravatarHelper.GetUrl(a.GetPropertyValue<string>("uBlogsyAuthorGravatarEmail"), gravatarSize)" alt="@(a.GetPropertyValue("uBlogsyAuthorName"))" class="uBlogsy_gravatar uBlogsy_gravatar@gravatarSize" />
+                </a>
+            }
+        </div>               
+        
+        @if (authors.Any())
+        {
+            <span>@uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uBlogsyDicPostWrittenBy")</span> 
+        }
+        <span class="uBlogsy_author_name">
+            @foreach (var a in authors)
+            {
+                var name = a.GetPropertyValue<string>("uBlogsyAuthorName").Trim();
+                <a href="@landing.Url()?author=@Server.UrlEncode(name)" title="@name">@name</a>if (a != authors.Last())
+                                                                                    {<span>,</span>}
+            }
+        </span> 
+        
+        <span class="uBlogsy_post_time">@uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uBlogsyDicPostWrittenAt")
+            @(postDate.ToString("HH:mm"))</span>
+    </div>    
+    
+}
+

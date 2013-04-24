@@ -1,0 +1,17 @@
+@using System.Linq;
+@using uBlogsy.BusinessLogic;
+@using Umbraco.Web
+@using uHelpsy.Helpers
+@using uHelpsy.Singletons
+@inherits umbraco.MacroEngines.DynamicNodeContext
+<div class="uBlogsy_rss_link_container uBlogsy_bottom_border well">
+    <h2 class="uBlogsy_head_style20">
+        @{
+            // get landing page
+            IPublishedContent landing = DataService.Instance.GetLanding(IPublishedContentHelper.GetNode((int)Model.Id));
+            var rss = landing.Children.Single(x => x.DocumentTypeAlias == "uBlogsyRSS");
+            <a href="@rss.Url()" class="uBlogsy_feed" title="RSS"><span>@uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uBlogsyDicRssSubscribe")</span></a>    
+        }
+    </h2>
+ </div>
+

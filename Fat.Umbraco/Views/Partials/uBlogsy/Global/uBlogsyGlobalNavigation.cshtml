@@ -1,0 +1,32 @@
+@using System.Linq
+@using uBlogsy.BusinessLogic
+@using uHelpsy.Helpers
+@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+    IPublishedContent root = DataService.Instance.GetSiteRoot(IPublishedContentHelper.GetNode(Model.Id), "uBlogsySiteRoot") ?? IPublishedContentHelper.GetNode(Model.Id).AncestorOrSelf(1);
+
+    // get all pages
+    var nodes = root.Children;                   
+                        
+    <nav id="uBlogsy_nav" class="uBlogsy_font_style20">
+        @if (Request.Url.AbsolutePath == root.Url())
+        {
+            <a href="@root.Url()" class="uBlogsy_nav_item uBlogsy_current">Home</a>
+        }
+        else
+        {
+            <a href="@root.Url()" class="uBlogsy_nav_item">Home</a>
+        }
+        @foreach (var n in nodes)
+        {
+            if (Request.Url.AbsolutePath == n.Url())
+            {
+                <a href="@n.Url()" class="uBlogsy_nav_item uBlogsy_current">@n.GetPropertyValue("uBlogsyNavigationTitle")</a>
+            }
+            else
+            {
+                <a href="@n.Url()" class="uBlogsy_nav_item">@n.GetPropertyValue("uBlogsyNavigationTitle")</a>
+            }
+        }
+    </nav>
+}

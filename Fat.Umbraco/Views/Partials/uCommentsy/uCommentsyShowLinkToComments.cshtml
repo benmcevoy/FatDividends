@@ -1,0 +1,35 @@
+﻿@{
+        /* LISTS ALL RECENT COMMENTS */
+}
+@using System.Linq
+@using Umbraco.Core.Models
+@using uCommentsy.BusinessLogic
+@using uHelpsy.Extensions
+
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    var model = ViewData.ContainsKey("Node") ? (IPublishedContent)ViewData["Node"] : Model.Content;
+    
+    var comments = CommentService.Instance.GetComments(model, false).ToList().ToIPublishedContent(true);
+
+    @RenderForMain(comments)
+}
+
+
+
+
+
+@helper RenderForMain(IEnumerable<IPublishedContent> comments)
+{
+    @*list comments*@
+    if (!comments.Any())
+    {
+        <span>0  @Umbraco.GetDictionaryValue("uCommentsyDicComments")</span>
+    }
+    else
+    {
+        var commentUrl = CommentService.Instance.GetCommentUrl(comments.First(), true);
+        <a href="@commentUrl" title="Comments">@comments.Count() @Umbraco.GetDictionaryValue("uCommentsyDicComments")</a>
+    }
+}
+

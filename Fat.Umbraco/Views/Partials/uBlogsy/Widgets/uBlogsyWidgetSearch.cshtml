@@ -1,0 +1,20 @@
+﻿@using uBlogsy.BusinessLogic;
+@using uHelpsy.Helpers
+@using uHelpsy.Singletons
+@inherits umbraco.MacroEngines.DynamicNodeContext
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#uBlogsyBtnSearch').click(function(){
+            @{IPublishedContent landing = DataService.Instance.GetLanding(IPublishedContentHelper.GetNode(Model.Id)); }
+            window.location.href = "@landing.Url()" + '?search=' + $("#uBlogsyTxtSearch").val();
+            return false;
+        });
+        $('#uBlogsyTxtSearch').keyup(function (e) {
+            if(e.which == 13) {$('#uBlogsyBtnSearch').trigger('click');}
+        });
+    });
+</script>
+<div class="uBlogsy_search well">
+    <input id="uBlogsyTxtSearch" type="text" placeholder="@uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uBlogsyDicSearch")" />
+    <input id="uBlogsyBtnSearch" type="submit" value="@uHelpsyUmbracoHelper.Instance.GetDictionaryValue("uBlogsyDicSearchSubmit")"  />
+</div>

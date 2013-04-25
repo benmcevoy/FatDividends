@@ -1,19 +1,22 @@
 ﻿@{
-    var latestArticle = Fat.Umbraco.Data.ArticleRepository.GetLatest(this);
+    var blogPost = Fat.Umbraco.Data.ArticleRepository.GetLatest(this);
 
     <div class="article">
         <article>
-            <h1 class="title">@latestArticle.Title</h1>
+            <h1 class="title">@blogPost.Title</h1>
             <div>
-                <sub class="author">By @latestArticle.Author</sub>
-                <sub class="date">on @latestArticle.Date</sub>
+                <sub class="author">By @blogPost.Author</sub>
+                <sub class="date">on @blogPost.Date</sub>
             </div>
-            
-            <div class="image">
-                 <img alt="" src="/imagegen.ashx?width=300&image=@latestArticle.Image"/>
-             </div>
-    
-            <div class="content">@Html.Raw(latestArticle.Content)</div>
+
+            @if (!string.IsNullOrEmpty(blogPost.Image))
+            {
+                <div class="image">
+                    <img alt="" src="/imagegen.ashx?width=300&image=@blogPost.Image"/>
+                </div>
+            }
+
+            <div class="content">@Html.Raw(blogPost.Content)</div>
         </article>
     </div>
 }

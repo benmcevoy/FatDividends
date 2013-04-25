@@ -1,22 +1,63 @@
 ﻿using Fat.Umbraco.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Web;
+using uHelpsy.Helpers;
 using umbraco.MacroEngines;
-using umbraco.cms.businesslogic.media;
+using Media = umbraco.cms.businesslogic.media.Media;
 
 namespace Fat.Umbraco.Data
 {
     public static class ArticleRepository
     {
-        public static BlogPost Get(DynamicNodeContext nodeContex)
+        public static BlogPost Get(DynamicNodeContext nodeContext, int postId = -1)
         {
-            // TODO:
-            return GetEmptyPost();
+            if (postId == -1)
+            {
+                postId = GetBlogPostId();
+            }
+
+            if (postId <= 0)
+            {
+                return GetEmptyPost();
+            }
+
+            var post = new DynamicNode(postId);
+
+            return MapToBlogPost(post);
+        }
+
+        public static IEnumerable<BlogPost> GetByTag(DynamicNodeContext nodeContext, string tag = "")
+        {
+            if (string.IsNullOrEmpty(tag))
+            {
+                tag = GetTag();
+            }
+
+            if (string.IsNullOrEmpty(tag))
+            {
+                return Enumerable.Empty<BlogPost>();
+            }
+
+            int count;
+            var results = uBlogsy.BusinessLogic.PostService.Instance.GetPosts(IPublishedContentHelper.GetNode(1128),
+                tag, "", "", "", "", "",
+                "", "", out count);
+
+            return results.Select(searchResult => new BlogPost
+                {
+                    Author = GetAuthor(searchResult.Fields["uBlogsyPostAuthor"]),
+                    Date = DateTime.Parse(searchResult.Fields["uBlogsyPostDate"]).ToString("dd MMM yyyy"),
+                    Image = GetImageUrl(searchResult.Fields["uBlogsyPostImage"]),
+                    Title = searchResult.Fields["uBlogsyContentTitle"], 
+                    Summary = searchResult.Fields["uBlogsyContentSummary"], 
+                    Content = searchResult.Fields["uBlogsyContentBody"]
+                }).ToList();
         }
 
         public static BlogPost GetLatest(DynamicNodeContext nodeContext)
         {
-
             var post = nodeContext.Current.XPath("//HomePage/uBlogsyLanding/descendant::uBlogsyPost")
                .Items.OrderByDescending(item => DateTime.Parse(item.GetPropertyValue("uBlogsyPostDate")))
                .FirstOrDefault();
@@ -65,6 +106,18 @@ namespace Fat.Umbraco.Data
             return id <= 0
                        ? string.Empty
                        : new Media(id).getProperty("umbracoFile").Value.ToString();
+        }
+
+        private static int GetBlogPostId()
+        {
+            int id;
+            int.TryParse(HttpContext.Current.Request.QueryString["post"], out id);
+            return id;
+        }
+
+        private static string GetTag()
+        {
+            return HttpContext.Current.Request.QueryString["tag"];
         }
     }
 }

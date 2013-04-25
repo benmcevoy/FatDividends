@@ -14,7 +14,6 @@
     
     <div class="homecontent clear">
         <umbraco:Macro ID="Macro3" FileLocation="~/macroScripts/articles/LatestArticle.cshtml" runat="server" />
-
     </div>
 
     <div class="homecontent clear"><%= CurrentContent.Content %></div>

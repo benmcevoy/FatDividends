@@ -721,4 +721,19 @@
       <file name="/umbraco_client/ui/jquery.tooltip.min.js" />
     </files>
   </item>
+  <item key="L3VtYnJhY29fY2xpZW50L3VpL2pxdWVyeS5qczsvdW1icmFjb19jbGllbnQvdWkvZGVmYXVsdC5qczsvdW1icmFjb19jbGllbnQvdGlueW1jZTMvdGlueV9tY2VfcG9wdXAuanM7L3VtYnJhY29fY2xpZW50L3RpbnltY2UzL3V0aWxzL21jdGFicy5qczsvdW1icmFjb19jbGllbnQvdGlueW1jZTMvdXRpbHMvZm9ybV91dGlscy5qczsvdW1icmFjb19jbGllbnQvdGlueW1jZTMvdXRpbHMvdmFsaWRhdGUuanM7" file="D:\Dev\git\FatDividends\Umbraco\App_Data\TEMP\ClientDependency\2_4aca9ab99d2e4becb055948d98f08c4f.cdJ" compression="gzip" version="2">
+    <files>
+      <file name="/umbraco_client/ui/jquery.js" />
+      <file name="/umbraco_client/ui/default.js" />
+      <file name="/umbraco_client/tinymce3/tiny_mce_popup.js" />
+      <file name="/umbraco_client/tinymce3/utils/mctabs.js" />
+      <file name="/umbraco_client/tinymce3/utils/form_utils.js" />
+      <file name="/umbraco_client/tinymce3/utils/validate.js" />
+    </files>
+  </item>
+  <item key="L3VtYnJhY29fY2xpZW50L3Byb3BlcnR5cGFuZS9zdHlsZS5jc3M7" file="D:\Dev\git\FatDividends\Umbraco\App_Data\TEMP\ClientDependency\2_cb20e39c381941e5a0f00640098820a4.cdC" compression="gzip" version="2">
+    <files>
+      <file name="/umbraco_client/propertypane/style.css" />
+    </files>
+  </item>
 </map>

@@ -1,27 +1,25 @@
-﻿@{
-     var tag = Parameter.tag;
-    
+﻿@using umbraco.MacroEngines
+
+@inherits DynamicNodeContext
+@{
+    var tag = Model.Tag;
+
     var posts = Fat.Umbraco.Data.ArticleRepository.GetByTag(this, tag);
 
     foreach (var blogPost in posts)
     {
     <div class="article">
         <article>
-            <h1 class="title">@blogPost.Title</h1>
+            <a href="/article/@blogPost.Id">
+                <h3 class="title">@blogPost.Title</h3>
+            </a>
+            <div class="content">@Html.Raw(blogPost.Summary)</div>
             <div>
                 <sub class="author">By @blogPost.Author</sub>
                 <sub class="date">on @blogPost.Date</sub>
             </div>
-            
-            @if (!string.IsNullOrEmpty(blogPost.Image))
-            {
-                <div class="image">
-                    <img alt="" src="/imagegen.ashx?width=300&image=@blogPost.Image"/>
-                </div>
-            }
-
-            <div class="content">@Html.Raw(blogPost.Content)</div>
         </article>
     </div>
+    <div class="clear"></div>
     }
 }

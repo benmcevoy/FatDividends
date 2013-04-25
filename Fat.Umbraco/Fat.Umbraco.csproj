@@ -246,6 +246,8 @@
     <Content Include="macroScripts\articles\LatestArticle.cshtml" />
     <Content Include="macroScripts\articles\ArticlesByTag.cshtml" />
     <Content Include="macroScripts\articles\Article.cshtml" />
+    <Content Include="masterpages\Article.master" />
+    <Content Include="masterpages\ArticleList.master" />
     <None Include="scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="scripts\jquery-1.7.1.min.js" />
     <Content Include="scripts\jQuery.tmpl.min.js" />
@@ -267,6 +269,8 @@
     <Compile Include="Data\EarningRepository.cs" />
     <Compile Include="Data\SearchRepository.cs" />
     <Compile Include="Data\StockRepository.cs" />
+    <Compile Include="DocumentTypes\Article.cs" />
+    <Compile Include="DocumentTypes\ArticleList.cs" />
     <Compile Include="DocumentTypes\ContactFormPage.cs" />
     <Compile Include="DocumentTypes\ContentPage.cs" />
     <Compile Include="DocumentTypes\DividendDetail.cs" />
@@ -285,6 +289,20 @@
     <Compile Include="Filters\AllowCrossOriginAttribute.cs" />
     <Compile Include="Filters\ApiCacheAttribute.cs" />
     <Compile Include="HtmlHelper.cs" />
+    <Compile Include="masterpages\Article.master.cs">
+      <DependentUpon>Article.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="masterpages\Article.master.designer.cs">
+      <DependentUpon>Article.master</DependentUpon>
+    </Compile>
+    <Compile Include="masterpages\ArticleList.master.cs">
+      <DependentUpon>ArticleList.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="masterpages\ArticleList.master.designer.cs">
+      <DependentUpon>ArticleList.master</DependentUpon>
+    </Compile>
     <Compile Include="masterpages\ContactUsForm.master.cs">
       <DependentUpon>ContactUsForm.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

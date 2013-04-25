@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using uBlogsy.BusinessLogic;
 using uHelpsy.Helpers;
 using umbraco.MacroEngines;
 using Media = umbraco.cms.businesslogic.media.Media;
@@ -41,12 +42,13 @@ namespace Fat.Umbraco.Data
             }
 
             int count;
-            var results = uBlogsy.BusinessLogic.PostService.Instance.GetPosts(IPublishedContentHelper.GetNode(1128),
+            var results = PostService.Instance.GetPosts(IPublishedContentHelper.GetNode(1128),
                 tag, "", "", "", "", "",
                 "", "", out count);
 
             return results.Select(searchResult => new BlogPost
                 {
+                    Id = searchResult.Id,
                     Author = GetAuthor(searchResult.Fields["uBlogsyPostAuthor"]),
                     Date = DateTime.Parse(searchResult.Fields["uBlogsyPostDate"]).ToString("dd MMM yyyy"),
                     Image = GetImageUrl(searchResult.Fields["uBlogsyPostImage"]),
@@ -71,6 +73,7 @@ namespace Fat.Umbraco.Data
         {
             return new BlogPost
                 {
+                    Id = -1,
                     Author = "",
                     Content = "Sorry, nothing found",
                     Title = "Sorry, nothing found",
@@ -83,6 +86,7 @@ namespace Fat.Umbraco.Data
         {
             return new BlogPost
                 {
+                    Id = post.Id,
                     Author = GetAuthor(post.GetPropertyValue("uBlogsyPostAuthor")),
                     Date = DateTime.Parse(post.GetPropertyValue("uBlogsyPostDate", DateTime.UtcNow.ToString("dd MMM yyyy"))).ToString("dd MMM yyyy"),
                     Title = post.GetPropertyValue("uBlogsyContentTitle", "Sorry, nothing found"),

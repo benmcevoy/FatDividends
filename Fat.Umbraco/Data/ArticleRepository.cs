@@ -29,7 +29,7 @@ namespace Fat.Umbraco.Data
             return MapToBlogPost(post);
         }
 
-        public static IEnumerable<BlogPost> GetByTag(DynamicNodeContext nodeContext, string tag = "")
+        public static IEnumerable<BlogPost> GetByTag(DynamicNodeContext nodeContext, string tag = "", int count = 10)
         {
             if (string.IsNullOrEmpty(tag))
             {
@@ -41,12 +41,14 @@ namespace Fat.Umbraco.Data
                 return Enumerable.Empty<BlogPost>();
             }
 
-            int count;
+            int resultCount;
             var results = PostService.Instance.GetPosts(IPublishedContentHelper.GetNode(1128),
                 tag, "", "", "", "", "",
-                "", "", out count);
+                "", "", out resultCount);
 
-            return results.Select(searchResult => new BlogPost
+            return results
+                .OrderByDescending(searchResult => DateTime.Parse(searchResult.Fields["uBlogsyPostDate"]))
+                .Select(searchResult => new BlogPost
                 {
                     Id = searchResult.Id,
                     Author = GetAuthor(searchResult.Fields["uBlogsyPostAuthor"]),
@@ -55,7 +57,7 @@ namespace Fat.Umbraco.Data
                     Title = searchResult.Fields["uBlogsyContentTitle"], 
                     Summary = searchResult.Fields["uBlogsyContentSummary"], 
                     Content = searchResult.Fields["uBlogsyContentBody"]
-                }).ToList();
+                }).Take(count).ToList();
         }
 
         public static BlogPost GetLatest(DynamicNodeContext nodeContext)

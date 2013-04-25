@@ -6,19 +6,19 @@
 @{
     // image settings
     const string defaultImage = "http://placekitten.com/300/200/"; // change this if want a default image. eg "http://placekitten.com/300/200/", else make it null (no "")
-    const int imageHieght = -1; // -1 if no height specified
+    const int imageHeight = -1; // -1 if no height specified
     const int imageWidth = 300;
 
     var node = (IPublishedContent)PageData["Node"];
     
     var url = node.Url().GetUrlWithQueryString(Request.QueryString, new[] { "action", "success" });
     
-    @ShowPost(node,  url, imageHieght, imageWidth, defaultImage)
+    @ShowPost(node,  url, imageHeight, imageWidth, defaultImage)
 }
 
 
 
-@helper ShowPost(IPublishedContent node, string url, int imageHieght, int imageWidth, string defaultImage)
+@helper ShowPost(IPublishedContent node, string url, int imageHeight, int imageWidth, string defaultImage)
     {
         <article class="uBlogsy_post uBlogsy_bottom_border">
         <h2>
@@ -26,7 +26,7 @@
         <h3 class="uBlogsy_post_date uBlogsy_font_style40">@(node.GetPropertyValue<DateTime>("uBlogsyPostDate").ToString("dddd MMMM d, yyyy"))</h3>
 
         <section class="uBlogsy_post_body">
-            @RenderPostImage(node, imageHieght, imageWidth, defaultImage)
+            @RenderPostImage(node, imageHeight, imageWidth, defaultImage)
 
             @Html.Raw(library.RenderMacroContent(node.GetPropertyValue<string>("uBlogsyContentBody"), node.Id))
         </section>

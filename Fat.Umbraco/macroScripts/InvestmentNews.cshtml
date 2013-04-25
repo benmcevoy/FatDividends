@@ -28,7 +28,7 @@
 
                         if (reader == null) { continue; }
 
-                        items.AddRange(reader.Items.OrderByDescending(x => x.Date).Take(4));
+                        items.AddRange(reader.Items.OrderByDescending(x => x.Date));
                     }
                     foreach (var item in items.OrderByDescending(x => x.Date).Take(count))
                     {

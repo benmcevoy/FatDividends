@@ -15,7 +15,7 @@ namespace Fat.Import
         public static void Import()
         {
             var csvMapper = new CsvMapper();
-            var csv = File.ReadAllText(@"D:\Dev\git\FatDividends\_documentation\scrape_output_750.csv");
+            var csv = File.ReadAllText(@"D:\Dev\git\FatDividends\_documentation\complete_dividends.csv");
             var mappings = new Dictionary<string, int>
                 {
                     {"StockCode", 0},

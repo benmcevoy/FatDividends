@@ -25,6 +25,7 @@
             .Add("~/css/stockDetail.css")
             .Add("~/css/investmentNews.css")
             .Add("~/css/tabs.css")
+            .Add("~/css/article.css")
             .Add("~/css/textStyles.css")
             .Render("~/generated/combined_#.css") %>
 
@@ -115,7 +116,7 @@
             <div id="footer">
                 <footer>
                     <div id="copyright">
-                        &copy;Fat Dividends | <a href="/contact/">Contact</a>
+                        &copy;Fat Dividends | <a href="/blog/">Blog</a> | <a href="/contact/">Contact</a>
                     </div>
                     <%--<div class="advert">
                         <script type="text/javascript"><!--

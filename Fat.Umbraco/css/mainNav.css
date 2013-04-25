@@ -1,75 +1,105 @@
-﻿
-#mainNav {
+﻿#mainNav {
     float: left;
+    display: block;
+    width: 100%;
 }
 
-    #mainNav ul {
+    #mainNav table {
         margin: 0;
         padding: 0;
-        height: 45px;
+        height: 50px;
         border-bottom: 5px solid #17A9DA;
         width: 100%;
+        border-collapse: collapse;
     }
 
-        #mainNav ul li {
-            list-style: none;
-            float: left;
-            display: inline-block;
-            height: 40px;
-            margin-top: 5px;
+    #mainNav td {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        height: 40px;
+    }
+
+        #mainNav td a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+            display: block;
+            margin: 0;
+            padding: 15px 0 0 0;
+            height: 30px;
         }
 
-            #mainNav ul li a {
-                height: 40px;
-                width: 190px;
-                color: #fff;
-                text-decoration: none;
-                display: table-cell;
-                vertical-align: middle;
-                text-align: center;
-                font-size: 1.1em;
-            }
-
-                #mainNav ul li a.home {
-                    width: 50px;
-                }
-
-                    #mainNav ul li a.home img {
-                        border: none;
-                        margin: 6px 0 0 0;
-                    }
-
-                #mainNav ul li a:active, #mainNav ul li a:hover {
-                    background-color: #17A9DA;
-                    margin-top: 0;
-                }
-
-            #mainNav ul li.home {
-                background-color: #333;
-            }
-
-            #mainNav ul li.index1 {
-                background-color: #555;
-            }
-
-            #mainNav ul li.index2 {
-                background-color: #6E6F71;
-            }
-
-            #mainNav ul li.index3 {
-                background-color: #7B7C80;
-            }
-
-            #mainNav ul li.index4 {
-                background-color: #898A8C;
-            }
-
-            #mainNav ul li.index5 {
-                background-color: #96979B;
-            }
-
-            #mainNav ul li.active {
+            #mainNav td a.active {
+                margin-top: -5px;
                 background-color: #17A9DA;
-                height: 45px;
-                margin-top: 0;
             }
+
+            #mainNav td a.home {
+                width: 50px;
+            }
+
+                #mainNav td a.home img {
+                    border: none;
+                    margin: -10px 0 0 0;
+                }
+
+                #mainNav td a.home:hover img,
+                #mainNav td a.home.active img {
+                    margin-top: -5px;
+                }
+
+            #mainNav td a:active, #mainNav td a:hover {
+                background-color: #17A9DA;
+                margin-top: -5px;
+                height: 35px;
+            }
+
+        #mainNav td.home {
+            background-color: #333;
+            width: 50px;
+        }
+
+        #mainNav td.index1 {
+            background-color: #555;
+        }
+
+        #mainNav td.index2 {
+            background-color: #6E6F71;
+        }
+
+        #mainNav td.index3 {
+            background-color: #7B7C80;
+        }
+
+        #mainNav td.index4 {
+            background-color: #898A8C;
+        }
+
+        #mainNav td.index5 {
+            background-color: #96979B;
+        }
+
+        #mainNav td.index6 {
+            background-color: #a3a3a3;
+        }
+
+        #mainNav td.index7 {
+            background-color: #b0b0b0;
+        }
+
+        #mainNav td.index8 {
+            background-color: #bcbcbc;
+        }
+
+        #mainNav td.index9 {
+            background-color: #cacaca;
+        }
+
+        #mainNav td.index10 {
+            background-color: #d7d7d7;
+        }
+
+        #mainNav td.active {
+            background-color: #17A9DA;
+        }

@@ -187,6 +187,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="App_Data\fattyd.database.sdf" />
+    <Content Include="css\article.css" />
     <Content Include="css\blog\bootstrap-responsive.css" />
     <Content Include="css\blog\bootstrap-responsive.min.css" />
     <Content Include="css\blog\bootstrap-swatch.css" />
@@ -242,6 +243,9 @@
     <Content Include="masterpages\uBlogsyRss.master" />
     <Content Include="masterpages\uBlogsySiteHome.master" />
     <Content Include="masterpages\uDateFoldersyFolderRedirect.master" />
+    <Content Include="macroScripts\articles\LatestArticle.cshtml" />
+    <Content Include="macroScripts\articles\ArticlesByTag.cshtml" />
+    <Content Include="macroScripts\articles\Article.cshtml" />
     <None Include="scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="scripts\jquery-1.7.1.min.js" />
     <Content Include="scripts\jQuery.tmpl.min.js" />
@@ -258,6 +262,7 @@
     <Compile Include="API\SearchController.cs" />
     <Compile Include="API\StockController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Data\ArticleRepository.cs" />
     <Compile Include="Data\DividendRepository.cs" />
     <Compile Include="Data\EarningRepository.cs" />
     <Compile Include="Data\SearchRepository.cs" />
@@ -347,6 +352,7 @@
     <Compile Include="Sitemap.ashx.cs">
       <DependentUpon>Sitemap.ashx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\BlogPost.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

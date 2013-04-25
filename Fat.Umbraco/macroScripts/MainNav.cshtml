@@ -3,7 +3,6 @@
 @using umbraco.MacroEngines
 
 @inherits DynamicNodeContext
-
 @{
     var startNodeId = Parameter.StartNodeId;
     if (startNodeId != null)
@@ -14,27 +13,31 @@
         {
             var index = 1;
             var active = "";
-            <div id="mainNav">
-                <nav role="navigation">
-                    <ul role="menu">
-                        <li role="menuitem" class="home @Fat.Umbraco.HtmlHelper.RenderHomeNodeActiveClass(Current.Id)">
-                            <a class="home" href="/" title="Home"><img alt="Home" src="/css/Images/home.png" /></a>
-                        </li>
-                        @foreach (var item in startNode.Children)
-                        {
-                            var linkItem = ContentHelper.GetByNodeId<LinkItem>(item.Id);
+    <div id="mainNav">
+        <nav role="navigation">
+            <table role="menu">
+                <tr>
+                    <td role="menuitem" class="home @Fat.Umbraco.HtmlHelper.RenderHomeNodeActiveClass(Current.Id)">
+                        <a class="home @Fat.Umbraco.HtmlHelper.RenderHomeNodeActiveClass(Current.Id)" href="/" title="Home">
+                            <img alt="Home" src="/css/Images/home.png" /></a>
+                    </td>
+                    @foreach (var item in startNode.Children)
+                    {
+                        var linkItem = ContentHelper.GetByNodeId<LinkItem>(item.Id);
 
-                            if (Current.Id == linkItem.LocalHref) { active = "active"; }
+                        if (Current.Id == linkItem.LocalHref) { active = "active"; }
                     
-                            <li role="menuitem" class="@active index@(index)"><a href="@linkItem.EffectiveUrl" title="@linkItem.RenderTitle" @linkItem.Target>@linkItem.RenderTitle</a></li>
+                        <td role="menuitem" class="@active index@(index)">
+                            <a href="@linkItem.EffectiveUrl" class="@active" title="@linkItem.RenderTitle" @linkItem.Target>@linkItem.RenderTitle</a>
+                        </td>
 
-                            index++;
-                            active = "";
-                        }
-                    </ul>
-                </nav>
-            </div>
-            <div class="clear"></div>
+                        index++;
+                        active = "";
+                    }
+                </tr>
+            </table>
+        </nav>
+    </div>
         }
     }
 }

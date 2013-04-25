@@ -1,0 +1,19 @@
+﻿@{
+    var latestArticle = Fat.Umbraco.Data.ArticleRepository.GetLatest(this);
+
+    <div class="article">
+        <article>
+            <h1 class="title">@latestArticle.Title</h1>
+            <div>
+                <sub class="author">By @latestArticle.Author</sub>
+                <sub class="date">on @latestArticle.Date</sub>
+            </div>
+            
+            <div class="image">
+                 <img alt="" src="/imagegen.ashx?width=300&image=@latestArticle.Image"/>
+             </div>
+    
+            <div class="content">@Html.Raw(latestArticle.Content)</div>
+        </article>
+    </div>
+}

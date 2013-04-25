@@ -6,20 +6,20 @@
     font-weight: normal;
 }
 
-.h1 {
+h1, .h1 {
     font-size: 2em;
 	font-weight: 900;
     margin: 0;
     padding: 0;
 }
 
-.h2 {
+h2, .h2 {
     font-size: 1.8em;
     margin: 0;
     padding: 0;
 }
 
-.h3 {
+h3, .h3 {
     font-size: 1.5em;
     margin: 0;
     padding: 0;

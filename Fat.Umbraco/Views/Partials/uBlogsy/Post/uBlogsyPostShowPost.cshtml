@@ -1,4 +1,5 @@
-﻿@using uBlogsy.BusinessLogic
+﻿@using Fat.Umbraco
+@using uBlogsy.BusinessLogic
 @using uBlogsy.Common.Extensions
 @using uHelpsy.Helpers
 @using uHelpsy.Singletons
@@ -28,7 +29,7 @@
         <section class="uBlogsy_post_body">
             @RenderPostImage(node, imageHeight, imageWidth, defaultImage)
 
-            @Html.Raw(library.RenderMacroContent(node.GetPropertyValue<string>("uBlogsyContentBody"), node.Id))
+            @Html.Raw(library.RenderMacroContent(node.GetPropertyValue<string>("uBlogsyContentBody").Wikify(), node.Id).Wikify())
         </section>
 
         <aside class="uBlogsy_post_details">

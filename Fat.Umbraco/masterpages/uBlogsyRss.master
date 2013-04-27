@@ -8,6 +8,7 @@
 @using uHelpsy.Helpers
 @using Umbraco
 @using Umbraco.Web
+@using Fat.Umbraco
 @{
     Layout = null;
     // get tag, label, or author from query string
@@ -64,7 +65,7 @@
             <title>@p.GetValue("uBlogsyContentTitle")</title>
             <author>@p.GetValue("uBlogsyPostAuthor")</author>
             <comments>@(blogUrl + p.Url())</comments>
-            <description>@(uBlogsy.Common.Extensions.StringExtensions.StripHtml(p.GetValue("uBlogsyContentBody")).Trim())</description>
+            <description>@(uBlogsy.Common.Extensions.StringExtensions.StripHtml(p.GetValue("uBlogsyContentBody").Wikify()).Trim())</description>
             @Html.Raw(string.Format("<link>{0}{1}</link>", blogUrl, p.Url()))
             <guid>@(blogUrl + p.Url())</guid>
             <pubDate>@(p.GetValue("uBlogsyPostDate").ToString().FormatDateTime("ddd, dd MMMM yyyy HH:mm:ss")) </pubDate>

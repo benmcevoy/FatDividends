@@ -10,11 +10,12 @@
     <div id="uBlogsy">
         <div id="uBlogsy_main" style="width:80%;padding: 0 5%">
             <umbraco:Macro runat="server" Language="razor">
+                @using Fat.Umbraco
                 <h3>
                     <a href="@Model.Url">@Model.uBlogsyContentTitle</a>
                 </h3>
                 <div class="uBlogsy_content_body">
-                    @Html.Raw(library.RenderMacroContent(Model.uBlogsyContentBody.ToString(), Model.Id))
+                    @Html.Raw(library.RenderMacroContent(Model.uBlogsyContentBody.ToString(), Model.Id).Wikify())
                 </div>
             </umbraco:Macro>
         </div>

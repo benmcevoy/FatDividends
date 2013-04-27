@@ -51,14 +51,16 @@ namespace Fat.Umbraco.Data
                 .Select(searchResult => new BlogPost
                 {
                     Id = searchResult.Id,
-                    Author = GetAuthor(searchResult.Fields["uBlogsyPostAuthor"]),
-                    Date = DateTime.Parse(searchResult.Fields["uBlogsyPostDate"]).ToString("dd MMM yyyy"),
-                    Image = GetImageUrl(searchResult.Fields["uBlogsyPostImage"]),
-                    Title = searchResult.Fields["uBlogsyContentTitle"], 
-                    Summary = searchResult.Fields["uBlogsyContentSummary"], 
-                    Content = searchResult.Fields["uBlogsyContentBody"]
+                    Author = GetAuthor(searchResult.GetLuceneField("uBlogsyPostAuthor")),
+                    Date = DateTime.Parse(searchResult.GetLuceneField("uBlogsyPostDate")).ToString("dd MMM yyyy"),
+                    Image = GetImageUrl(searchResult.GetLuceneField("uBlogsyPostImage")),
+                    Title = searchResult.GetLuceneField("uBlogsyContentTitle").Wikify(),
+                    Summary = searchResult.GetLuceneField("uBlogsyContentSummary").Wikify(),
+                    Content = searchResult.GetLuceneField("uBlogsyContentBody").Wikify()
                 }).Take(count).ToList();
         }
+
+       
 
         public static BlogPost GetLatest(DynamicNodeContext nodeContext)
         {
@@ -91,9 +93,9 @@ namespace Fat.Umbraco.Data
                     Id = post.Id,
                     Author = GetAuthor(post.GetPropertyValue("uBlogsyPostAuthor")),
                     Date = DateTime.Parse(post.GetPropertyValue("uBlogsyPostDate", DateTime.UtcNow.ToString("dd MMM yyyy"))).ToString("dd MMM yyyy"),
-                    Title = post.GetPropertyValue("uBlogsyContentTitle", "Sorry, nothing found"),
-                    Summary = post.GetPropertyValue("uBlogsyContentSummary", "Sorry, nothing found"),
-                    Content = post.GetPropertyValue("uBlogsyContentBody", "Sorry, nothing found"),
+                    Title = post.GetPropertyValue("uBlogsyContentTitle", "Sorry, nothing found").Wikify(),
+                    Summary = post.GetPropertyValue("uBlogsyContentSummary", "Sorry, nothing found").Wikify(),
+                    Content = post.GetPropertyValue("uBlogsyContentBody", "Sorry, nothing found").Wikify(),
                     Image = GetImageUrl(post.GetPropertyValue("uBlogsyPostImage"))
                 };
         }

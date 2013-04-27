@@ -1,4 +1,5 @@
-﻿@using uBlogsy.BusinessLogic
+﻿@using Fat.Umbraco
+@using uBlogsy.BusinessLogic
 @using uHelpsy.Helpers
 @using uHelpsy.Singletons
 @inherits umbraco.MacroEngines.DynamicNodeContext
@@ -6,7 +7,7 @@
     // image settings
     const string defaultImage = "http://placekitten.com/300/200/"; // change this if want a default image. eg "http://placekitten.com/300/200/", else make it null (no "")
     const int imageHieght = -1; // -1 if no height specified
-    const int imageWidth = 300;
+    const int imageWidth = 200;
 
 
     IPublishedContent node = PageData.ContainsKey("Node") ? (IPublishedContent)PageData["Node"] : IPublishedContentHelper.GetNode((int)Model.Id);
@@ -65,13 +66,13 @@
 @helper RenderPostBody(IPublishedContent d)
 {
     var useSummary = DataService.Instance.GetValueFromLanding(IPublishedContentHelper.GetNode((int)Model.Id), "uBlogsyGeneralUseSummary");
-    if (useSummary == "1" && d.GetPropertyValue<string>("uBlogsyContentSummary").Trim() != string.Empty)
+    if (useSummary == "1" && d.GetPropertyValue<string>("uBlogsyContentSummary").Wikify().Trim() != string.Empty)
     {
-        @Html.Raw(d.GetPropertyValue("uBlogsyContentSummary"))
+        @Html.Raw(d.GetPropertyValue<string>("uBlogsyContentSummary").Wikify())
     }
     else
     {
-    @Html.Raw(library.RenderMacroContent(d.GetPropertyValue<string>("uBlogsyContentBody"), d.Id))
+    @Html.Raw(library.RenderMacroContent(d.GetPropertyValue<string>("uBlogsyContentBody").Wikify(), d.Id))
     } 
 }
 

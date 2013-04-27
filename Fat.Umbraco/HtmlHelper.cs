@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.Text.RegularExpressions;
+using Examine;
+using System;
 using System.Configuration;
 using System.Linq;
 using System.Web;
@@ -86,6 +88,17 @@ namespace Fat.Umbraco
         public static string AsString(this bool instance, string trueString, string falseString)
         {
             return instance ? trueString : falseString;
+        }
+
+        public static string GetLuceneField(this SearchResult searchResult, string key, string defaultValue = "")
+        {
+            return searchResult.Fields.ContainsKey(key) ? searchResult.Fields[key] : defaultValue;
+        }
+
+        private static readonly Regex WikiRegex = new Regex(@"\{\{([a-zA-Z]{3})\}\}");
+        public static string Wikify(this string value)
+        {
+            return WikiRegex.Replace(value, "<a href='/stock-information/$1'>$1</a>");
         }
     }
 }

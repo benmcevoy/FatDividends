@@ -32,7 +32,7 @@
                     }
                     foreach (var item in items.OrderByDescending(x => x.Date).Take(count))
                     {
-                    <li class="newsitem"><a href="@item.Link" title="@item.Title">
+                    <li class="newsitem"><a href="@item.Link" target="_blank" title="@item.Title">
                         <h3 class="title">@item.Title</h3>
                         <div class="snippet">@Html.Raw(item.Description)</div>
                         <div class="date">@item.Date</div>

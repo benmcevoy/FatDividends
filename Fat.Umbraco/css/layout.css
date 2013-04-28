@@ -130,3 +130,8 @@
 .homecontent {
     width: 600px;
 }
+
+.noborder .widget {
+    border-bottom: none;
+    height: auto;
+}

@@ -27,7 +27,6 @@
 #stockPrice, #stockDividends, #stockEarnings {
     float: left;
     width: 323px;
-    height: 150px;
 }
 
     #stockPrice .price {

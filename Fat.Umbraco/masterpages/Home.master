@@ -16,7 +16,7 @@
         <umbraco:Macro ID="Macro3" FileLocation="~/macroScripts/articles/LatestArticle.cshtml" runat="server" />
     </div>
 
-    <div class="homecontent clear"><%= CurrentContent.Content %></div>
+    <div class="homecontent clear"><%= CurrentContent.Content.Wikify() %></div>
 </asp:Content>
 
 

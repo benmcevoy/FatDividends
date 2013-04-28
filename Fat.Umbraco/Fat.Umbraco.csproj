@@ -194,6 +194,7 @@
     <Content Include="css\blog\bootstrap.css" />
     <Content Include="css\blog\bootstrap.min.css" />
     <Content Include="css\calendarWidget.css" />
+    <Content Include="css\dashboard.css" />
     <Content Include="css\ie7.css" />
     <Content Include="css\Images\home.png" />
     <Content Include="css\Images\logo.png" />
@@ -248,11 +249,13 @@
     <Content Include="macroScripts\articles\Article.cshtml" />
     <Content Include="masterpages\Article.master" />
     <Content Include="masterpages\ArticleList.master" />
+    <Content Include="Config\Dashboard.config" />
     <None Include="scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="scripts\jquery-1.7.1.min.js" />
     <Content Include="scripts\jQuery.tmpl.min.js" />
     <Content Include="scripts\modernizr-2.5.3.js" />
     <Content Include="umbraco\plugins\uComponents\uComponentsInstaller.ascx" />
+    <Content Include="usercontrols\FatDividends\Dashboard.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -370,6 +373,13 @@
     <Compile Include="Sitemap.ashx.cs">
       <DependentUpon>Sitemap.ashx</DependentUpon>
     </Compile>
+    <Compile Include="usercontrols\FatDividends\Dashboard.ascx.cs">
+      <DependentUpon>Dashboard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\FatDividends\Dashboard.ascx.designer.cs">
+      <DependentUpon>Dashboard.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\BlogPost.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -417,9 +427,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="usercontrols\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Fat.Services\Fat.Services.csproj">
       <Project>{0135e795-f0cc-42b6-8ab0-599022d8efd3}</Project>

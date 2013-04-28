@@ -5,8 +5,8 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head>
-    <title>
+<head runat="server">
+    <title><asp:ContentPlaceHolder runat="server" ID="title"></asp:ContentPlaceHolder>
         <umbraco:Item ID="Item1" Field="title" runat="server" />
         - Fat Dividends</title>
     <meta charset="UTF-8" />

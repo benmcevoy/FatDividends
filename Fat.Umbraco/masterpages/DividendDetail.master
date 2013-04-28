@@ -1,9 +1,10 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Site.Master" AutoEventWireup="true" CodeBehind="DividendDetail.master.cs" Inherits="Fat.Umbraco.masterpages.DividendDetail" %>
+<%@ Import Namespace="Fat.Umbraco" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
        <div>
-        <%= CurrentContent.Content %>
+        <%= CurrentContent.Content.Wikify() %>
     </div>
     
     <umbraco:Macro ID="Macro1" FileLocation="~/macroScripts/stocks/MiniSummaryWidget.cshtml" runat="server" />

@@ -386,3 +386,33 @@ System.InvalidOperationException: Multiple nodes with the same URL '/' were foun
 2013-04-28 13:15:05,978 [64] INFO  umbraco.BusinessLogic.Log - [Thread 50] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Custom | User: 0 | NodeId: -1 | Comment: [UmbracoExamine] Adding examine event handlers for index providers: 3
 2013-04-28 13:15:05,988 [64] INFO  Umbraco.Core.PluginManager - [Thread 30] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 8ms)
 2013-04-28 13:15:06,036 [64] INFO  Umbraco.Core.PluginManager - [Thread 30] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 5ms)
+2013-04-28 13:20:20,624 [64] INFO  Umbraco.Core.PluginManager - [Thread 47] Completed resolution of types of umbraco.interfaces.IDataType, found 35 (took 4ms)
+2013-04-28 13:20:20,639 [64] INFO  Umbraco.Core.PluginManager - [Thread 47] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 4ms)
+2013-04-28 13:20:20,979 [64] INFO  umbraco.content - [Thread 47] Loading content from disk cache...
+2013-04-28 13:24:14,915 [64] INFO  Umbraco.Core.PluginManager - [Thread 55] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 2 (took 5ms)
+2013-04-28 13:24:23,320 [48] INFO  Umbraco.Core.CoreBootManager - [Thread 30] Umbraco application starting
+2013-04-28 13:24:23,351 [48] INFO  Umbraco.Core.PluginManager - [Thread 30] Determining hash of code files on disk
+2013-04-28 13:24:23,360 [48] INFO  Umbraco.Core.PluginManager - [Thread 30] Hash determined (took 8ms)
+2013-04-28 13:24:23,512 [48] INFO  Umbraco.Core.PluginManager - [Thread 30] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 19 (took 140ms)
+2013-04-28 13:24:23,538 [48] INFO  Umbraco.Core.PluginManager - [Thread 30] Completed resolution of types of Umbraco.Core.Models.IMacroPropertyType, found 0 (took 4ms)
+2013-04-28 13:24:23,544 [48] INFO  Umbraco.Core.PluginManager - [Thread 30] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 4ms)
+2013-04-28 13:24:23,549 [48] INFO  Umbraco.Core.PluginManager - [Thread 30] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 1 (took 4ms)
+2013-04-28 13:24:23,558 [48] INFO  Umbraco.Core.PluginManager - [Thread 30] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 4ms)
+2013-04-28 13:24:23,562 [48] INFO  Umbraco.Core.PluginManager - [Thread 30] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 4ms)
+2013-04-28 13:24:23,676 [48] INFO  Umbraco.Core.CoreBootManager - [Thread 30] Umbraco application startup complete (took 346ms)
+2013-04-28 13:24:23,842 [48] INFO  Umbraco.Core.PluginManager - [Thread 30] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 8ms)
+2013-04-28 13:24:23,894 [48] INFO  Umbraco.Core.PluginManager - [Thread 30] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 5ms)
+2013-04-28 13:24:23,958 [48] INFO  umbraco.BusinessLogic.Log - [Thread 18] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Custom | User: 0 | NodeId: -1 | Comment: [UmbracoExamine] Adding examine event handlers for index providers: 3
+2013-04-28 13:24:29,942 [64] INFO  umbraco.BusinessLogic.Log - [Thread 5] Log scrubbed.  Removed all items older than 2013-02-27 13:24:29
+2013-04-28 13:24:29,946 [64] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 5] Application shutdown. Reason: BinDirChangeOrDirectoryRename
+2013-04-28 13:24:34,200 [48] INFO  umbraco.content - [Thread 55] Loading content from disk cache...
+2013-04-28 13:24:34,758 [48] INFO  Umbraco.Core.PluginManager - [Thread 55] Completed resolution of types of umbraco.interfaces.IDataType, found 35 (took 4ms)
+2013-04-28 13:24:34,772 [48] INFO  Umbraco.Core.PluginManager - [Thread 55] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 3ms)
+2013-04-28 13:24:37,326 [48] INFO  Umbraco.Core.PluginManager - [Thread 55] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 2 (took 4ms)
+2013-04-28 13:25:01,162 [48] INFO  Umbraco.Core.PluginManager - [Thread 62] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 4ms)
+2013-04-28 13:25:01,529 [48] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 62] Content 'Dividend Investing' with Id '1052' has been published.
+2013-04-28 13:25:01,695 [48] ERROR umbraco.presentation.nodeFactory.UmbracoSiteMapProvider - [Thread 62] Error adding node 1048 to SiteMapProvider in loadNodes()
+System.InvalidOperationException: Multiple nodes with the same URL '/' were found. XmlSiteMapProvider requires that sitemap nodes have unique URLs.
+   at System.Web.StaticSiteMapProvider.AddNode(SiteMapNode node, SiteMapNode parentNode)
+   at umbraco.presentation.nodeFactory.UmbracoSiteMapProvider.loadNodes(String parentId, SiteMapNode parentNode)
+2013-04-28 13:25:27,642 [48] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 60] Content 'Dividend Investing' with Id '1052' has been published.

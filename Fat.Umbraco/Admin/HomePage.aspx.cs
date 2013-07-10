@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Fat.Services.Models;
+using umbraco.BasePages;
 
-namespace Fat.Umbraco.usercontrols.FatDividends
+namespace Fat.Umbraco.Admin
 {
-    public partial class Dashboard : System.Web.UI.UserControl
+    public partial class HomePage : UmbracoEnsuredPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

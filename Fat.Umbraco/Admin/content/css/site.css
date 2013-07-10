@@ -1,0 +1,13 @@
+﻿body { margin: 20px; }
+
+#header img { height: 75px; margin: 0 20px 0 0; float: left;}
+
+#nav{ clear: both; margin-top: 20px; }
+
+ul.inline li{ float: left; }
+
+fieldset { padding: 10px;}
+fieldset div.field label {margin-bottom: 5px;width: 100px; display: inline-block;}
+fieldset div.commands { margin-left: 100px; }
+
+fieldset div.field .field-validation-error { color: red;}

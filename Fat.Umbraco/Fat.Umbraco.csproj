@@ -184,9 +184,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\AdminMaster.master" />
     <None Include="build.xml">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Admin\content\css\metro.blue.css" />
+    <Content Include="Admin\content\css\site.css" />
+    <Content Include="Admin\content\image\logo.png" />
+    <Content Include="Admin\Dividends\CreateDividendPage.aspx" />
+    <Content Include="Admin\Dividends\ListPage.aspx" />
+    <Content Include="Admin\Earnings\CreateEarningPage.aspx" />
+    <Content Include="Admin\Earnings\ListPage.aspx" />
+    <Content Include="Admin\HomePage.aspx" />
+    <Content Include="Admin\IndexQuote\IndexPage.aspx" />
+    <Content Include="Admin\Stock\CreateStockPage.aspx" />
     <Content Include="App_Data\fattyd.database.sdf" />
     <Content Include="css\article.css" />
     <Content Include="css\blog\bootstrap-responsive.css" />
@@ -256,13 +267,62 @@
     <Content Include="scripts\jQuery.tmpl.min.js" />
     <Content Include="scripts\modernizr-2.5.3.js" />
     <Content Include="umbraco\plugins\uComponents\uComponentsInstaller.ascx" />
-    <Content Include="usercontrols\FatDividends\Dashboard.ascx" />
-    <Content Include="usercontrols\FatDividends\Stock\List.ascx" />
+    <Content Include="Admin\Stock\List.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Dividends\CreateDividendPage.aspx.cs">
+      <DependentUpon>CreateDividendPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dividends\CreateDividendPage.aspx.designer.cs">
+      <DependentUpon>CreateDividendPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dividends\ListPage.aspx.cs">
+      <DependentUpon>ListPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dividends\ListPage.aspx.designer.cs">
+      <DependentUpon>ListPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Earnings\CreateEarningPage.aspx.cs">
+      <DependentUpon>CreateEarningPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Earnings\CreateEarningPage.aspx.designer.cs">
+      <DependentUpon>CreateEarningPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Earnings\ListPage.aspx.cs">
+      <DependentUpon>ListPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Earnings\ListPage.aspx.designer.cs">
+      <DependentUpon>ListPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EnumerableExtensions.cs" />
+    <Compile Include="Admin\HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\IndexQuote\IndexPage.aspx.cs">
+      <DependentUpon>IndexPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\IndexQuote\IndexPage.aspx.designer.cs">
+      <DependentUpon>IndexPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Stock\CreateStockPage.aspx.cs">
+      <DependentUpon>CreateStockPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Stock\CreateStockPage.aspx.designer.cs">
+      <DependentUpon>CreateStockPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="API\DividendController.cs" />
     <Compile Include="API\EarningController.cs" />
     <Compile Include="API\IndexQuoteController.cs" />
@@ -375,18 +435,11 @@
     <Compile Include="Sitemap.ashx.cs">
       <DependentUpon>Sitemap.ashx</DependentUpon>
     </Compile>
-    <Compile Include="usercontrols\FatDividends\Dashboard.ascx.cs">
-      <DependentUpon>Dashboard.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="usercontrols\FatDividends\Dashboard.ascx.designer.cs">
-      <DependentUpon>Dashboard.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="usercontrols\FatDividends\Stock\List.ascx.cs">
+    <Compile Include="Admin\Stock\List.ascx.cs">
       <DependentUpon>List.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="usercontrols\FatDividends\Stock\List.ascx.designer.cs">
+    <Compile Include="Admin\Stock\List.ascx.designer.cs">
       <DependentUpon>List.ascx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\BlogPost.cs" />
@@ -436,7 +489,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Admin\content\script\" />
+    <Folder Include="usercontrols\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Fat.Services\Fat.Services.csproj">
       <Project>{0135e795-f0cc-42b6-8ab0-599022d8efd3}</Project>

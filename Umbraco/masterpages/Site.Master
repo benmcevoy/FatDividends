@@ -47,7 +47,7 @@
     <div id="main">
         <div id="asideLeft">
             <aside>
-                <div class="advert">
+               <%-- <div class="advert">
                     <script type="text/javascript"><!--
     google_ad_client = "ca-pub-5756725000793640";
     /* Sidewinder */
@@ -57,13 +57,13 @@
     //-->
                     </script>
                     <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-                </div>
+                </div>--%>
             </aside>
         </div>
 
         <div id="asideRight">
             <aside>
-                <div class="advert">
+                <%--<div class="advert">
                     <script type="text/javascript"><!--
     google_ad_client = "ca-pub-5756725000793640";
     /* Sidewinder */
@@ -73,7 +73,7 @@
     //-->
                     </script>
                     <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-                </div>
+                </div>--%>
             </aside>
         </div>
 
@@ -81,7 +81,7 @@
             <div id="header">
                 <header>
                     <div id="logo"><a href="/" title="fat dividends"></a></div>
-                    <div class="advert">
+                    <%--<div class="advert">
                         <script type="text/javascript"><!--
     google_ad_client = "ca-pub-5756725000793640";
     /* Main Banner */
@@ -91,7 +91,7 @@
     //-->
                         </script>
                         <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-                    </div>
+                    </div>--%>
                     <umbraco:Macro ID="Macro1" StartNodeId="<%$ fat: mainNavigationStartNodeId %>" Alias="MainNav" runat="server"></umbraco:Macro>
                     <%--<umbraco:Macro ID="Macro1" FileLocation="~/macroScripts/MainNav.cshtml" runat="server" />--%>
                 </header>

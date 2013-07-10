@@ -7,9 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Fat.Umbraco.usercontrols.FatDividends {
+namespace Fat.Umbraco.Admin {
     
     
-    public partial class Dashboard {
+    public partial class HomePage {
+        
+        /// <summary>
+        /// List control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Fat.Umbraco.Admin.Stock.List List;
     }
 }

@@ -16,16 +16,25 @@ namespace Fat.Umbraco.API
             _indexQuoteService = new IndexQuoteService();
         }
 
+
+        [ApiCache(600)]
+        [AllowCrossOrigin]
+        public IEnumerable<Quote> Get(int id)
+        {
+            return _indexQuoteService.Get(id).Select(q =>
+                new Quote
+                {
+                    Date = q.ClosingDate,
+                    Price = q.Price
+                });
+        }
+
+
         [ApiCache(600)]
         [AllowCrossOrigin]
         public IEnumerable<Quote> Get()
         {
-            return _indexQuoteService.Get(30).Select(q =>
-                new Quote
-                    {
-                        Date = q.ClosingDate,
-                        Price = q.Price
-                    });
+            return Get(30);
         }
 
         protected override void Dispose(bool disposing)

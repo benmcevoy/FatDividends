@@ -13,8 +13,8 @@ namespace Fat.Umbraco.App_Start
             RouteTable.Routes.MapHttpRoute(
                 name: "ActionApi",
                 routeTemplate: "api/{controller}/{action}/{id}",
-                defaults: new { id = RouteParameter.Optional } );
-
+                defaults: new { id = RouteParameter.Optional });
+            
             RouteTable.Routes.MapHttpRoute("DefaultApi",
                 "api/{controller}/{id}",
                 new { id = RouteParameter.Optional });

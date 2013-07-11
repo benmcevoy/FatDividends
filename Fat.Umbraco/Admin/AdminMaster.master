@@ -1,4 +1,5 @@
 ﻿<%@ Master Language="C#" %>
+
 <%@ Import Namespace="SquishIt.Framework" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -8,12 +9,12 @@
     <title>Admin - Fat Dividends</title>
     <link href="content/css/metro.blue.css" rel="stylesheet" />
     <link href="content/css/site.css" rel="stylesheet" />
-   <%= Bundle.JavaScript()
+    <%= Bundle.JavaScript()
         .Add("~/scripts/modernizr-2.5.3.js")
         .Add("~/scripts/jquery-1.7.1.min.js")
         .Add("~/scripts/jQuery.tmpl.min.js")
         .Render("~/generated/jquery_#.js") %>
-    
+
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <asp:ContentPlaceHolder ID="HeadPlaceHolder" runat="server" />
 </head>
@@ -29,9 +30,17 @@
                 <li>
                     <a href="/Admin/HomePage.aspx">stocks</a>
                 </li>
-                
+
                 <li>
                     <a href="/Admin/IndexQuote/IndexPage.aspx">asx index</a>
+                </li>
+
+                <li>
+                    <a href="/Admin/Dividends/ImportPage.aspx">import dividends</a>
+                </li>
+
+                <li>
+                    <a href="/Admin/Earnings/Import.aspx">import earnings</a>
                 </li>
             </ul>
         </div>
@@ -41,7 +50,7 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
-    
+
     <asp:ContentPlaceHolder ID="ScriptPlaceHolder" runat="server" />
 </body>
 </html>

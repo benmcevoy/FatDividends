@@ -192,8 +192,10 @@
     <Content Include="Admin\content\css\site.css" />
     <Content Include="Admin\content\image\logo.png" />
     <Content Include="Admin\Dividends\CreateDividendPage.aspx" />
+    <Content Include="Admin\Dividends\ImportPage.aspx" />
     <Content Include="Admin\Dividends\ListPage.aspx" />
     <Content Include="Admin\Earnings\CreateEarningPage.aspx" />
+    <Content Include="Admin\Earnings\Import.aspx" />
     <Content Include="Admin\Earnings\ListPage.aspx" />
     <Content Include="Admin\HomePage.aspx" />
     <Content Include="Admin\IndexQuote\IndexPage.aspx" />
@@ -280,6 +282,13 @@
     <Compile Include="Admin\Dividends\CreateDividendPage.aspx.designer.cs">
       <DependentUpon>CreateDividendPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Dividends\ImportPage.aspx.cs">
+      <DependentUpon>ImportPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dividends\ImportPage.aspx.designer.cs">
+      <DependentUpon>ImportPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Dividends\ListPage.aspx.cs">
       <DependentUpon>ListPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -293,6 +302,13 @@
     </Compile>
     <Compile Include="Admin\Earnings\CreateEarningPage.aspx.designer.cs">
       <DependentUpon>CreateEarningPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Earnings\Import.aspx.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Earnings\Import.aspx.designer.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Earnings\ListPage.aspx.cs">
       <DependentUpon>ListPage.aspx</DependentUpon>

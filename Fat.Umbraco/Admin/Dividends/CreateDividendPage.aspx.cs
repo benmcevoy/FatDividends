@@ -51,7 +51,7 @@ namespace Fat.Umbraco.Admin.Dividends
                 newDividend.ExDate = exDate.Value;
                 newDividend.Franked = FrankedTextBox.Text.ToDecimal();
                 newDividend.FrankingCredit = FrankingCreditTextBox.Text.ToDecimal();
-                newDividend.PayableDate = PayableDateTextBox.Text.ToDate();
+                newDividend.PayableDate = PayableDateTextBox.Text.ToDate().Value;
                 newDividend.RecordDate = RecordDateTextBox.Text.ToDate();
 
                 Fat.Import.DividendCalendarImporter.Import(newDividend);

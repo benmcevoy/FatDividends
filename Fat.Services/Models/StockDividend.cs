@@ -21,7 +21,7 @@ namespace Fat.Services.Models
 
         public decimal FrankingCredit { get; set; }
 
-        public DateTime? PayableDate { get; set; }
+        public DateTime PayableDate { get; set; }
 
         public DateTime CreatedUtcDate { get; set; }
 
@@ -48,12 +48,7 @@ namespace Fat.Services.Models
         {
             get
             {
-                if (PayableDate.HasValue)
-                {
-                    return PayableDate.Value.ToString("dd MMM yy");
-                }
-
-                return "";
+                return PayableDate.ToString("dd MMM yy");
             }
         }
 

@@ -10,6 +10,7 @@ fieldset { padding: 20px;margin-top: 20px;}
 fieldset div.field label {margin-bottom: 5px;width: 100px; display: inline-block;}
 fieldset div.field .field-validation-error { color: red;}
 
-#messageholder { border: 1px solid #1ba1e2;min-width: 400px;padding: 5px;margin: 10px 2px;background: rgb(195, 235, 255);font-weight: 900;}
+div.notice, #messageholder { border: 1px solid #1ba1e2;min-width: 400px;padding: 5px;margin: 10px 2px;background: rgb(255, 255, 200);font-weight: 600;}
 
 hr.the-thin-blue-line { height: 1px; background-color:#1ba1e2;border: 0;}
+

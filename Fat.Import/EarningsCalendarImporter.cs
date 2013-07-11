@@ -8,10 +8,10 @@ namespace Fat.Import
 {
     public static class EarningsCalendarImporter
     {
-        public static void Import()
+        public static void Import(string csv)
         {
             var csvMapper = new CsvMapper();
-            var csv = File.ReadAllText(@"D:\Dev\git\FatDividends\_documentation\D&E\earning_cba.csv");
+            //var csv = File.ReadAllText(@"D:\Dev\git\FatDividends\_documentation\D&E\earning_cba.csv");
             var mappings = new Dictionary<string, int>
                 {
                     {"StockCode", 0},

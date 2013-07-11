@@ -56,6 +56,9 @@
             <div class="field">
                 <asp:Label ID="Label5" runat="server" AssociatedControlID="PayableDateTextBox">payable date</asp:Label>
                 <asp:TextBox ID="PayableDateTextBox" runat="server" />
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="PayableDateTextBox"
+                    Display="Dynamic" CssClass="field-validation-error"
+                    ErrorMessage="payable date is required" EnableClientScript="True" />
                 <asp:CompareValidator ID="CompareValidator3" runat="server" ControlToValidate="PayableDateTextBox" Display="Dynamic"
                     ErrorMessage="payable date must be a date e.g. 23/07/2013" Type="Date" Operator="DataTypeCheck"
                     CssClass="field-validation-error" EnableClientScript="True" />

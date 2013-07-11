@@ -167,14 +167,29 @@ namespace Fat.Import.Data
                     return value;
 
                 case "Int32":
+                    if (string.IsNullOrEmpty(value.Trim()))
+                    {
+                        return 0;
+                    }
+
                     value = value.Replace("%", "").Replace(",", "").Replace("$", "");
                     return Convert.ToInt32(value);
 
                 case "Double":
+                    if (string.IsNullOrEmpty(value.Trim()))
+                    {
+                        return 0D;
+                    }
+
                     value = value.Replace("%", "").Replace(",", "").Replace("$", "");
                     return Convert.ToDouble(value);
 
                 case "Decimal":
+                    if (string.IsNullOrEmpty(value.Trim()))
+                    {
+                        return 0M;
+                    }
+
                     value = value.Replace("%", "").Replace(",", "").Replace("$", "");
                     return Convert.ToDecimal(value);
 

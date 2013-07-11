@@ -9,10 +9,9 @@ namespace Fat.Import
 {
     public static class DividendCalendarImporter
     {
-        public static void Import()
+        public static void Import(string csv)
         {
             var csvMapper = new CsvMapper();
-            var csv = File.ReadAllText(@"D:\Dev\git\FatDividends\_documentation\complete_dividends.csv");
             var mappings = new Dictionary<string, int>
                 {
                     {"StockCode", 0},
@@ -32,6 +31,13 @@ namespace Fat.Import
                 service.Add(stockDividends);
             }
         }
+
+        //public static void Import()
+        //{
+        //    var csv = File.ReadAllText(@"D:\Dev\git\FatDividends\_documentation\complete_dividends.csv");
+
+            
+        //}
 
         public static void Import(StockDividend dividend)
         {

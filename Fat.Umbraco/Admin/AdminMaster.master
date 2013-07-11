@@ -21,7 +21,7 @@
     <form id="MainForm" runat="server">
         <div id="header">
             <img src="/Admin/content/image/logo.png" alt="Fat Dividend Logo" />
-            <h1 class="title">Fat Dividends Administration</h1>
+            <h1 class="title">Administration</h1>
         </div>
 
         <div id="nav">

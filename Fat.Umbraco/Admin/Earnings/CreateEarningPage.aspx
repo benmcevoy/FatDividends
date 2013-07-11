@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyPlaceHolder" runat="server">
     <div>
-        <h2>create earning|<asp:Label runat="server" ID="StockCodeLabel" />></h2>
+        <h2>create earning | <asp:Label runat="server" ID="StockCodeLabel" />></h2>
 
         <fieldset>
 

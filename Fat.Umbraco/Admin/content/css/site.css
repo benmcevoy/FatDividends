@@ -8,6 +8,6 @@ ul.inline li{ float: left; }
 
 fieldset { padding: 10px;}
 fieldset div.field label {margin-bottom: 5px;width: 100px; display: inline-block;}
-fieldset div.commands { margin-left: 100px; }
-
 fieldset div.field .field-validation-error { color: red;}
+
+#messageholder { border: 1px solid #1ba1e2;min-width: 400px;padding: 5px;margin: 10px 2px;background: rgb(195, 235, 255);font-weight: 900;}

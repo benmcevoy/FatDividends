@@ -1,19 +1,17 @@
 ﻿<%@ Page Title="ASX Quotes" Language="C#" MasterPageFile="~/Admin/AdminMaster.master" AutoEventWireup="true" CodeBehind="IndexPage.aspx.cs" Inherits="Fat.Umbraco.Admin.IndexQuote.IndexPage" %>
 
-
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyPlaceHolder" runat="server">
     <div id="indexquotes">
-        <h2>asx index</h2>
+        <h2>index | asx</h2>
 
         <ul class="metro-list">
         </ul>
         <div id="indexChart" class="widget">
             <section>
-        <h4>Market Last <span id="displaycount">30</span> Days</h4>
-        <div id="marketIndexChart"></div>
-    </section>
+                <h4>Market Last <span id="displaycount">30</span> Days</h4>
+                <div id="marketIndexChart"></div>
+            </section>
         </div>
-
 
         <ul class="metro-list inline">
             <li><a class="quote-display-count" data-count="30">30</a></li>
@@ -24,8 +22,6 @@
             <li>
                 <asp:LinkButton ID="LinkButton1" runat="server" Text="download" ToolTip="download as csv" OnClick="Download_Click" /></li>
         </ul>
-
-
 
     </div>
     <asp:HiddenField runat="server" ClientIDMode="Static" ID="QuotesToShow" />
@@ -38,15 +34,15 @@
                 e.preventDefault();
 
                 var data = $(this).data();
-
+                var count = data.count;
                 if (data.count == 'all') {
-                    data.count = 100000;
+                    count = 100000;
                 }
 
-                $('#QuotesToShow').val(data.count);
+                $('#QuotesToShow').val(count);
                 $('#displaycount').text(data.count);
 
-                fat.charts.drawIndexChart(e, data.count);
+                fat.charts.drawIndexChart(e, count);
             });
         });
 

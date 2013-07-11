@@ -54,7 +54,7 @@ namespace Fat.Umbraco.Admin.Stock
             }
         }
 
-        private void SetMessage(string message, params string[] values)
+        private void SetMessage(string message, params object[] values)
         {
             MessagePlaceHolder.Visible = true;
             MessageLabel.Text = string.Format(message, values);

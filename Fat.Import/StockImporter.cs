@@ -3,7 +3,7 @@ using Fat.Import.Data;
 
 namespace Fat.Import
 {
-    static class StockImporter
+    public static class StockImporter
     {
         public static void Import()
         {

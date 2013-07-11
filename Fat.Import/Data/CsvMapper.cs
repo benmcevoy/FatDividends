@@ -36,7 +36,7 @@ namespace Fat.Import.Data
             var records = Regex.Split(csv, lineDelimiter);
             var columns = new List<string>();
 
-            foreach (string row in records)
+            foreach (var row in records)
             {
                 if (skipFirstRow)
                 {
@@ -44,10 +44,7 @@ namespace Fat.Import.Data
                     continue;
                 }
 
-                if (string.IsNullOrEmpty(row.Trim()))
-                {
-                    continue;
-                }
+                if (string.IsNullOrEmpty(row.Trim()))  continue; 
 
                 if (_concatenateNextRow)
                 {
@@ -58,23 +55,18 @@ namespace Fat.Import.Data
                     columns = ParseRow(row);
                 }
 
-                if (columns.Count == 0)
+                if (columns.Count == 0)continue;
+                if (_concatenateNextRow) continue;
+
+                var item = new T();
+
+                foreach (var map in mapping)
                 {
-                    continue;
+                    var property = propertyMap[map.Key];
+                    property.SetValue(item, ConvertToType(property.PropertyType, columns[map.Value]), null);
                 }
 
-                if (!_concatenateNextRow)
-                {
-                    var item = new T();
-
-                    foreach (var map in mapping)
-                    {
-                        var property = propertyMap[map.Key];
-                        property.SetValue(item, ConvertToType(property.PropertyType, columns[map.Value]), null);
-                    }
-
-                    results.Add(item);
-                }
+                results.Add(item);
             }
 
             return results;
@@ -83,7 +75,7 @@ namespace Fat.Import.Data
         private List<string> ParseRow(string row)
         {
             var results = new List<string>();
-            int position = 0;
+            var position = 0;
 
             while (position < row.Length)
             {
@@ -102,8 +94,9 @@ namespace Fat.Import.Data
                     }
 
                     // Parse quoted value
-                    int start = position;
-                    bool isEndFound = false;
+                    var start = position;
+                    var isEndFound = false;
+
                     while (position < row.Length)
                     {
                         // Test for quote character
@@ -140,7 +133,7 @@ namespace Fat.Import.Data
                 else
                 {
                     // Parse unquoted value
-                    int start = position;
+                    var start = position;
 
                     while (position < row.Length && row[position] != ',')
                     {

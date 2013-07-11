@@ -6,7 +6,7 @@ using System.IO;
 
 namespace Fat.Import
 {
-    static class EarningsCalendarImporter
+    public static class EarningsCalendarImporter
     {
         public static void Import()
         {
@@ -27,6 +27,16 @@ namespace Fat.Import
                 };
 
             var earnings = csvMapper.MapCsvTo<StockEarning>(mappings, csv, true);
+
+            using (var service = new EarningService())
+            {
+                service.Add(earnings);
+            }
+        }
+
+        public static void Import(StockEarning earning)
+        {
+            var earnings = new List<StockEarning>() { earning };
 
             using (var service = new EarningService())
             {

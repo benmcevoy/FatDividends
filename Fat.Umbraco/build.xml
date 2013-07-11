@@ -11,6 +11,7 @@
     <ItemGroup>
       <AssemblyItem Include="bin/Fat.Umbraco.dll" />
       <AssemblyItem Include="bin/Fat.Services.dll" />
+      <AssemblyItem Include="bin/Fat.Import.exe" />
       <AssemblyItem Include="bin/EntityFramework.dll" />
       <AssemblyItem Include="bin/uComponents.Core.dll" />
       <AssemblyItem Include="bin/Vega.uSiteBuilder.dll" />

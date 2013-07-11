@@ -339,6 +339,7 @@
     <Compile Include="Admin\Stock\CreateStockPage.aspx.designer.cs">
       <DependentUpon>CreateStockPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\StringExtensions.cs" />
     <Compile Include="API\DividendController.cs" />
     <Compile Include="API\EarningController.cs" />
     <Compile Include="API\IndexQuoteController.cs" />
@@ -510,6 +511,10 @@
     <Folder Include="usercontrols\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Fat.Import\Fat.Import.csproj">
+      <Project>{84a3bdfb-b2e1-4ba5-ac46-4be995018798}</Project>
+      <Name>Fat.Import</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Fat.Services\Fat.Services.csproj">
       <Project>{0135e795-f0cc-42b6-8ab0-599022d8efd3}</Project>
       <Name>Fat.Services</Name>

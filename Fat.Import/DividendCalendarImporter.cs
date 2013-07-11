@@ -7,7 +7,7 @@ using Fat.Services.Models;
 
 namespace Fat.Import
 {
-    static class DividendCalendarImporter
+    public static class DividendCalendarImporter
     {
         public static void Import()
         {
@@ -25,17 +25,29 @@ namespace Fat.Import
 
             var stockDividends = csvMapper.MapCsvTo<StockDividend>(mappings, csv, true).ToList();
 
-            UpdateClosingPrice(stockDividends);
-            
+            UpdateClosingPrices(stockDividends);
+
             using (var service = new DividendService())
             {
                 service.Add(stockDividends);
             }
         }
 
+        public static void Import(StockDividend dividend)
+        {
+            var dividends = new List<StockDividend> { dividend };
+
+            UpdateClosingPrices(dividends);
+
+            using (var service = new DividendService())
+            {
+                service.Add(dividends);
+            }
+        }
+
         // TODO: i think i need something like this for historical data, as we scrape in old price data
         // we can then fix up the closing price for the dividend
-        private static void UpdateClosingPrice(IEnumerable<StockDividend> stockDividends)
+        private static void UpdateClosingPrices(IEnumerable<StockDividend> stockDividends)
         {
             using (var service = new QuoteService())
             {

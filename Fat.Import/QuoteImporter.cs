@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace Fat.Import
 {
-    static class QuoteImporter
+    public static class QuoteImporter
     {
         public static void Import(DateTime staleDate)
         {

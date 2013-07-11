@@ -14,5 +14,10 @@ namespace Fat.Umbraco.Admin.Dividends
         {
 
         }
+
+        protected void Cancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../HomePage.aspx");
+        }
     }
 }

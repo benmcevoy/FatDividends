@@ -25,7 +25,7 @@ namespace Fat.Umbraco.Admin.Earnings
 
         protected void Create_Click(object sender, EventArgs e)
         {
-            Response.Redirect("CreateEarningPage.aspx");
+            Response.Redirect("CreateEarningPage.aspx?code=" + Request.QueryString["code"] + "&name=" + Request.QueryString["name"]);
         }
 
         protected void Download_Click(object sender, EventArgs e)

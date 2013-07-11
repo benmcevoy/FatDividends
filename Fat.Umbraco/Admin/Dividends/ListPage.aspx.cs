@@ -25,7 +25,7 @@ namespace Fat.Umbraco.Admin.Dividends
 
         protected void Create_Click(object sender, EventArgs e)
         {
-            Response.Redirect("CreateDividendPage.aspx");
+            Response.Redirect("CreateDividendPage.aspx?code=" + Request.QueryString["code"] + "&name=" + Request.QueryString["name"]);
         }
 
         protected void Download_Click(object sender, EventArgs e)

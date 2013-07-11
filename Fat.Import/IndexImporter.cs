@@ -2,7 +2,7 @@
 
 namespace Fat.Import
 {
-    static class IndexImporter
+    public static class IndexImporter
     {
         public static void Import()
         {

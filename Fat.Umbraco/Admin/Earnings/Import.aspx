@@ -33,8 +33,8 @@
             </div>
 
             <div class="commands">
-                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="Cancel_Click">cancel</asp:LinkButton>
-                <asp:LinkButton ID="LinkButton2" runat="server" OnClick="Import_Click">import</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="false" OnClick="Cancel_Click">cancel</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="True" OnClick="Import_Click">import</asp:LinkButton>
             </div>
         </fieldset>
 

@@ -2826,3 +2826,5 @@ To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fus
 2013-07-11 21:38:53,167 [143] INFO  Umbraco.Core.PluginManager - [Thread 125] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 4ms)
 2013-07-11 21:38:53,198 [143] INFO  Umbraco.Core.PluginManager - [Thread 125] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 4ms)
 2013-07-11 21:38:53,221 [143] INFO  umbraco.BusinessLogic.Log - [Thread 152] Redirected log call (please use Umbraco.Core.Logging.LogHelper instead of umbraco.BusinessLogic.Log) | Type: Custom | User: 0 | NodeId: -1 | Comment: [UmbracoExamine] Adding examine event handlers for index providers: 3
+2013-07-11 22:00:36,439 [143] INFO  umbraco.BusinessLogic.Log - [Thread 120] Log scrubbed.  Removed all items older than 2013-05-12 22:00:36
+2013-07-11 22:00:36,442 [143] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 120] Application shutdown. Reason: HostingEnvironment

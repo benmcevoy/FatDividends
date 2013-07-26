@@ -31,6 +31,15 @@ namespace Fat.Umbraco.Admin.Stock {
         protected global::System.Web.UI.WebControls.EntityDataSource StocksEntityDataSource;
         
         /// <summary>
+        /// IndustryDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.EntityDataSource IndustryDataSource;
+        
+        /// <summary>
         /// SearchQueryExtender control.
         /// </summary>
         /// <remarks>

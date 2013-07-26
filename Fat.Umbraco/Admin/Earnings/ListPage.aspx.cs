@@ -39,9 +39,9 @@ namespace Fat.Umbraco.Admin.Earnings
                     .Select(earning => new
                     {
                         earning.StockCode,
-                        earning.FormattedReportedDate,
                         earning.Year,
                         earning.Period,
+                        earning.FormattedReportedDate,
                         earning.NPAT,
                         earning.Margin,
                         earning.CashFlow,

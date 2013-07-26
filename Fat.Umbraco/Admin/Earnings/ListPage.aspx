@@ -43,16 +43,6 @@
                     <HeaderStyle Width="50px" />
                 </asp:TemplateField>
 
-                <asp:TemplateField HeaderText="Reported Date" SortExpression="ReportedDate">
-                    <ItemTemplate>
-                        <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("ReportedDate", "{0:dd MMM yy}") %>' />
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:Label ID="Label3" runat="server" Text='<%# Eval("ReportedDate") %>' />
-                    </EditItemTemplate>
-                    <ItemStyle Width="100px" />
-                </asp:TemplateField>
-
                 <asp:TemplateField HeaderText="Year">
                     <ItemTemplate>
                         <asp:Label ID="IndustryLabel" runat="server" Text='<%# Bind("Year") %>' />
@@ -71,6 +61,16 @@
                         <asp:TextBox ID="PeriodTextBox" runat="server" Text='<%# Bind("Period") %>' />
                     </EditItemTemplate>
                     <ItemStyle Width="50px" />
+                </asp:TemplateField>
+                
+                <asp:TemplateField HeaderText="Reported Date" SortExpression="ReportedDate">
+                    <ItemTemplate>
+                        <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("ReportedDate", "{0:dd MMM yy}") %>' />
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:Label ID="Label3" runat="server" Text='<%# Eval("ReportedDate") %>' />
+                    </EditItemTemplate>
+                    <ItemStyle Width="100px" />
                 </asp:TemplateField>
 
                 <asp:TemplateField HeaderText="NPAT">

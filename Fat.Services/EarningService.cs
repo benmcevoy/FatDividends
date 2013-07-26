@@ -20,18 +20,17 @@ namespace Fat.Services
         {
             return DataContext.StockEarnings
                 .Include("Stock")
-                .OrderBy(d => d.ReportedDate)
-                .FirstOrDefault(d => d.StockCode == stockCode);
+                .OrderBy(e => e.ReportedDate)
+                .FirstOrDefault(e => e.StockCode == stockCode);
         }
 
         public IEnumerable<StockEarning> Get(string stockCode, int count)
         {
             return DataContext.StockEarnings
-                .Include("Stock")
-                .Where(d => d.StockCode == stockCode)
-                .OrderBy(d => d.ReportedDate)
-                .Skip(Math.Max(0, DataContext.StockEarnings.Count() - count))
-                .Take(count);
+                                               .Include("Stock")
+                                               .Where(e => e.StockCode == stockCode)
+                          .OrderByDescending(e => e.ReportedDate)
+                          .Take(count);
         }
 
         public void Add(IEnumerable<StockEarning> stockEarnings)
@@ -39,9 +38,9 @@ namespace Fat.Services
             // use own context for bulk insert
             using (var context = new FatDataContext())
             {
-                foreach (var dividend in stockEarnings)
+                foreach (var earning in stockEarnings)
                 {
-                    AddUncomitted(context, dividend);
+                    AddUncomitted(context, earning);
                 }
 
                 context.SaveChanges();

@@ -3,7 +3,7 @@
 
 @inherits DynamicNodeContext
 @{
-    var dividends = Fat.Umbraco.Data.DividendRepository.Get(this, 5).Reverse().ToList();
+    var dividends = Fat.Umbraco.Data.DividendRepository.Get(this, 5).ToList();
 
     <div id="stockDividends" class="widget">
         <section>

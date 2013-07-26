@@ -49,6 +49,7 @@
     <Compile Include="EarningService.cs" />
     <Compile Include="DividendService.cs" />
     <Compile Include="IndexQuoteService.cs" />
+    <Compile Include="IndustryService.cs" />
     <Compile Include="Models\FatDataContext.cs" />
     <Compile Include="Models\IndexQuote.cs" />
     <Compile Include="Models\Mappings\IndexQuoteMap.cs" />

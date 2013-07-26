@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using Fat.Services;
 using Fat.Services.Models;
 using umbraco.BasePages;
 
@@ -9,6 +11,18 @@ namespace Fat.Umbraco.Admin.Stock
         protected void Page_Load(object sender, EventArgs e)
         {
             ClearMessage();
+            if (!IsPostBack)
+            {
+                PopulateIndustryDropDownList();
+            }
+        }
+
+        private void PopulateIndustryDropDownList()
+        {
+            var service = new IndustryService();
+            IndustryDropDownList.DataSource = service.Get().ToList();
+            IndustryDropDownList.DataBind();
+
         }
 
         private void ClearMessage()
@@ -39,7 +53,7 @@ namespace Fat.Umbraco.Admin.Stock
 
                 newStock.Code = code;
                 newStock.CreatedUtcDate = DateTime.UtcNow;
-                newStock.Industry = IndustryTextBox.Text;
+                newStock.Industry = IndustryDropDownList.SelectedValue;
                 newStock.IsActive = true;
                 newStock.Name = NameTextBox.Text;
 
@@ -49,7 +63,7 @@ namespace Fat.Umbraco.Admin.Stock
                 SetMessage("Stock {0} created.", code);
 
                 CodeTextBox.Text = "";
-                IndustryTextBox.Text = "";
+                IndustryDropDownList.SelectedIndex = -1;
                 NameTextBox.Text = "";
             }
         }

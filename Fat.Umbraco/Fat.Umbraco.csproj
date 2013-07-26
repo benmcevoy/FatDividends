@@ -200,7 +200,7 @@
     <Content Include="Admin\HomePage.aspx" />
     <Content Include="Admin\IndexQuote\IndexPage.aspx" />
     <Content Include="Admin\Stock\CreateStockPage.aspx" />
-    <Content Include="App_Data\fattyd.database.sdf" />
+    <None Include="App_Data\fattyd.database.sdf" />
     <Content Include="css\article.css" />
     <Content Include="css\blog\bootstrap-responsive.css" />
     <Content Include="css\blog\bootstrap-responsive.min.css" />

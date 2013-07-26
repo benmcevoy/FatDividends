@@ -16,8 +16,7 @@ namespace Fat.Services
         {
             return DataContext.StockDividends
                 .Include("Stock")
-                .OrderBy(d => d.ExDate)
-                .Skip(Math.Max(0, DataContext.StockDividends.Count() - count))
+                .OrderByDescending(d => d.ExDate)
                 .Take(count);
         }
 
@@ -26,8 +25,7 @@ namespace Fat.Services
             return DataContext.StockDividends
                 .Include("Stock")
                 .Where(d => d.ExDate >= startDate)
-                .OrderBy(d => d.ExDate)
-                .Skip(Math.Max(0, DataContext.StockDividends.Count() - count))
+                .OrderByDescending(d => d.ExDate)
                 .Take(count);
         }
 
@@ -54,8 +52,7 @@ namespace Fat.Services
             return DataContext.StockDividends
                 .Include("Stock")
                 .Where(d => d.StockCode == stockCode)
-                .OrderBy(d => d.ExDate)
-                .Skip(Math.Max(0, DataContext.StockDividends.Count(d => d.StockCode == stockCode) - count))
+                .OrderByDescending(d => d.ExDate)
                 .Take(count);
         }
 

@@ -14,10 +14,10 @@
             <asp:LinkButton runat="server" Text="download" ToolTip="download as csv" OnClick="Download_Click" /></li>
     </ul>
 
-    <asp:GridView runat="server" DataSourceID="StocksEntityDataSource" 
+    <asp:GridView runat="server" DataSourceID="StocksEntityDataSource"
         AutoGenerateColumns="False" AllowPaging="True" AllowSorting="True" DataKeyNames="Code">
         <Columns>
-            <asp:CommandField ShowEditButton="True" >
+            <asp:CommandField ShowEditButton="True">
                 <HeaderStyle Width="50px" />
                 <ItemStyle Width="50px" />
             </asp:CommandField>
@@ -47,7 +47,9 @@
                     <asp:Label ID="IndustryLabel" runat="server" Text='<%# Bind("Industry") %>' />
                 </ItemTemplate>
                 <EditItemTemplate>
-                    <asp:TextBox ID="IndustryTextBox" runat="server" Text='<%# Bind("Industry") %>' />
+                    <asp:DropDownList ID="IndustryDropDownList" runat="server"
+                        DataSourceID="IndustryDataSource"
+                        DataTextField="Industry" DataValueField="Industry" SelectedValue='<%# Bind("Industry") %>' />
                 </EditItemTemplate>
             </asp:TemplateField>
 
@@ -73,8 +75,8 @@
                 <ItemStyle Width="10%" />
             </asp:TemplateField>
 
-            <asp:HyperLinkField HeaderText="Dividends" Text="Dividends" 
-                DataNavigateUrlFields="code,name" DataNavigateUrlFormatString="/admin/dividends/listpage.aspx?code={0}&name={1}" >
+            <asp:HyperLinkField HeaderText="Dividends" Text="Dividends"
+                DataNavigateUrlFields="code,name" DataNavigateUrlFormatString="/admin/dividends/listpage.aspx?code={0}&name={1}">
                 <HeaderStyle Width="10%" />
                 <ItemStyle Width="10%" />
             </asp:HyperLinkField>
@@ -86,10 +88,17 @@
 
         </Columns>
     </asp:GridView>
+    
+    
 
     <asp:EntityDataSource runat="server" ID="StocksEntityDataSource"
         OnContextCreating="StocksEntityDataSource_OnContextCreating" EnableUpdate="True" EnableInsert="True"
         EntitySetName="Stocks">
+    </asp:EntityDataSource>
+
+    <asp:EntityDataSource runat="server" ID="IndustryDataSource"
+        OnContextCreating="StocksEntityDataSource_OnContextCreating"
+        EntitySetName="Stocks" Select="it.Industry" GroupBy="it.Industry">
     </asp:EntityDataSource>
 
     <asp:QueryExtender ID="SearchQueryExtender" runat="server"

@@ -31,8 +31,8 @@
             </div>
 
             <div class="field">
-                <asp:Label ID="Label2" runat="server" AssociatedControlID="IndustryTextBox">industry</asp:Label>
-                <asp:TextBox ID="IndustryTextBox" runat="server"></asp:TextBox>
+                <asp:Label ID="Label2" runat="server" AssociatedControlID="IndustryDropDownList">industry</asp:Label>
+                <asp:DropDownList runat="server" ID="IndustryDropDownList"/>
 
             </div>
 

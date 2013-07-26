@@ -76,13 +76,13 @@ namespace Fat.Umbraco.Admin.Stock {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// IndustryTextBox control.
+        /// IndustryDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox IndustryTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList IndustryDropDownList;
         
         /// <summary>
         /// LinkButton1 control.

@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <plugins>
   <baseType type="umbraco.interfaces.IApplicationStartupHandler" resolutionType="FindAllTypes">
-    <add type="uCommentsy.BusinessLogic.EventHandlers.UmbracoNodeEventsForComments, uCommentsy.BusinessLogic, Version=1.0.0.2, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.editorControls.PickerRelations.PickerRelationsEventHandler, umbraco.editorControls, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
-    <add type="uLoremsy.Web.UmbracoEvents.uLoremsy, uLoremsy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uDateFoldersy.UmbracoEvents.UmbracoNodeEventsForDateFolders, uDateFoldersy, Version=1.1.1.25721, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Strategies.DataTypes.LegacyUploadFieldWorkaround, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Strategies.Migrations.PublishAfterUpgradeToVersionSixth, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Strategies.Publishing.UpdateCacheAfterPublish, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
@@ -13,11 +12,12 @@
     <add type="umbraco.presentation.nodeFactory.UmbracoSiteMapProviderAccessUpdate, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.presentation.EnsureSystemPathsApplicationStartupHandler, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.presentation.umbraco.Search.ExamineEvents, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
-    <add type="uDateFoldersy.UmbracoEvents.UmbracoNodeEventsForDateFolders, uDateFoldersy, Version=1.1.1.25721, Culture=neutral, PublicKeyToken=null" />
-    <add type="Vega.USiteBuilder.SiteBuilderApplicationBase, Vega.USiteBuilder, Version=1.2.5.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="UmbracoExamine.UmbracoEventManager, UmbracoExamine, Version=0.1.42.2941, Culture=neutral, PublicKeyToken=null" />
+    <add type="uLoremsy.Web.UmbracoEvents.uLoremsy, uLoremsy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uCommentsy.BusinessLogic.EventHandlers.UmbracoNodeEventsForComments, uCommentsy.BusinessLogic, Version=1.0.0.2, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.BusinessLogic.ApplicationRegistrar, businesslogic, Version=1.0.4834.18855, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.BusinessLogic.ApplicationTreeRegistrar, businesslogic, Version=1.0.4834.18855, Culture=neutral, PublicKeyToken=null" />
-    <add type="UmbracoExamine.UmbracoEventManager, UmbracoExamine, Version=0.1.42.2941, Culture=neutral, PublicKeyToken=null" />
+    <add type="Vega.USiteBuilder.SiteBuilderApplicationBase, Vega.USiteBuilder, Version=1.2.5.0, Culture=neutral, PublicKeyToken=null" />
     <add type="uBlogsy.BusinessLogic.EventHandlers.UmbracoNodeEventsForPosts, uBlogsy.BusinessLogic, Version=3.0.0.36919, Culture=neutral, PublicKeyToken=null" />
     <add type="uBlogsy.BusinessLogic.EventHandlers.UmbracoExamineEvents, uBlogsy.BusinessLogic, Version=3.0.0.36919, Culture=neutral, PublicKeyToken=null" />
   </baseType>
@@ -151,8 +151,8 @@
     <add type="umbraco.editorControls.yesno.YesNoDataType, umbraco.editorControls, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.cms.businesslogic.macro.IMacroEngine" resolutionType="FindAllTypes">
-    <add type="Umbraco.Web.Macros.PartialViewMacroEngine, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.MacroEngines.RazorMacroEngine, umbraco.MacroEngines, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Macros.PartialViewMacroEngine, umbraco, Version=1.0.4834.18856, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.MacroEngines.IRazorDataTypeModel" resolutionType="FindTypesWithAttribute">
     <add type="umbraco.MacroEngines.RazorDataTypeModels.HtmlStringDataTypeModel, umbraco.MacroEngines, Version=1.0.4834.18858, Culture=neutral, PublicKeyToken=null" />

@@ -26,24 +26,13 @@ namespace Fat.Umbraco.Admin.IndexQuote
             int.TryParse(QuotesToShow.Value, out quotesToShow);
 
             var quotes = _indexQuoteService.Get(quotesToShow).Select(q =>
-                new 
+                new
                 {
                     Date = q.ClosingDate.ToString("dd MMM"),
                     ClosingPrice = q.Price
-                });
+                }).OrderByDescending(x => x.Date).AsQueryable();
 
-            // TODO: move to repository?
-            var csv = quotes.ToCsv();
-
-            csv = csv.Insert(0, "Date, ClosingPrice\r\n");
-
-            // TODO: move to handler and reuse for all 
-            Response.Clear();
-            Response.AddHeader("Content-Disposition", "attachment; filename=asx_quotes.csv");
-            Response.ContentType = "text/comma-separated-values";
-
-            Response.Write(csv);
-            Response.End();
+            DownloadHelper.DownloadAsCsv(Context, quotes, "asx_quotes.csv");
         }
     }
 }

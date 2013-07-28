@@ -50,23 +50,14 @@ namespace Fat.Umbraco.Admin.Stock
 
                 // TODO: move to repository?
                 var csv = stocks.Select(s => new
-                                {
-                                    s.Code,
-                                    s.Name,
-                                    s.Industry,
-                                    Active = s.IsActive ? "active" : "inactive"
-                                })
-                            .ToCsv();
+                    {
+                        s.Code,
+                        s.Name,
+                        s.Industry,
+                        Active = s.IsActive ? "active" : "inactive"
+                    }).AsQueryable();
 
-                csv = csv.Insert(0, "Code, Name, Industry, Active\r\n");
-
-                // TODO: move to handler and reuse for all 
-                Response.Clear();
-                Response.AddHeader("Content-Disposition", "attachment; filename=stocks.csv");
-                Response.ContentType = "text/comma-separated-values";
-
-                Response.Write(csv);
-                Response.End();
+                DownloadHelper.DownloadAsCsv(Context, csv, "stock.csv");
             }
         }
     }

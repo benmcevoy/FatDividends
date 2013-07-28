@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using Fat.Services.Models;
 using umbraco.BasePages;
@@ -34,7 +31,7 @@ namespace Fat.Umbraco.Admin.Dividends
             {
                 var code = Request.QueryString["code"];
                 var dividends = context.StockDividends.Where(
-                    s => s.StockCode == code).ToList()
+                    s => s.StockCode == code)
                     .Select(d => new
                         {
                             d.StockCode,
@@ -45,20 +42,9 @@ namespace Fat.Umbraco.Admin.Dividends
                             d.FormattedPayableDate,
                             d.FrankingCredit,
                             d.ClosingPrice
-                        });
+                        }).AsQueryable();
 
-                // TODO: move to repository?
-                var csv = dividends.ToCsv();
-
-                csv = csv.Insert(0, "Code, Ex Date, Amount, Franked, Record Date, Payable Date, Franking Credit, Closing Price\r\n");
-
-                // TODO: move to handler and reuse for all 
-                Response.Clear();
-                Response.AddHeader("Content-Disposition", "attachment; filename=" + code + "_dividends.csv");
-                Response.ContentType = "text/comma-separated-values";
-
-                Response.Write(csv);
-                Response.End();
+                DownloadHelper.DownloadAsCsv(Context, dividends,  code + "_dividends.csv");
             }
         }
 

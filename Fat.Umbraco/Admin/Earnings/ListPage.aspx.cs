@@ -34,8 +34,8 @@ namespace Fat.Umbraco.Admin.Earnings
             {
                 var code = Request.QueryString["code"];
 
-                var dividends = context.StockEarnings.Where(
-                    s => s.StockCode == code).ToList()
+                var earnings = context.StockEarnings.Where(
+                    s => s.StockCode == code)
                     .Select(earning => new
                     {
                         earning.StockCode,
@@ -48,20 +48,9 @@ namespace Fat.Umbraco.Admin.Earnings
                         earning.EPS,
                         earning.DPS,
                         earning.ROE
-                    });
+                    }).AsQueryable();
 
-                // TODO: move to repository?
-                var csv = dividends.ToCsv();
-
-                csv = csv.Insert(0, "Code, Reported Date, Year, Period, NPAT, Margin, CashFlow, EPS, DPS, ROE\r\n");
-
-                // TODO: move to handler and reuse for all 
-                Response.Clear();
-                Response.AddHeader("Content-Disposition", "attachment; filename=" + code + "_earnings.csv");
-                Response.ContentType = "text/comma-separated-values";
-
-                Response.Write(csv);
-                Response.End();
+                DownloadHelper.DownloadAsCsv(Context, earnings, code + "_earnings.csv");
             }
         }
 

@@ -296,6 +296,7 @@
     <Compile Include="Admin\Dividends\ListPage.aspx.designer.cs">
       <DependentUpon>ListPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\DownloadHelper.cs" />
     <Compile Include="Admin\Earnings\CreateEarningPage.aspx.cs">
       <DependentUpon>CreateEarningPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

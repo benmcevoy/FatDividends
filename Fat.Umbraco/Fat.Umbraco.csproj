@@ -197,6 +197,7 @@
     <Content Include="Admin\Earnings\CreateEarningPage.aspx" />
     <Content Include="Admin\Earnings\Import.aspx" />
     <Content Include="Admin\Earnings\ListPage.aspx" />
+    <Content Include="Admin\HomePage.ascx" />
     <Content Include="Admin\HomePage.aspx" />
     <Content Include="Admin\IndexQuote\IndexPage.aspx" />
     <Content Include="Admin\Stock\CreateStockPage.aspx" />
@@ -319,6 +320,13 @@
       <DependentUpon>ListPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\EnumerableExtensions.cs" />
+    <Compile Include="Admin\HomePage.ascx.cs">
+      <DependentUpon>HomePage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HomePage.ascx.designer.cs">
+      <DependentUpon>HomePage.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -30,7 +30,7 @@ namespace Fat.Import
 
                     service.AddQuotes(quotes);
 
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
                 }
             }
         }

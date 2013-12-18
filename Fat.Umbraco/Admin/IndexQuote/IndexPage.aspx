@@ -61,7 +61,7 @@
                     // reproject to google format (array of array)
                     data = $.map(data, function (value, key) { return [[value.FormattedDate, value.Price]]; });
 
-                    var chartData = google.visualization.arrayToDataTable(data);
+                    var chartData = google.visualization.arrayToDataTable(data, true);
                     var chart = new google.visualization.LineChart(document.getElementById('marketIndexChart'));
 
                     chartData.addColumn('number', 'Price');

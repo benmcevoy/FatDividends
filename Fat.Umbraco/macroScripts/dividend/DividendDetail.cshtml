@@ -1,4 +1,4 @@
-﻿<div id="dividendDetail">
+﻿<div id="dividendDetail" class="widget">
     <section>
         <h3>Dividend Detail</h3>
         @{
@@ -11,27 +11,27 @@
                 <dd>@dividend.FormattedExDate</dd>
 
                 <dt>Amount</dt>
-                <dd>@dividend.Amount</dd>
+                <dd>@dividend.Amount.ToString("0.0000")</dd>
 
                 <dt>Franked</dt>
-                <dd>@dividend.Franked</dd>
+                <dd>@dividend.Franked.ToString("0.0000")</dd>
 
-                <dt>FrankingCredit</dt>
-                <dd>@dividend.FrankingCredit</dd>
+                <dt>Franking Credit</dt>
+                <dd>@dividend.FrankingCredit.ToString("0.0000")</dd>
 
-                <dt>ClosingPrice</dt>
-                <dd>@dividend.ClosingPrice</dd>
+                <dt>Closing Price</dt>
+                <dd>@dividend.ClosingPrice.ToString("0.0000")</dd>
 
-                <dt>GrossedAmount</dt>
-                <dd>@dividend.GrossedAmount</dd>
+                <dt>Grossed Amount</dt>
+                <dd>@dividend.GrossedAmount.ToString("0.0000")</dd>
 
-                <dt>GrossedYieldPercentage</dt>
-                <dd>@dividend.GrossedYieldPercentage</dd>
+                <dt>Grossed Yield %</dt>
+                <dd>@dividend.GrossedYieldPercentage.ToString("0.0000")</dd>
 
-                <dt>PayableDate</dt>
+                <dt>Payable Date</dt>
                 <dd>@dividend.FormattedPayableDate</dd>
 
-                <dt>RecordDate</dt>
+                <dt>Record Date</dt>
                 <dd>@dividend.FormattedRecordDate</dd>
             </dl>
             }

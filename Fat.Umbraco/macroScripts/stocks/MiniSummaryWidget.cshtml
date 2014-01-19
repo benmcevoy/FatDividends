@@ -1,70 +1,65 @@
-﻿@using Fat.Umbraco.DocumentTypes
-@using Vega.USiteBuilder
-@using umbraco.MacroEngines
-
+﻿@using umbraco.MacroEngines
+@inherits DynamicNodeContext
 <div id="miniSummaryWidget" class="widget">
 
-    @inherits DynamicNodeContext
-@{
-    var stock = Fat.Umbraco.Data.StockRepository.GetStock(this);
+    <div id="stockTitle" class="widget">
+        <section>
+            @{
+                var stock = Fat.Umbraco.Data.StockRepository.GetStock(this);
 
-    if (stock != null)
-    {
-    <section>
-        <header>
-            <div class="title">
-                <a href="/stock-information/@stock.Code">
-                    <span class="code">@stock.Code</span>
-                    <span class="name">@stock.Name</span>
-                </a>
-            </div>
-            <div class="industry">@stock.Industry</div>
-        </header>
-
-        <div id="stockChart">
-            <section>
-                <h3>Closing Price Last 90 Days</h3>
-                <div id="smallchart"></div>
-            </section>
-        </div>
-
-        @{
+                if (stock != null)
+                {
+                <header>
+                    <div class="title">
+                        <a href="/stock-information/@stock.Code">
+                            <span class="code">@stock.Code</span>
+                            <span class="name">@stock.Name</span>
+                        </a>
+                    </div>
+                    <div class="industry">@stock.Industry</div>
+                </header>
+                }
+            }
+        </section>
+    </div>
+    <div id="stockChart">
+        <section>
+            <h3>Closing Price Last 90 Days</h3>
+            <div id="smallchart"></div>
+        </section>
+    </div>
+    @{
         var quote = Fat.Umbraco.Data.StockRepository.GetLatestQuote(this);
 
         if (quote != null)
         {
-            <div id="stockPrice">
-                <section>
-                    <h3>Latest Price</h3>
-                    <div class="subheading">
-                        <span class="currency">AUD</span>
-                        <span class="date">@quote.ClosingDate.ToString("dd MMM yyyy")</span>
-                    </div>
-                    <div class="price">
-                        @quote.Price
-                    </div>
-                </section>
-            </div>
+        <div id="stockPrice">
+            <section>
+                <h3>Latest Price</h3>
+                <div class="subheading">
+                    <span class="currency">AUD</span>
+                    <span class="date">@quote.ClosingDate.ToString("dd MMM yyyy")</span>
+                </div>
+                <div class="price">
+                    @quote.Price
+                </div>
+            </section>
+        </div>
         }
+        else
+        {
+        <section>
+            <header>
+                <div class="title">
+                    <span class="name">Sorry, we can't find any details for that ASX code.</span>
+                </div>
+                <div>
+                    Try <a href="/search" class="link">searching by code or company name</a>.
+                </div>
+            </header>
+        </section>
         }
-
-
-    </section>
     }
-    else
-    {
-    <section>
-        <header>
-            <div class="title">
-                <span class="name">Sorry, we can't find any details for that ASX code.</span>
-            </div>
-            <div>
-                Try <a href="/search" class="link">searching by code or company name</a>.
-            </div>
-        </header>
-    </section>
-    }
-}
 </div>
 
 <script type="text/javascript">

@@ -23,6 +23,7 @@
             .Add("~/css/indexWidget.css")
             .Add("~/css/calendarWidget.css")
             .Add("~/css/stockDetail.css")
+            .Add("~/css/dividendDetail.css")
             .Add("~/css/investmentNews.css")
             .Add("~/css/tabs.css")
             .Add("~/css/article.css")

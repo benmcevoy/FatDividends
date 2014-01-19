@@ -22,12 +22,30 @@ namespace Fat.Umbraco.masterpages {
         protected global::umbraco.presentation.templateControls.Macro Macro1;
         
         /// <summary>
-        /// Macro5 control.
+        /// Macro4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::umbraco.presentation.templateControls.Macro Macro5;
+        protected global::umbraco.presentation.templateControls.Macro Macro4;
+        
+        /// <summary>
+        /// Macro3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::umbraco.presentation.templateControls.Macro Macro3;
+        
+        /// <summary>
+        /// Macro2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::umbraco.presentation.templateControls.Macro Macro2;
     }
 }

@@ -210,6 +210,7 @@
     <Content Include="css\blog\bootstrap.min.css" />
     <Content Include="css\calendarWidget.css" />
     <Content Include="css\dashboard.css" />
+    <Content Include="css\dividendDetail.css" />
     <Content Include="css\ie7.css" />
     <Content Include="css\Images\home.png" />
     <Content Include="css\Images\logo.png" />
@@ -265,6 +266,7 @@
     <Content Include="masterpages\Article.master" />
     <Content Include="masterpages\ArticleList.master" />
     <Content Include="Config\Dashboard.config" />
+    <Content Include="macroScripts\stocks\SmallChartWidget.cshtml" />
     <None Include="scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="scripts\jquery-1.7.1.min.js" />
     <Content Include="scripts\jQuery.tmpl.min.js" />
